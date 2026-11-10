@@ -19,7 +19,7 @@ The top of the page should quickly explain your main service, where you offer it
 
 You don't need a clever headline or a paragraph about how passionate you are about customer service. Clear usually wins. If you serve Orlando and the surrounding towns, say that. If you focus on a certain kind of work, make that clear too.
 
-## Give your main services their own pages
+## Create a page for each main service
 
 One mistake we see often is putting every service on a single page.
 

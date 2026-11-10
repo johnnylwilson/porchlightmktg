@@ -10,6 +10,9 @@ export const site = {
   city: 'Lake Mary, FL',
   linkedin: 'https://www.linkedin.com/company/gridline-marketing/', // TODO: update to the Porchlight LinkedIn page
   year: 2026,
+  // Google Business Profile map. Paste the embed URL here (the src="..." value from Google Maps:
+  // Share > Embed a map). Leave empty to show the illustrated placeholder map.
+  gbpMapEmbed: '',
 };
 
 export const services = [
@@ -99,7 +102,7 @@ export const servicePages: Record<string, any> = {
         'Every business is different in size, services, and market, so each scope is built to fit. Many start with a focused discovery and cleanup phase to set a solid base. From there, work moves to a monthly plan that keeps building your on-page SEO. As your needs grow, you can add more content or support for more locations.',
         'Pricing is based on the work your business actually needs rather than a preset bundle, so it can vary quite a bit. Once we finish your free SEO audit, we will put together a custom plan and a clear estimate.',
       ],
-      card: { title: 'How pricing works', steps: ['Free SEO audit of your site and Google presence', 'A scope built around your services and towns', 'A clear estimate before any work begins'] },
+      card: { title: 'How pricing works', steps: ['Free SEO audit of your site and Google presence', 'A scope built around your services and towns', 'A clear estimate before any work begins'], note: 'No preset bundles. You see the scope and the price before anything starts.' },
     },
     testimonial: 'justin',
     faqTitle: 'Still unsure about local SEO for your business?',
@@ -112,6 +115,8 @@ export const servicePages: Record<string, any> = {
     finalTitle: 'Ready to get found in your area?',
     finalText: 'Showing up on Google starts with a simple first step. Send us your website and the cities you serve, and we will review where you stand with a free SEO audit.',
     blogService: 'Local SEO',
+    faqLede: ['Wondering how local SEO would work for your business? Call', 'and we\'ll talk it through.'],
+    postCta: { title: 'Curious where you show up on Google Maps?', text: 'Ask for a free SEO audit. We\'ll check your Google Business Profile, your website, and the searches that matter in your area, then walk you through what we\'d fix first.' },
   },
 
   'google-ads': {
@@ -204,6 +209,8 @@ export const servicePages: Record<string, any> = {
     finalTitle: 'Ready to show up when people are searching?',
     finalText: 'If you want to talk through timing, budget, your target area, or any questions, we are happy to help. Start with a free ads audit or just reach out.',
     blogService: 'Google Ads',
+    faqLede: ['Have a question about budgets or targeting? Call', 'for a straight answer.'],
+    postCta: { title: 'Wondering if your ad budget is working?', text: 'Ask for a free ads audit. We\'ll look at your search terms, targeting, and landing pages, and tell you plainly what we\'d change, or whether ads make sense for you yet.' },
   },
 
   'website-design': {
@@ -278,7 +285,7 @@ export const servicePages: Record<string, any> = {
         'Web design is priced around your goals and how many services and areas you want to promote, so you only pay for what your business needs. Some projects need a light refresh, while others need a full redesign and new content.',
         'Because every business starts in a different place, pricing is based on the scope of work rather than a fixed package. The size of the site, number of service pages, design needs, and technical requirements all play a part. After reviewing your current site in the free audit, we will outline a plan and give you a clear estimate.',
       ],
-      card: { title: 'How pricing works', steps: ['Free site audit of your current website', 'A plan sized to your services and service areas', 'A clear estimate and schedule before work begins'] },
+      card: { title: 'How pricing works', steps: ['Free site audit of your current website', 'A plan sized to your services and service areas', 'A clear estimate and schedule before work begins'], note: 'Every site is quoted on its own, so you only pay for the pages and features your business needs.' },
     },
     testimonial: 'david',
     faqTitle: 'Not sure about a new website yet?',
@@ -291,5 +298,7 @@ export const servicePages: Record<string, any> = {
     finalTitle: 'Ready for a website that works as hard as you do?',
     finalText: 'If you want a website that builds trust, helps you get found, and makes it easy to reach out, we can walk you through exactly what your project needs.',
     blogService: 'Web Design',
+    faqLede: ['Not sure what your website needs? Call', 'and we\'ll help you sort it out.'],
+    postCta: { title: 'Is your website doing its job?', text: 'Ask for a free site audit. We\'ll look at your site the way a potential customer does and show you what\'s helping and what\'s getting in the way of calls.' },
   },
 };

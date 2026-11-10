@@ -1,0 +1,36 @@
+---
+// Google Business Profile section, shown just above the footer on the home and service pages.
+// The map comes from site.gbpMapEmbed in src/data/site.ts. Until that's set, an illustrated map shows.
+import { site } from '../data/site';
+import { pageSeo, LOCATION } from '../data/seo';
+
+interface Props {
+  // Key from src/data/seo.ts: home, local-seo, google-ads, or website-design
+  seoKey: string;
+}
+
+const { seoKey } = Astro.props;
+const heading = `${pageSeo[seoKey].focus} in ${LOCATION}`;
+---
+<section class="section gbp" aria-labelledby="gbp-heading">
+  <div class="wrap location">
+    <div class="stack">
+      <h2 id="gbp-heading"><a class="h-link" href="/contact">{heading}</a></h2>
+      <dl class="gbp-facts">
+        <div><dt>Hours</dt><dd>{site.hours}</dd></div>
+        <div><dt>Phone</dt><dd><a href={`tel:${site.phoneHref}`}>{site.phone}</a></dd></div>
+      </dl>
+      <div><a class="btn btn-primary" href="/contact">Contact Us</a></div>
+    </div>
+    <div class="loc-card gbp-map">
+      {site.gbpMapEmbed ? (
+        <iframe src={site.gbpMapEmbed} title="Porchlight Marketing on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      ) : (
+        <Fragment>
+          <div class="viz-map" aria-hidden="true"><span class="pin" style="left:20%;top:66%"></span><span class="pin" style="left:76%;top:22%"></span><span class="pin pin--lit"></span></div>
+          <span class="loc-label" aria-hidden="true">Porchlight Marketing &middot; Lake Mary</span>
+        </Fragment>
+      )}
+    </div>
+  </div>
+</section>

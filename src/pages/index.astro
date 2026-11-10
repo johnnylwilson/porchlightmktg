@@ -8,6 +8,7 @@ import Testimonial from '../components/Testimonial.astro';
 import FinalCta from '../components/FinalCta.astro';
 import MapCard from '../components/MapCard.astro';
 import HeroChips from '../components/HeroChips.astro';
+import GbpSection from '../components/GbpSection.astro';
 import { site, testimonials } from '../data/site';
 import { seoFor } from '../data/seo';
 
@@ -125,5 +126,7 @@ const reasons = [
     </div>
   </section>
 
-  <FinalCta title="Ready to make a name around town?" text="Partner with a team that understands local search and builds visibility where it counts. Start with a free audit, or just reach out and tell us about your business." />
+  <FinalCta title="Ready to make a name around town?" text="Partner with a team that understands local search and builds visibility where it counts. Start with a free audit, or just reach out and tell us about your business." showPhone={false} />
+
+  <GbpSection seoKey="home" />
 </BaseLayout>

@@ -55,8 +55,8 @@ const auditLabel = post.service === 'Web Design' ? 'Free site audit' : post.serv
       <div class="box on-dark">
         <PorchLight x="80%" w="460px" h="380px" lamp={false} />
         <span class="eyebrow">{auditLabel}</span>
-        <h2>Want a second set of eyes on yours?</h2>
-        <p>We'll look at where you stand today and walk you through what we'd change first. No pressure and no jargon.</p>
+        <h2>{sp.postCta.title}</h2>
+        <p>{sp.postCta.text}</p>
         <CtaPair audit={sp.audit} auditHref={`/${svc.slug}#audit`} />
       </div>
     </aside>

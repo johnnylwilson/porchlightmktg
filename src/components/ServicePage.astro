@@ -15,6 +15,7 @@ import PostCard from './PostCard.astro';
 import MapCard from './MapCard.astro';
 import AdCard from './AdCard.astro';
 import PhoneCard from './PhoneCard.astro';
+import GbpSection from './GbpSection.astro';
 import { servicePages, testimonials } from '../data/site';
 import { seoFor } from '../data/seo';
 
@@ -172,7 +173,7 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
           <Fragment>
             <h3>{s.pricing.card.title}</h3>
             <ol>{s.pricing.card.steps.map((x: string) => <li>{x}</li>)}</ol>
-            <p class="fine">No preset bundles. You see the scope and the price before anything starts.</p>
+            <p class="fine">{s.pricing.card.note}</p>
           </Fragment>
         )}
       </div>
@@ -181,11 +182,11 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
 
   <Testimonial t={testimonial} bg="boards" />
 
-  <Faq title={s.faqTitle} items={s.faqs} />
+  <Faq title={s.faqTitle} items={s.faqs} lede={s.faqLede} />
 
-  <FinalCta title={s.finalTitle} text={s.finalText} audit={s.audit} auditHref={auditHref} />
+  <FinalCta title={s.finalTitle} text={s.finalText} audit={s.audit} auditHref={auditHref} showPhone={false} />
 
-  <section class="section">
+  <section class="section section--paper">
     <div class="wrap">
       <SectionHead eyebrow={`${s.blogService} blog`} title={blogTitle} center />
       <div class="post-grid">
@@ -193,4 +194,6 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
       </div>
     </div>
   </section>
+
+  <GbpSection seoKey={slug} />
 </BaseLayout>

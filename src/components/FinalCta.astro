@@ -8,9 +8,11 @@ interface Props {
   text: string;
   audit?: string;
   auditHref?: string;
+  // Hide the phone line on pages where the Google Business Profile section shows it just below.
+  showPhone?: boolean;
 }
 
-const { title, text, audit = 'Free Audit', auditHref } = Astro.props;
+const { title, text, audit = 'Free Audit', auditHref, showPhone = true } = Astro.props;
 ---
 <section class="evening on-dark final-cta lightbox">
   <PorchLight w="900px" h="640px" />
@@ -19,6 +21,6 @@ const { title, text, audit = 'Free Audit', auditHref } = Astro.props;
     <h2>{title}</h2>
     <p>{text}</p>
     <CtaPair audit={audit} auditHref={auditHref} />
-    <p class="phone-note">Prefer to talk it through? Call <a href={`tel:${site.phoneHref}`}>{site.phone}</a></p>
+    {showPhone && <p class="phone-note">Prefer to talk it through? Call <a href={`tel:${site.phoneHref}`}>{site.phone}</a></p>}
   </div>
 </section>

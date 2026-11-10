@@ -6,16 +6,18 @@ interface Props {
   title: string;
   items: { q: string; a: string }[];
   eyebrow?: string;
+  // Intro line, split around the phone number: [before, after]
+  lede?: [string, string];
 }
 
-const { title, items, eyebrow = 'Questions' } = Astro.props;
+const { title, items, eyebrow = 'Questions', lede = ["Still have a question we didn't cover? Call", "and you'll get a straight answer."] } = Astro.props;
 ---
 <section class="section">
   <div class="wrap split">
     <div class="sticky-col">
       <span class="eyebrow">{eyebrow}</span>
       <h2>{title}</h2>
-      <p class="lede">Still have a question we didn't cover? Call <a href={`tel:${site.phoneHref}`}>{site.phone}</a> and you'll get a straight answer.</p>
+      <p class="lede">{lede[0]} <a href={`tel:${site.phoneHref}`}>{site.phone}</a> {lede[1]}</p>
     </div>
     <div class="faq">
       {items.map((f) => (
