@@ -1,0 +1,17 @@
+---
+// The soft beam of porch light. Place inside an element with class "lightbox".
+// x: horizontal position of the light, w/h: size of the beam, a: strength (0 to 1).
+interface Props {
+  x?: string;
+  w?: string;
+  h?: string;
+  a?: string;
+  lamp?: boolean;
+}
+
+const { x = '50%', w = '760px', h = '720px', a, lamp = true } = Astro.props;
+const beamStyle = `--lx:${x};--lw:${w};--lh:${h};${a ? `--la:${a};` : ''}`;
+const lampStyle = `--lx:${x}`;
+---
+<div class="porchlight" style={beamStyle} aria-hidden="true"></div>
+{lamp && <span class="lamp" style={lampStyle} aria-hidden="true"></span>}

@@ -1,0 +1,10 @@
+---
+import LegalPage from '../components/LegalPage.astro';
+import { Content } from '../legal/privacy-policy.md';
+import { seoFor } from '../data/seo';
+
+const seo = seoFor('privacy-policy');
+---
+<LegalPage title={seo.title} description={seo.description} heading="Privacy Policy">
+  <Content />
+</LegalPage>

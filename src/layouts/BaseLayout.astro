@@ -1,0 +1,145 @@
+---
+import '../styles/global.css';
+import Intro from '../components/Intro.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  // Which nav item is highlighted: home, local-seo, google-ads, website-design, about, blog, contact
+  current?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+}
+
+const { title, description, current, ogType = 'website', noindex = false } = Astro.props;
+
+// Canonical URL without .html or a trailing slash, matching how Vercel serves pages.
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '').replace(/\/$/, '') || '/';
+const canonical = Astro.site ? new URL(path, Astro.site).href : undefined;
+const ogImage = Astro.site ? new URL('/images/og-image.jpg', Astro.site).href : undefined;
+const fonts = 'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {canonical && !noindex && <link rel="canonical" href={canonical} />}
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Porchlight Marketing" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href={fonts} />
+
+    <!-- Decide before first paint whether the porch light intro plays (once per session). -->
+    <script is:inline>
+      (function () {
+        try {
+          var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (!reduce && sessionStorage.getItem('pl-intro') !== '1') {
+            document.documentElement.classList.add('intro-on');
+            sessionStorage.setItem('pl-intro', '1');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Pages can add extra head tags here, such as JSON-LD schema. -->
+    <slot name="head" />
+  </head>
+  <body>
+    <Intro />
+    <Header current={current} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      // Header border once the page scrolls
+      const header = document.querySelector('.site-header');
+      const onScroll = () => header?.classList.toggle('is-scrolled', window.scrollY > 8);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Mobile menu
+      const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+      const panel = document.getElementById('mobile-panel');
+      if (toggle && panel) {
+        const openIcon = toggle.innerHTML;
+        const closeIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>';
+        toggle.addEventListener('click', () => {
+          const opening = panel.hidden;
+          panel.hidden = !opening;
+          toggle.setAttribute('aria-expanded', String(opening));
+          toggle.setAttribute('aria-label', opening ? 'Close menu' : 'Open menu');
+          toggle.innerHTML = opening ? closeIcon : openIcon;
+        });
+      }
+
+      // Services dropdown: click support for touch and keyboard
+      document.querySelectorAll('.has-dropdown').forEach((dd) => {
+        const btn = dd.querySelector('.dd-toggle');
+        if (!btn) return;
+        btn.addEventListener('click', () => {
+          const on = !dd.classList.contains('is-open');
+          dd.classList.toggle('is-open', on);
+          btn.setAttribute('aria-expanded', String(on));
+        });
+        document.addEventListener('click', (e) => {
+          if (!dd.contains(e.target as Node)) {
+            dd.classList.remove('is-open');
+            btn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+
+      // Lead forms: send to PUBLIC_FORM_ENDPOINT without leaving the page.
+      const endpoint = import.meta.env.PUBLIC_FORM_ENDPOINT;
+      document.querySelectorAll<HTMLFormElement>('form[data-lead-form]').forEach((form) => {
+        const ok = form.querySelector<HTMLElement>('.form-success');
+        const err = form.querySelector<HTMLElement>('.form-error');
+        const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          if (ok) ok.hidden = true;
+          if (err) err.hidden = true;
+          if (!endpoint) {
+            console.warn('PUBLIC_FORM_ENDPOINT is not set, so form submissions have nowhere to go. See README.');
+            if (err) err.hidden = false;
+            return;
+          }
+          const label = btn?.textContent ?? '';
+          if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+          try {
+            const res = await fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+            if (!res.ok) throw new Error(`Form endpoint returned ${res.status}`);
+            form.reset();
+            if (ok) ok.hidden = false;
+          } catch (error) {
+            console.error(error);
+            if (err) err.hidden = false;
+          } finally {
+            if (btn) { btn.disabled = false; btn.textContent = label; }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+// Inline SVG icons (24x24, stroke uses currentColor). Use <Icon name="pin" />.
+const svg = (inner: string, extra = '') => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ${extra}>${inner}</svg>`;
+
+export const icons: Record<string, string> = {
+  pin: svg('<path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>'),
+  search: svg('<circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/>'),
+  phone: svg('<path d="M5 4h3.5l1.5 4-2.2 1.4a11 11 0 0 0 5.8 5.8L15 13l4 1.5V18a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/>'),
+  layout: svg('<rect x="3.5" y="4" width="17" height="16" rx="2.5"/><path d="M3.5 9h17M9 9v11"/>'),
+  ad: svg('<rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M6.4 15l2.1-6 2.1 6M7.2 13h2.6M13.4 9v6h1.3a2.3 2.3 0 0 0 2.3-2.3v-1.4A2.3 2.3 0 0 0 14.7 9h-1.3z"/>'),
+  check: svg('<circle cx="12" cy="12" r="9"/><path d="m8 12.3 2.6 2.6L16.2 9.3"/>'),
+  tick: svg('<path d="m5 12.5 4.2 4.2L19 7"/>'),
+  target: svg('<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/>'),
+  shield: svg('<path d="M12 3.5 5 6v5.5c0 4.4 3 7.9 7 9 4-1.1 7-4.6 7-9V6l-7-2.5z"/><path d="m9 12 2.2 2.2L15.5 10"/>'),
+  chart: svg('<path d="M4 20V4M4 20h16"/><path d="m7.5 15 3.5-4 3 2.5 4.5-6"/>'),
+  chat: svg('<path d="M20 12a7.5 7.5 0 0 1-11 6.6L4 20l1.4-4.6A7.5 7.5 0 1 1 20 12z"/>'),
+  gear: svg('<circle cx="12" cy="12" r="3"/><path d="M12 2.8v2.4M12 18.8v2.4M4.8 4.8l1.7 1.7M17.5 17.5l1.7 1.7M2.8 12h2.4M18.8 12h2.4M4.8 19.2l1.7-1.7M17.5 6.5l1.7-1.7"/>'),
+  mobile: svg('<rect x="7" y="2.8" width="10" height="18.4" rx="2.4"/><path d="M11 17.8h2"/>'),
+  map: svg('<path d="M9 4.5 3.5 6.5v13l5.5-2 6 2 5.5-2v-13l-5.5 2-6-2z"/><path d="M9 4.5v13M15 6.5v13"/>'),
+  star: svg('<path d="m12 3.5 2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/>'),
+  clock: svg('<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>'),
+  doc: svg('<path d="M7 3.5h7l4 4v13H7z"/><path d="M14 3.5v4h4M9.5 12h6M9.5 15.5h6"/>'),
+  handshake: svg('<path d="m3 12 4-4 4 1.5L14 7l7 5"/><path d="m7 8 5.5 5.5a1.6 1.6 0 0 1-2.3 2.3L7.5 13M10 16.5l1 1a1.6 1.6 0 0 0 2.3-2.3M13 17.5a1.6 1.6 0 0 0 2.3-2.3L12.5 12.5M3 12l2 2M21 12l-3 3"/>'),
+  calendar: svg('<rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/>'),
+  quote: svg('<path d="M6 4.5h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-6.5L7 20v-3.5H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z"/><path d="M8.5 9h7M8.5 12.5h4.5"/>'),
+  layers: svg('<path d="m12 3.5 8.5 4.5-8.5 4.5L3.5 8z"/><path d="m3.5 12 8.5 4.5 8.5-4.5M3.5 16l8.5 4.5 8.5-4.5"/>'),
+  compass: svg('<circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>'),
+  plus: svg('<path d="M12 5v14M5 12h14"/>', 'stroke-width="2.2"'),
+  menu: svg('<path d="M4 7h16M4 12h16M4 17h16"/>'),
+  close: svg('<path d="M6 6l12 12M18 6 6 18"/>'),
+  linkedin: svg('<rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5V16M8 7.8v.1M11.5 16v-3.2a2.2 2.2 0 0 1 4.4 0V16M11.5 10.5V16"/>'),
+};

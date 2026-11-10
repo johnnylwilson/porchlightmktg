@@ -1,0 +1,29 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  items: { q: string; a: string }[];
+  eyebrow?: string;
+}
+
+const { title, items, eyebrow = 'Questions' } = Astro.props;
+---
+<section class="section">
+  <div class="wrap split">
+    <div class="sticky-col">
+      <span class="eyebrow">{eyebrow}</span>
+      <h2>{title}</h2>
+      <p class="lede">Still have a question we didn't cover? Call <a href={`tel:${site.phoneHref}`}>{site.phone}</a> and you'll get a straight answer.</p>
+    </div>
+    <div class="faq">
+      {items.map((f) => (
+        <details>
+          <summary>{f.q}<span class="plus"><Icon name="plus" /></span></summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

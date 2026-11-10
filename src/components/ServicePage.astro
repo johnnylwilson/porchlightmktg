@@ -1,0 +1,196 @@
+---
+// Shared template for the Local SEO, Google Ads, and Web Design pages.
+// All of the copy comes from servicePages in src/data/site.ts.
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PorchLight from './PorchLight.astro';
+import CtaPair from './CtaPair.astro';
+import SectionHead from './SectionHead.astro';
+import Icon from './Icon.astro';
+import Testimonial from './Testimonial.astro';
+import Faq from './Faq.astro';
+import FinalCta from './FinalCta.astro';
+import AuditForm from './AuditForm.astro';
+import PostCard from './PostCard.astro';
+import MapCard from './MapCard.astro';
+import AdCard from './AdCard.astro';
+import PhoneCard from './PhoneCard.astro';
+import { servicePages, testimonials } from '../data/site';
+import { seoFor } from '../data/seo';
+
+interface Props {
+  slug: 'local-seo' | 'google-ads' | 'website-design';
+}
+
+const { slug } = Astro.props;
+const s = servicePages[slug];
+const seo = seoFor(slug);
+const auditHref = '#audit';
+const testimonial = (testimonials as Record<string, { quote: string; name: string; role: string }>)[s.testimonial];
+
+const posts = await getCollection('blog', ({ data }) => !data.draft && data.service === s.blogService);
+const related = posts.sort((a, b) => a.data.order - b.data.order).slice(0, 3);
+const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blogService}`;
+---
+<BaseLayout title={seo.title} description={seo.description} current={slug}>
+  <section class="hero lightbox">
+    <PorchLight x="74%" w="760px" h="720px" />
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>{s.h1}</h1>
+        <p class="lede">{s.intro}</p>
+        <ul class="checks">
+          {s.bullets.map((b: string) => (
+            <li><Icon name="check" /><span set:html={b}></span></li>
+          ))}
+        </ul>
+        <CtaPair audit={s.audit} auditHref={auditHref} />
+      </div>
+      <div class="hero-visual">
+        {s.visual === 'map' && <MapCard />}
+        {s.visual === 'ad' && <AdCard />}
+        {s.visual === 'phone' && <PhoneCard />}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="wrap">
+      <div class="section-head section-head--center stats-head">
+        <h2>{s.statsTitle}</h2>
+        <p class="lede" set:html={s.statsIntro}></p>
+      </div>
+      <div class="stats">
+        {s.stats.map((x: { n: string; d: string }) => (
+          <div class="stat"><span class="stat-n">{x.n}</span><p>{x.d}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--boards">
+    <div class="wrap success">
+      <div class="stack">
+        <h2>{s.successTitle}</h2>
+        {s.successParas.map((p: string) => <p class="measure" style="color:var(--muted)">{p}</p>)}
+        <div style="margin-top:.5rem"><CtaPair audit={s.audit} auditHref={auditHref} /></div>
+      </div>
+      <div class="success-list">
+        {s.successItems.map((x: { icon: string; t: string; d: string }) => (
+          <div class="success-item"><span class="icon"><Icon name={x.icon} /></span><div><h3>{x.t}</h3><p>{x.d}</p></div></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="wrap">
+      <SectionHead eyebrow={s.offerEyebrow} title={s.offerTitle} center />
+      <div class:list={['offer-grid', { 'cols-2': s.offerCols === 2 }]}>
+        {s.offers.map((o: { icon: string; t: string; d: string }) => (
+          <div class="offer"><h3><Icon name={o.icon} />{o.t}</h3><p>{o.d}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap audit-layout">
+      <div class="form-card" id="audit">
+        <h2>{s.formTitle}</h2>
+        <p class="sub"><Icon name="clock" />Takes less than a minute</p>
+        <AuditForm id={`${slug}-audit`} formName={`${s.audit} (${s.name} page)`} cta={`Get my ${s.audit.toLowerCase()}`} />
+      </div>
+      <div>
+        <SectionHead eyebrow="Our process" title={s.processTitle} intro={s.processIntro} />
+        <ol class="steps">
+          {s.steps.map((st: { t: string; d: string; list?: string[]; after?: string }) => (
+            <li class="step">
+              <div>
+                <h3>{st.t}</h3>
+                <p>{st.d}</p>
+                {st.list && <ul>{st.list.map((l) => <li>{l}</li>)}</ul>}
+                {st.after && <p>{st.after}</p>}
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="wrap deliver">
+      <div class="stack">
+        <span class="eyebrow">Deliverables</span>
+        <h2>{s.expectTitle}</h2>
+        <p class="lede">{s.expectIntro}</p>
+        <p class="expect-cta">{s.expectCta}</p>
+        <CtaPair audit={s.audit} auditHref={auditHref} />
+      </div>
+      <ul class="deliver-list">
+        {s.expect.map((e: string) => <li><Icon name="tick" /><span>{e}</span></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <SectionHead eyebrow="Why Porchlight" title={s.whyTitle} center />
+      <div class="features">
+        {s.why.map((w: { icon: string; t: string; d: string }) => (
+          <div class="feature"><span class="icon"><Icon name={w.icon} /></span><h3>{w.t}</h3><p>{w.d}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class:list={['wrap', 'pricing', { 'pricing--top': s.pricing.tiers }]}>
+      {!s.pricing.tiers && <span class="eyebrow">Pricing</span>}
+      <div class="stack">
+        {s.pricing.tiers && <span class="eyebrow">Pricing</span>}
+        <h2>{s.pricing.title}</h2>
+        {s.pricing.paras.map((p: string) => <p class="measure" style="color:var(--muted)">{p}</p>)}
+        <div style="margin-top:.75rem"><CtaPair audit={s.audit} auditHref={auditHref} /></div>
+      </div>
+      <div class="price-card on-dark">
+        {s.pricing.tiers ? (
+          <Fragment>
+            <h3>Campaign setup</h3>
+            <div class="tiers">
+              {s.pricing.tiers.map((t: { n: string; p: string; d: string }) => (
+                <details class="tier">
+                  <summary><span class="t-name">{t.n}</span><span class="t-price">{t.p}</span><span class="t-chev" aria-hidden="true"><Icon name="plus" /></span></summary>
+                  <p class="t-desc">{t.d}</p>
+                </details>
+              ))}
+            </div>
+            <p class="fine">{s.pricing.tierNote}</p>
+          </Fragment>
+        ) : (
+          <Fragment>
+            <h3>{s.pricing.card.title}</h3>
+            <ol>{s.pricing.card.steps.map((x: string) => <li>{x}</li>)}</ol>
+            <p class="fine">No preset bundles. You see the scope and the price before anything starts.</p>
+          </Fragment>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <Testimonial t={testimonial} bg="boards" />
+
+  <Faq title={s.faqTitle} items={s.faqs} />
+
+  <FinalCta title={s.finalTitle} text={s.finalText} audit={s.audit} auditHref={auditHref} />
+
+  <section class="section">
+    <div class="wrap">
+      <SectionHead eyebrow={`${s.blogService} blog`} title={blogTitle} center />
+      <div class="post-grid">
+        {related.map((p) => <PostCard post={p} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

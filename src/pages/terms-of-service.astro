@@ -1,0 +1,10 @@
+---
+import LegalPage from '../components/LegalPage.astro';
+import { Content } from '../legal/terms-of-service.md';
+import { seoFor } from '../data/seo';
+
+const seo = seoFor('terms-of-service');
+---
+<LegalPage title={seo.title} description={seo.description} heading="Terms of Service">
+  <Content />
+</LegalPage>

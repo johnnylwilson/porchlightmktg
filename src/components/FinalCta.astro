@@ -1,0 +1,24 @@
+---
+import PorchLight from './PorchLight.astro';
+import CtaPair from './CtaPair.astro';
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  text: string;
+  audit?: string;
+  auditHref?: string;
+}
+
+const { title, text, audit = 'Free Audit', auditHref } = Astro.props;
+---
+<section class="evening on-dark final-cta lightbox">
+  <PorchLight w="900px" h="640px" />
+  <div class="wrap">
+    <span class="eyebrow">Get in touch</span>
+    <h2>{title}</h2>
+    <p>{text}</p>
+    <CtaPair audit={audit} auditHref={auditHref} />
+    <p class="phone-note">Prefer to talk it through? Call <a href={`tel:${site.phoneHref}`}>{site.phone}</a></p>
+  </div>
+</section>

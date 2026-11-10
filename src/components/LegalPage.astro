@@ -1,0 +1,28 @@
+---
+// Layout for the Privacy Policy and Terms of Service. The text lives in src/legal/*.md.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PorchLight from './PorchLight.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+}
+
+const { title, description, heading } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <section class="page-hero lightbox legal-hero">
+    <PorchLight w="760px" h="480px" />
+    <div class="wrap">
+      <h1>{heading}</h1>
+    </div>
+  </section>
+  <section class="section section--after-hero">
+    <div class="wrap">
+      <div class="legal">
+        <slot />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

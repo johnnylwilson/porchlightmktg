@@ -1,0 +1,14 @@
+---
+// The free audit button always travels with a Contact Us button.
+interface Props {
+  audit?: string;
+  auditHref?: string;
+  contactHref?: string;
+}
+
+const { audit = 'Free Audit', auditHref = '/contact#audit', contactHref = '/contact' } = Astro.props;
+---
+<div class="cta-pair">
+  <a class="btn btn-primary" href={auditHref}>{audit}</a>
+  <a class="btn btn-secondary" href={contactHref}>Contact Us</a>
+</div>

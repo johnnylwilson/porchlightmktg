@@ -1,0 +1,57 @@
+---
+// Lead form used on the service pages and the contact page.
+// Submissions go to PUBLIC_FORM_ENDPOINT (set it in Vercel). See README.
+import { site } from '../data/site';
+
+interface Props {
+  id: string;
+  formName: string;
+  cta?: string;
+  split?: boolean;
+  withServices?: boolean;
+}
+
+const { id, formName, cta = 'Request my free audit', split = false, withServices = false } = Astro.props;
+const endpoint = import.meta.env.PUBLIC_FORM_ENDPOINT || undefined;
+const serviceOptions = ['Local SEO', 'Google Ads', 'Web Design', 'Not sure yet'];
+---
+<form class="form" data-lead-form method="post" action={endpoint}>
+  <input type="hidden" name="form" value={formName} />
+  <input type="hidden" name="_subject" value={`New website inquiry: ${formName}`} />
+  <div class="hp" aria-hidden="true">
+    <label for={`${id}-gotcha`}>Leave this field empty</label>
+    <input id={`${id}-gotcha`} type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+  </div>
+
+  {split ? (
+    <div class="row">
+      <div class="field"><label for={`${id}-first`}>First name</label><input id={`${id}-first`} name="first_name" autocomplete="given-name" placeholder="First name" required /></div>
+      <div class="field"><label for={`${id}-last`}>Last name</label><input id={`${id}-last`} name="last_name" autocomplete="family-name" placeholder="Last name" /></div>
+    </div>
+  ) : (
+    <div class="field"><label for={`${id}-name`}>Full name</label><input id={`${id}-name`} name="name" autocomplete="name" placeholder="Your name" required /></div>
+  )}
+
+  <div class="row">
+    <div class="field"><label for={`${id}-phone`}>Phone number</label><input id={`${id}-phone`} name="phone" type="tel" autocomplete="tel" placeholder="(407) 555-0123" /></div>
+    <div class="field"><label for={`${id}-email`}>Email</label><input id={`${id}-email`} name="email" type="email" autocomplete="email" placeholder="you@business.com" required /></div>
+  </div>
+
+  <div class="field"><label for={`${id}-site`}>Website <span class="opt">(optional)</span></label><input id={`${id}-site`} name="website" inputmode="url" placeholder="yourbusiness.com" /></div>
+
+  {withServices && (
+    <fieldset class="checkset">
+      <legend>What can we help with?</legend>
+      {serviceOptions.map((s, i) => (
+        <label><input type="checkbox" id={`${id}-svc-${i}`} name="services" value={s} /> {s}</label>
+      ))}
+    </fieldset>
+  )}
+
+  <div class="field"><label for={`${id}-msg`}>Message</label><textarea id={`${id}-msg`} name="message" placeholder="Tell us about your business and the towns you serve."></textarea></div>
+
+  <button class="btn btn-primary" type="submit">{cta}</button>
+  <p class="form-note">We usually reply within one business day.</p>
+  <div class="form-success" role="status" hidden>Thanks! Your message is on its way. We usually reply within one business day.</div>
+  <div class="form-error" role="alert" hidden>Sorry, your message didn't go through. Please call <a href={`tel:${site.phoneHref}`}>{site.phone}</a> or try again.</div>
+</form>

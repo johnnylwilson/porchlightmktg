@@ -1,0 +1,51 @@
+---
+import Icon from './Icon.astro';
+import { site, services } from '../data/site';
+
+interface Props {
+  current?: string;
+}
+
+const { current } = Astro.props;
+const here = (key: string) => (current === key ? 'page' : undefined);
+---
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="Porchlight Marketing home"><img src="/images/porchlight-logo.png" alt="Porchlight Marketing" width="640" height="246" /></a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="/" aria-current={here('home')}>Home</a></li>
+        <li class="has-dropdown">
+          <button type="button" aria-expanded="false" aria-haspopup="true" class="dd-toggle">Services <svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5"></path></svg></button>
+          <ul class="dropdown">
+            {services.map((s) => (
+              <li><a href={`/${s.slug}`} aria-current={here(s.slug)}><strong>{s.name}</strong><small>{s.short}</small></a></li>
+            ))}
+          </ul>
+        </li>
+        <li><a href="/about-us" aria-current={here('about')}>About</a></li>
+        <li><a href="/blogs" aria-current={here('blog')}>Blog</a></li>
+        <li><a href="/contact" aria-current={here('contact')}>Contact</a></li>
+      </ul>
+      <div class="header-actions">
+        <a class="btn btn-primary btn-sm" href="/contact#audit">Free Audit</a>
+      </div>
+    </nav>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-panel" aria-label="Open menu"><Icon name="menu" /></button>
+  </div>
+  <div class="mobile-panel" id="mobile-panel" hidden>
+    <div class="wrap">
+      <ul>
+        <li><a class="m-link" href="/">Home</a></li>
+        {services.map((s) => (
+          <li><a class="m-link m-sub" href={`/${s.slug}`}>{s.name}</a></li>
+        ))}
+        <li><a class="m-link" href="/about-us">About</a></li>
+        <li><a class="m-link" href="/blogs">Blog</a></li>
+        <li><a class="m-link" href="/contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary" href="/contact#audit">Free Audit</a>
+      <p class="phone-line">Or call <a href={`tel:${site.phoneHref}`}>{site.phone}</a></p>
+    </div>
+  </div>
+</header>

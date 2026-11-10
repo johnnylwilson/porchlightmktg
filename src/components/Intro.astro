@@ -1,0 +1,32 @@
+---
+// First-visit intro: a dark porch, the light flickers on, then the site appears.
+// Plays once per browser session, skips on click, and never plays with reduced motion.
+// The decision is made by a small script in BaseLayout's <head>, which adds "intro-on" to <html>.
+---
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-scene">
+    <span class="intro-beam"></span>
+    <span class="intro-fixture"></span>
+    <span class="intro-bulb"></span>
+    <span class="intro-door"><span class="intro-window"></span><span class="intro-knob"></span></span>
+    <span class="intro-porch"></span>
+  </div>
+  <p class="intro-tag">Make a name around town.</p>
+  <button class="intro-skip" type="button" tabindex="-1">Skip</button>
+</div>
+<script is:inline>
+  (function () {
+    var el = document.getElementById('intro');
+    var root = document.documentElement;
+    if (!el) return;
+    if (!root.classList.contains('intro-on')) { el.remove(); return; }
+    var done = function () {
+      if (el.classList.contains('is-leaving')) return;
+      el.classList.add('is-leaving');
+      root.classList.remove('intro-on');
+      setTimeout(function () { el.remove(); }, 800);
+    };
+    var timer = setTimeout(done, 3100);
+    el.addEventListener('click', function () { clearTimeout(timer); done(); });
+  })();
+</script>

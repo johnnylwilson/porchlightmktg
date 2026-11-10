@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PorchLight from '../components/PorchLight.astro';
+import Icon from '../components/Icon.astro';
+import AuditForm from '../components/AuditForm.astro';
+import { site } from '../data/site';
+import { seoFor } from '../data/seo';
+
+const seo = seoFor('contact');
+---
+<BaseLayout title={seo.title} description={seo.description} current="contact">
+  <section class="page-hero lightbox">
+    <PorchLight w="760px" h="520px" />
+    <div class="wrap">
+      <h1 class="eyebrow">Contact</h1>
+      <h2 class="display">Let's talk about your business</h2>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact-panel">
+        <div class="contact-side on-dark">
+          <PorchLight x="30%" w="520px" h="520px" lamp={false} />
+          <h2>Send us a message</h2>
+          <p>Ready for your free audit or have a question? Give us a call or fill out the form. You should hear back within one to two business days.</p>
+          <p>We look forward to hearing from you.</p>
+          <div class="contact-lines">
+            <div><i><Icon name="phone" /></i><span><b>Phone</b><a href={`tel:${site.phoneHref}`}>{site.phone}</a></span></div>
+            <div><i><Icon name="clock" /></i><span><b>Hours</b><span>{site.hours}</span></span></div>
+            <div><i><Icon name="pin" /></i><span><b>Location</b><span>{site.city}</span></span></div>
+          </div>
+        </div>
+        <div class="contact-form" id="audit">
+          <AuditForm id="contact" formName="Contact page" split withServices cta="Send message" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="wrap location">
+      <div class="stack">
+        <span class="eyebrow">Our location</span>
+        <h2>Proudly based in Lake Mary</h2>
+        <p class="lede">We work with local businesses wherever they are. If you're nearby, let's meet for coffee. Otherwise, we're just a call away.</p>
+        <p><strong>{site.city}</strong><br /><span style="color:var(--muted)">{site.hours}</span></p>
+      </div>
+      <div class="loc-card" aria-hidden="true">
+        <div class="viz-map"><span class="pin" style="left:20%;top:66%"></span><span class="pin" style="left:76%;top:22%"></span><span class="pin pin--lit"></span></div>
+        <span class="loc-label">Porchlight Marketing &middot; Lake Mary</span>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

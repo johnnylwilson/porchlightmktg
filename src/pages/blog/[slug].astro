@@ -1,0 +1,76 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PorchLight from '../../components/PorchLight.astro';
+import CtaPair from '../../components/CtaPair.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import PostCard from '../../components/PostCard.astro';
+import { services, servicePages } from '../../data/site';
+import { metaTitle } from '../../data/seo';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((entry) => ({ params: { slug: entry.id }, props: { entry, posts } }));
+}
+
+interface Props {
+  entry: CollectionEntry<'blog'>;
+  posts: CollectionEntry<'blog'>[];
+}
+
+const { entry, posts } = Astro.props;
+const { Content } = await render(entry);
+const post = entry.data;
+
+const svc = services.find((s) => s.name === post.service)!;
+const sp = servicePages[svc.slug];
+const related = posts
+  .filter((p) => p.id !== entry.id && p.data.service === post.service)
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+// Keep the row at three columns; empty slots fill any gap.
+const emptySlots = Array.from({ length: Math.max(0, 3 - related.length) });
+const auditLabel = post.service === 'Web Design' ? 'Free site audit' : post.service === 'Google Ads' ? 'Free ads audit' : 'Free SEO audit';
+---
+<BaseLayout title={metaTitle(post.title)} description={post.description} current="blog" ogType="article">
+  <div class="article-top lightbox">
+    <PorchLight x="78%" w="760px" h="900px" lamp={false} a=".4" />
+    <section class="article-hero">
+      <div class="wrap">
+        <a class="tag" href={`/${svc.slug}`}>{post.service}</a>
+        <h1>{post.title}</h1>
+        <div class="article-meta"><span>By {post.author}</span></div>
+      </div>
+    </section>
+    <article class="wrap">
+      <div class="prose">
+        <Content />
+      </div>
+    </article>
+  </div>
+
+  <div class="wrap">
+    <aside class="article-cta">
+      <div class="box on-dark">
+        <PorchLight x="80%" w="460px" h="380px" lamp={false} />
+        <span class="eyebrow">{auditLabel}</span>
+        <h2>Want a second set of eyes on yours?</h2>
+        <p>We'll look at where you stand today and walk you through what we'd change first. No pressure and no jargon.</p>
+        <CtaPair audit={sp.audit} auditHref={`/${svc.slug}#audit`} />
+      </div>
+    </aside>
+  </div>
+
+  {related.length > 0 && (
+    <section class="section section--paper">
+      <div class="wrap">
+        <SectionHead eyebrow={`More on ${post.service}`} title="Related posts" center />
+        <div class="post-grid">
+          {related.map((p) => <PostCard post={p} />)}
+          {emptySlots.map(() => <div class="post-slot" aria-hidden="true"></div>)}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>

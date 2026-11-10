@@ -1,0 +1,19 @@
+---
+import Stars from './Stars.astro';
+
+interface Props {
+  t: { quote: string; name: string; role: string };
+  bg?: 'paper' | 'boards';
+}
+
+const { t, bg } = Astro.props;
+---
+<section class:list={['section', bg && `section--${bg}`]} aria-label="Client review">
+  <div class="wrap">
+    <figure class="quote-block">
+      <Stars />
+      <blockquote>{t.quote}</blockquote>
+      <cite><b>{t.name}</b><span>{t.role}</span></cite>
+    </figure>
+  </div>
+</section>

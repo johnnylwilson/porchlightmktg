@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PorchLight from '../components/PorchLight.astro';
+import CtaPair from '../components/CtaPair.astro';
+import SectionHead from '../components/SectionHead.astro';
+import Testimonial from '../components/Testimonial.astro';
+import FinalCta from '../components/FinalCta.astro';
+import { testimonials } from '../data/site';
+import { seoFor } from '../data/seo';
+
+const seo = seoFor('about');
+---
+<BaseLayout title={seo.title} description={seo.description} current="about">
+  <section class="page-hero lightbox">
+    <PorchLight w="760px" h="560px" />
+    <div class="wrap">
+      <h1 class="eyebrow">About Porchlight</h1>
+      <h2 class="display">Local marketing, done the neighborly way</h2>
+      <p class="lede">We help local businesses get found on Google and turn that attention into calls, bookings, and quote requests. Based in Lake Mary, Florida.</p>
+    </div>
+  </section>
+
+  <section class="section section--after-hero">
+    <div class="wrap story">
+      <figure class="porch-art" aria-hidden="true">
+        <PorchLight x="50%" w="620px" h="640px" lamp={false} />
+        <span class="fixture"></span><span class="lamp" style="--lx:50%"></span>
+        <span class="door"></span>
+      </figure>
+      <div class="text">
+        <span class="eyebrow">Why "Porchlight"</span>
+        <h2>A light on tells people you're home and open</h2>
+        <p>When the porch light is on, neighbors know someone's there and it's fine to knock. That's what good local marketing does for a business. It makes you easy to find, easy to trust, and easy to reach when someone nearby needs help.</p>
+        <p>We focus on local businesses that rely on calls, bookings, and quote requests. Every strategy, whether it's local SEO, carefully targeted ads, or a clear, well-built website, stays tied to the real work you do and the reputation you've earned.</p>
+        <p>That same respect shapes how we work. We share the numbers, keep budgets transparent, and adjust based on honest performance data. We don't make promises about rankings or lead counts. We do the work carefully and tell you plainly how it's going, so you can focus on running your business.</p>
+        <div style="margin-top:.5rem"><CtaPair /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="wrap">
+      <SectionHead title="What drives us" center />
+      <div class="mv">
+        <div>
+          <span class="eyebrow">Mission</span>
+          <h3>Help local businesses become the name people know</h3>
+          <p>Practical marketing that increases visibility, drives growth, and builds lasting community connections.</p>
+          <ul>
+            <li>Local SEO that helps nearby customers find you</li>
+            <li>Google Ads built to bring in qualified local leads</li>
+            <li>Web design that builds trust and earns inquiries</li>
+          </ul>
+        </div>
+        <div>
+          <span class="eyebrow">Vision</span>
+          <h3>The first name Lake Mary businesses think of for marketing</h3>
+          <p>Setting the local standard for visibility, growth, and trust, one business at a time.</p>
+          <ul>
+            <li>The team local businesses recommend to each other by name</li>
+            <li>Marketing dollars spent where they bring real local inquiries</li>
+            <li>Always learning, so clients keep up as search changes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="founder">
+        <img class="founder-photo" src="/images/johnny-wilson.jpg" alt="Johnny Wilson, founder of Porchlight Marketing" width="800" height="1000" loading="lazy" />
+        <div class="stack">
+          <span class="eyebrow">Who you will work with</span>
+          <h2>A real person, right here in Lake Mary</h2>
+          <p class="founder-name"><strong>Johnny Wilson</strong><span>Founder</span></p>
+          <p>Johnny started Porchlight to give local businesses straightforward marketing help from someone they can actually reach. He works directly with every client, from the first audit to the monthly reports, and brings more than five years of hands-on Google Ads experience to the table.</p>
+          <p>When you call Porchlight, you talk to Johnny. You get plain answers about what's working, what isn't, and what he'd do next.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--boards">
+    <div class="wrap">
+      <SectionHead eyebrow="Our values" title="How we work with every client" intro="Your business depends on trust. These principles keep us accountable to it." center />
+      <div class="values">
+        <div class="value"><h3>Integrity</h3><p>We support your business with transparent strategies and honest reporting.</p></div>
+        <div class="value"><h3>Stewardship</h3><p>We build your visibility thoughtfully while protecting your name for the long term.</p></div>
+        <div class="value"><h3>Focus</h3><p>We stay focused on your online presence so you show up where local clients search.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <Testimonial t={testimonials.justin} bg="paper" />
+
+  <FinalCta title="Ready to make a name around town?" text="Start with your free audit, or reach out and tell us about your business." />
+</BaseLayout>

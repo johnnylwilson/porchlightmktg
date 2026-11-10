@@ -1,0 +1,12 @@
+---
+// Renders one of the inline SVG icons from src/data/icons.ts.
+import { icons } from '../data/icons';
+
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+const svg = icons[name] ?? '';
+---
+<Fragment set:html={svg} />
