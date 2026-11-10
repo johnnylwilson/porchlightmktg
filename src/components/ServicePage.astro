@@ -74,13 +74,14 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
       <div class="stack">
         <h2>{s.successTitle}</h2>
         {s.successParas.map((p: string) => <p class="measure" style="color:var(--muted)">{p}</p>)}
-        <div style="margin-top:.5rem"><CtaPair audit={s.audit} auditHref={auditHref} /></div>
+        <div class="cta-before" style="margin-top:.5rem"><CtaPair audit={s.audit} auditHref={auditHref} /></div>
       </div>
       <div class="success-list">
         {s.successItems.map((x: { icon: string; t: string; d: string }) => (
           <div class="success-item"><span class="icon"><Icon name={x.icon} /></span><div><h3>{x.t}</h3><p>{x.d}</p></div></div>
         ))}
       </div>
+      <div class="cta-after"><CtaPair audit={s.audit} auditHref={auditHref} /></div>
     </div>
   </section>
 
@@ -127,11 +128,12 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
         <h2>{s.expectTitle}</h2>
         <p class="lede">{s.expectIntro}</p>
         <p class="expect-cta">{s.expectCta}</p>
-        <CtaPair audit={s.audit} auditHref={auditHref} />
+        <div class="cta-before"><CtaPair audit={s.audit} auditHref={auditHref} /></div>
       </div>
       <ul class="deliver-list">
         {s.expect.map((e: string) => <li><Icon name="tick" /><span>{e}</span></li>)}
       </ul>
+      <div class="cta-after"><CtaPair audit={s.audit} auditHref={auditHref} /></div>
     </div>
   </section>
 
@@ -153,7 +155,7 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
         {s.pricing.tiers && <span class="eyebrow">Pricing</span>}
         <h2>{s.pricing.title}</h2>
         {s.pricing.paras.map((p: string) => <p class="measure" style="color:var(--muted)">{p}</p>)}
-        <div style="margin-top:.75rem"><CtaPair audit={s.audit} auditHref={auditHref} /></div>
+        <div class="cta-before" style="margin-top:.75rem"><CtaPair audit={s.audit} auditHref={auditHref} /></div>
       </div>
       <div class="price-card on-dark">
         {s.pricing.tiers ? (
@@ -177,6 +179,7 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
           </Fragment>
         )}
       </div>
+      <div class="cta-after"><CtaPair audit={s.audit} auditHref={auditHref} /></div>
     </div>
   </section>
 

@@ -20,7 +20,7 @@ const heading = `${pageSeo[seoKey].focus} in ${LOCATION}`;
         <div><dt>Hours</dt><dd>{site.hours}</dd></div>
         <div><dt>Phone</dt><dd><a href={`tel:${site.phoneHref}`}>{site.phone}</a></dd></div>
       </dl>
-      <div><a class="btn btn-primary" href="/contact">Contact Us</a></div>
+      <div class="cta-before"><a class="btn btn-primary" href="/contact">Contact Us</a></div>
     </div>
     <div class="loc-card gbp-map">
       {site.gbpMapEmbed ? (
@@ -32,5 +32,6 @@ const heading = `${pageSeo[seoKey].focus} in ${LOCATION}`;
         </Fragment>
       )}
     </div>
+    <div class="cta-after"><a class="btn btn-primary" href="/contact">Contact Us</a></div>
   </div>
 </section>

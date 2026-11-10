@@ -679,3 +679,22 @@ html.intro-on .intro, .intro.is-leaving { display: flex; }
 .gbp .gbp-map { min-height: 0; height: 100%; }
 .gbp .gbp-map .viz-map, .gbp .gbp-map iframe { height: 100%; min-height: 0; }
 @media (max-width: 860px) { .gbp .gbp-map { height: 280px; } }
+
+/* Two-column sections: on phones, buttons move below the second column. */
+.cta-after { display: none; }
+@media (max-width: 900px) {
+  .split .cta-before, .success .cta-before, .deliver .cta-before, .pricing .cta-before { display: none; }
+  .split .cta-after, .success .cta-after, .deliver .cta-after, .pricing .cta-after { display: block; }
+}
+@media (max-width: 860px) {
+  .gbp .cta-before { display: none; }
+  .gbp .cta-after { display: block; }
+}
+
+/* Footer: brand and Get in touch only */
+.footer-grid { grid-template-columns: minmax(0, 1fr) auto; }
+.footer-grid .footer-col { min-width: 200px; }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr; } .footer-brand { grid-column: auto; } }
+
+/* Phone numbers are always underlined so they read as tappable */
+a[href^="tel:"] { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }

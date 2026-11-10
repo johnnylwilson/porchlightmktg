@@ -94,13 +94,14 @@ const reasons = [
         <span class="eyebrow">Why Porchlight</span>
         <h2>Marketing that keeps the focus close to home</h2>
         <p class="lede">We work with local businesses on the things that bring in work: showing up when people nearby search, and making it easy for them to reach you.</p>
-        <CtaPair />
+        <div class="cta-before"><CtaPair /></div>
       </div>
       <div class="reason-list">
         {reasons.map((r) => (
           <div class="reason"><span class="icon"><Icon name={r.icon} /></span><div><h3>{r.t}</h3><p>{r.d}</p></div></div>
         ))}
       </div>
+      <div class="cta-after"><CtaPair /></div>
     </div>
   </section>
 

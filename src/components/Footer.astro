@@ -1,5 +1,5 @@
 ---
-import { site, services } from '../data/site';
+import { site } from '../data/site';
 ---
 <footer class="site-footer">
   <div class="wrap">
@@ -8,21 +8,6 @@ import { site, services } from '../data/site';
         <img src="/images/porchlight-wordmark.png" alt="Porchlight Marketing" width="640" height="161" loading="lazy" />
         <p class="footer-tagline">{site.tagline}</p>
         <p class="small">Local SEO, Google Ads, and web design for local businesses. Based in Lake Mary, Florida.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          {services.map((s) => <li><a href={`/${s.slug}`}>{s.name}</a></li>)}
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about-us">About Us</a></li>
-          <li><a href="/blogs">Blog</a></li>
-          <li><a href="/contact">Contact Us</a></li>
-        </ul>
       </div>
       <div class="footer-col">
         <h4>Get in touch</h4>
