@@ -31,7 +31,6 @@ const related = posts
   .slice(0, 3);
 // Keep the row at three columns; empty slots fill any gap.
 const emptySlots = Array.from({ length: Math.max(0, 3 - related.length) });
-const auditLabel = post.service === 'Web Design' ? 'Free site audit' : post.service === 'Google Ads' ? 'Free ads audit' : 'Free SEO audit';
 ---
 <BaseLayout title={metaTitle(post.title)} description={post.description} current="blog" ogType="article">
   <div class="article-top lightbox">
@@ -54,7 +53,6 @@ const auditLabel = post.service === 'Web Design' ? 'Free site audit' : post.serv
     <aside class="article-cta">
       <div class="box on-dark">
         <PorchLight x="80%" w="460px" h="380px" lamp={false} />
-        <span class="eyebrow">{auditLabel}</span>
         <h2>{sp.postCta.title}</h2>
         <p>{sp.postCta.text}</p>
         <CtaPair audit={sp.audit} auditHref={`/${svc.slug}#audit`} />
@@ -65,7 +63,7 @@ const auditLabel = post.service === 'Web Design' ? 'Free site audit' : post.serv
   {related.length > 0 && (
     <section class="section section--paper">
       <div class="wrap">
-        <SectionHead eyebrow={`More on ${post.service}`} title="Related posts" center />
+        <SectionHead title="Related posts" center />
         <div class="post-grid">
           {related.map((p) => <PostCard post={p} />)}
           {emptySlots.map(() => <div class="post-slot" aria-hidden="true"></div>)}

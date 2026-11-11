@@ -16,7 +16,7 @@ const here = (key: string) => (current === key ? 'page' : undefined);
       <ul class="nav-links">
         <li><a href="/" aria-current={here('home')}>Home</a></li>
         <li class="has-dropdown">
-          <button type="button" aria-expanded="false" aria-haspopup="true" class="dd-toggle">Services <svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5"></path></svg></button>
+          <button type="button" aria-expanded="false" aria-haspopup="true" class="dd-toggle">Services</button>
           <ul class="dropdown">
             {services.map((s) => (
               <li><a href={`/${s.slug}`} aria-current={here(s.slug)}><strong>{s.name}</strong><small>{s.short}</small></a></li>

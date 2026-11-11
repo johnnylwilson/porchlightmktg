@@ -5,7 +5,7 @@ import CtaPair from '../components/CtaPair.astro';
 import SectionHead from '../components/SectionHead.astro';
 import Testimonial from '../components/Testimonial.astro';
 import FinalCta from '../components/FinalCta.astro';
-import { testimonials } from '../data/site';
+import { site, testimonials } from '../data/site';
 import { seoFor } from '../data/seo';
 
 const seo = seoFor('about');
@@ -40,6 +40,27 @@ const seo = seoFor('about');
 
   <section class="section section--paper">
     <div class="wrap">
+      <div class="founder">
+        <img class="founder-photo" src="/images/johnny-wilson.jpg" alt="Johnny Wilson, founder of Porchlight Marketing" width="800" height="1000" loading="lazy" />
+        <div class="stack">
+          <span class="eyebrow">Who you will work with</span>
+          <h2>Johnny Wilson</h2>
+          <ul class="founder-facts">
+            <li><b>200+</b><span>website builds and upgrades led</span></li>
+            <li><b>150+</b><span>Google Ads campaigns built</span></li>
+            <li><b>PMP</b><span>certified project manager</span></li>
+          </ul>
+          <p>I founded Porchlight to give local businesses senior-level marketing support from someone they can reach directly. My background is in marketing project management, where I have led SEO site builds, website upgrades, and Google Ads campaigns from strategy and keyword research through launch, tracking, and reporting.</p>
+          <p>I hold the Project Management Professional (PMP) certification from the Project Management Institute, along with Google Ads certifications in Creative and Measurement. Every new site I have built has ranked on page one of Google for at least one search term, and the Google Ads campaigns I manage average a 12.01x return on ad spend (ROAS).</p>
+          <p>Results depend on many variables, including your market, budget, services, landing pages, and more, so I don't promise numbers. What you can count on is working with me directly, from the first audit to the monthly reports.</p>
+          <p class="founder-contact">You can reach me at <a href={`tel:${site.phoneHref}`}>{site.phone}</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
       <SectionHead title="What drives us" center />
       <div class="mv">
         <div>
@@ -61,21 +82,6 @@ const seo = seoFor('about');
             <li>Marketing dollars spent where they bring real local inquiries</li>
             <li>Always learning, so clients keep up as search changes</li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="founder">
-        <img class="founder-photo" src="/images/johnny-wilson.jpg" alt="Johnny Wilson, founder of Porchlight Marketing" width="800" height="1000" loading="lazy" />
-        <div class="stack">
-          <span class="eyebrow">Who you will work with</span>
-          <h2>A real person, right here in Lake Mary</h2>
-          <p class="founder-name"><strong>Johnny Wilson</strong><span>Founder</span></p>
-          <p>Johnny started Porchlight to give local businesses straightforward marketing help from someone they can actually reach. He works directly with every client, from the first audit to the monthly reports, and brings more than five years of hands-on Google Ads experience to the table.</p>
-          <p>When you call Porchlight, you talk to Johnny. You get plain answers about what's working, what isn't, and what he'd do next.</p>
         </div>
       </div>
     </div>

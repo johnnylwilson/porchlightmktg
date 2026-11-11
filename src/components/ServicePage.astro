@@ -104,7 +104,7 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
         <AuditForm id={`${slug}-audit`} formName={`${s.audit} (${s.name} page)`} cta={`Get my ${s.audit.toLowerCase()}`} />
       </div>
       <div>
-        <SectionHead eyebrow="Our process" title={s.processTitle} intro={s.processIntro} />
+        <SectionHead title={s.processTitle} intro={s.processIntro} />
         <ol class="steps">
           {s.steps.map((st: { t: string; d: string; list?: string[]; after?: string }) => (
             <li class="step">
@@ -124,7 +124,6 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
   <section class="section section--paper">
     <div class="wrap deliver">
       <div class="stack">
-        <span class="eyebrow">Deliverables</span>
         <h2>{s.expectTitle}</h2>
         <p class="lede">{s.expectIntro}</p>
         <p class="expect-cta">{s.expectCta}</p>
@@ -139,7 +138,7 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
 
   <section class="section">
     <div class="wrap">
-      <SectionHead eyebrow="Why Porchlight" title={s.whyTitle} center />
+      <SectionHead title={s.whyTitle} center />
       <div class="features">
         {s.why.map((w: { icon: string; t: string; d: string }) => (
           <div class="feature"><span class="icon"><Icon name={w.icon} /></span><h3>{w.t}</h3><p>{w.d}</p></div>
@@ -150,9 +149,7 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
 
   <section class="section section--paper">
     <div class:list={['wrap', 'pricing', { 'pricing--top': s.pricing.tiers }]}>
-      {!s.pricing.tiers && <span class="eyebrow">Pricing</span>}
       <div class="stack">
-        {s.pricing.tiers && <span class="eyebrow">Pricing</span>}
         <h2>{s.pricing.title}</h2>
         {s.pricing.paras.map((p: string) => <p class="measure" style="color:var(--muted)">{p}</p>)}
         <div class="cta-before" style="margin-top:.75rem"><CtaPair audit={s.audit} auditHref={auditHref} /></div>
@@ -185,13 +182,13 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
 
   <Testimonial t={testimonial} bg="boards" />
 
-  <Faq title={s.faqTitle} items={s.faqs} lede={s.faqLede} />
+  <Faq title={s.faqTitle} items={s.faqs} lede={s.faqLede} eyebrow="Questions" />
 
   <FinalCta title={s.finalTitle} text={s.finalText} audit={s.audit} auditHref={auditHref} showPhone={false} />
 
   <section class="section section--paper">
     <div class="wrap">
-      <SectionHead eyebrow={`${s.blogService} blog`} title={blogTitle} center />
+      <SectionHead title={blogTitle} center />
       <div class="post-grid">
         {related.map((p) => <PostCard post={p} />)}
       </div>

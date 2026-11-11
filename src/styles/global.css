@@ -609,7 +609,9 @@ h1.eyebrow { font-family: var(--font-body); font-weight: 600; font-size: .78rem;
 .founder-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 22px; box-shadow: var(--shadow); }
 .founder .stack p { color: #3f4d43; max-width: 60ch; }
 .founder-name { display: flex; flex-direction: column; gap: .1rem; }
-.founder-name strong { font-size: 1.15rem; color: var(--green-800); }
+.founder-name h2 { margin: 0; }
+.founder .stack .founder-contact { color: var(--ink); font-weight: 600; }
+.founder-contact a { color: var(--green-800); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
 .founder-name span { color: var(--muted); font-size: .95rem; }
 
 /* Blog post: one continuous glow behind the title and opening */
@@ -707,3 +709,9 @@ a[href^="tel:"] { text-decoration: underline; text-decoration-thickness: 1px; te
 .hero-visual:not(:has(.chip)) { padding-block: 0; }
 .hero + .section--tight { padding-top: clamp(2rem, 1.5rem + 2vw, 3.5rem); }
 .chip--b { bottom: 22px; }
+
+/* About: founder credentials */
+.founder-facts { list-style: none; margin: .25rem 0 .5rem; padding: 1rem 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; border-block: 1px solid var(--sand); }
+.founder-facts li { display: flex; flex-direction: column; gap: .2rem; min-width: 0; }
+.founder-facts b { font-family: var(--font-display); font-weight: 700; font-size: 1.75rem; line-height: 1; color: var(--green-800); }
+.founder-facts span { font-size: .9rem; line-height: 1.35; color: var(--muted); }
