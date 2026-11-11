@@ -698,3 +698,12 @@ html.intro-on .intro, .intro.is-leaving { display: flex; }
 
 /* Phone numbers are always underlined so they read as tappable */
 a[href^="tel:"] { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+/* Heroes: compact enough that the next section peeks into view on laptop and desktop screens */
+.hero { padding-block: clamp(2.75rem, 1.75rem + 3.5vw, 5.5rem) clamp(3.25rem, 2.25rem + 3.5vw, 6rem); }
+.hero + .section { padding-top: clamp(3.5rem, 2.75rem + 3vw, 5.75rem); }
+.hero .viz-map { height: 150px; }
+.viz-phone .screen { min-height: 0; }
+.hero-visual:not(:has(.chip)) { padding-block: 0; }
+.hero + .section--tight { padding-top: clamp(2rem, 1.5rem + 2vw, 3.5rem); }
+.chip--b { bottom: 22px; }
