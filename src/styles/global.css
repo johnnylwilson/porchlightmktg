@@ -547,7 +547,6 @@ strong { font-weight: 600; }
 
 .below-link { display: flex; justify-content: center; margin-top: 2rem; }
 .deliver .cta-pair { margin-top: .5rem; }
-.deliver .expect-cta { font-weight: 600; color: var(--green-800); }
 .mobile-panel .btn { width: 100%; }
 
 /* Intro --------------------------------------------------------------- */
@@ -677,8 +676,8 @@ html.intro-on .intro, .intro.is-leaving { display: flex; }
 .gbp-facts dd { margin: .25rem 0 0; font-size: 1.15rem; color: var(--ink); }
 .gbp-facts a { color: var(--green-800); font-weight: 600; text-underline-offset: 3px; }
 /* GBP map matches the height of the text column beside it */
-.gbp .location { align-items: stretch; }
-.gbp .gbp-map { min-height: 0; height: 100%; }
+.gbp .location { align-items: center; }
+.gbp .gbp-map { min-height: 0; height: 340px; }
 .gbp .gbp-map .viz-map, .gbp .gbp-map iframe { height: 100%; min-height: 0; }
 @media (max-width: 860px) { .gbp .gbp-map { height: 280px; } }
 

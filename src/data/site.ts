@@ -86,7 +86,6 @@ export const servicePages: Record<string, any> = {
       'An optimized Google Business Profile so more people see you in Google Maps',
       'Monthly keyword tracking and new content to support your rankings over time',
     ],
-    expectCta: 'Want to see where your site stands today?',
     whyTitle: 'Why businesses choose Porchlight for local SEO',
     why: [
       { icon: 'target', t: 'Local SEO experience', d: 'Local search for service area businesses is what we focus on, so your strategy is built for how people search close to home.' },
@@ -174,7 +173,6 @@ export const servicePages: Record<string, any> = {
       'Monthly data and conversion reports with recommendations',
       'A monthly return on ad spend sheet so you know what you are getting back',
     ],
-    expectCta: 'Curious whether Google Ads is a good fit for your business?',
     whyTitle: 'Why local businesses choose Porchlight for Google Ads',
     why: [
       { icon: 'target', t: 'Ads experience', d: 'Your campaign is built on more than five years of hands-on experience targeting the searches that matter for local services.' },
@@ -269,7 +267,6 @@ export const servicePages: Record<string, any> = {
       'Service pages designed to help you show up on Google and bring in inquiries',
       'Optional ongoing support to keep your site current and active',
     ],
-    expectCta: 'Want to know how your current website holds up?',
     whyTitle: 'Why local businesses choose Porchlight for web design',
     why: [
       { icon: 'compass', t: 'Relevant experience', d: 'We know how good local business websites are put together, so yours reflects the work you do and how clients look for it.' },

@@ -124,15 +124,13 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
   <section class="section section--paper">
     <div class="wrap deliver">
       <div class="stack">
+        <span class="eyebrow">Deliverables</span>
         <h2>{s.expectTitle}</h2>
         <p class="lede">{s.expectIntro}</p>
-        <p class="expect-cta">{s.expectCta}</p>
-        <div class="cta-before"><CtaPair audit={s.audit} auditHref={auditHref} /></div>
       </div>
       <ul class="deliver-list">
         {s.expect.map((e: string) => <li><Icon name="tick" /><span>{e}</span></li>)}
       </ul>
-      <div class="cta-after"><CtaPair audit={s.audit} auditHref={auditHref} /></div>
     </div>
   </section>
 
