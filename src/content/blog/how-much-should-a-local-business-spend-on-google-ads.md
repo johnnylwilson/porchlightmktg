@@ -8,8 +8,9 @@ excerpt: "There's no one right budget, but there is a sensible floor. Here's how
 focus: "Google Ads Budget"
 description: "How big should your Google Ads budget be? Porchlight Marketing in Lake Mary, FL explains how to size a budget around your clicks, services, and goals."
 author: "Johnny Wilson"
+date: "2026-11-11"
 ---
-There isn't one Google Ads budget that works for every local business. Your ideal budget depends on your industry, location, competition, and what a click costs in your market. As a general starting point, we usually don't recommend going below $300 per month for a small campaign with one or two ad groups.
+There isn't one Google Ads budget that works for every local business. Your ideal budget depends on your industry, location, competition, and the cost per click (CPC) in your market. As a general starting point, we usually don't recommend going below $300 per month for a small campaign with one or two ad groups.
 
 ## Why there isn't a perfect Google Ads budget
 

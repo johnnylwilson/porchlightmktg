@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { businessSchema, personSchema, pageSchema } from '../data/schema';
 import PorchLight from '../components/PorchLight.astro';
 import CtaPair from '../components/CtaPair.astro';
 import SectionHead from '../components/SectionHead.astro';
@@ -10,13 +11,13 @@ import { seoFor } from '../data/seo';
 
 const seo = seoFor('about');
 ---
-<BaseLayout title={seo.title} description={seo.description} current="about">
+<BaseLayout title={seo.title} description={seo.description} current="about" schema={[pageSchema('AboutPage', '/about-us', 'about'), businessSchema(), personSchema()]}>
   <section class="page-hero lightbox">
     <PorchLight w="760px" h="560px" />
     <div class="wrap">
       <h1 class="eyebrow">About Porchlight</h1>
       <h2 class="display">Local marketing, done the neighborly way</h2>
-      <p class="lede">We help local businesses get found on Google and turn that attention into calls, bookings, and quote requests. Based in Lake Mary, Florida.</p>
+      <p class="lede">Porchlight is a marketing agency based in Lake Mary, Florida. We help local businesses get found on Google and turn that attention into calls, bookings, and quote requests.</p>
     </div>
   </section>
 

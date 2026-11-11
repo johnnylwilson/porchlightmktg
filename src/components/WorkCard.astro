@@ -1,0 +1,27 @@
+---
+// One portfolio project card. Entries live in src/content/portfolio as Markdown files.
+// The card opens the project's own page at /portfolio/[file-name].
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  item: CollectionEntry<'portfolio'>;
+}
+
+const { item } = Astro.props;
+const d = item.data;
+const cover = d.images[0];
+---
+<a class="work-card" href={`/portfolio/${item.id}`}>
+  <div class="work-shot" data-label={d.title}>
+    <span class="work-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+    <img src={cover.src} alt={cover.alt} width="1200" height="640" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('is-missing')" />
+  </div>
+  <div class="work-body">
+    <span class="tag">{d.category}</span>
+    <h3>{d.title}</h3>
+    {d.url && <p class="work-url">{d.url}</p>}
+    {d.note && <p class="work-note">{d.note}</p>}
+    {d.metric && <p class="work-metric"><b>{d.metric.value}</b><span>{d.metric.label}</span></p>}
+    <span class="work-more text-link">View project <span>&rarr;</span></span>
+  </div>
+</a>

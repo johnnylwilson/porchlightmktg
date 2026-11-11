@@ -3,6 +3,7 @@
 // All of the copy comes from servicePages in src/data/site.ts.
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { serviceSchemas } from '../data/schema';
 import PorchLight from './PorchLight.astro';
 import CtaPair from './CtaPair.astro';
 import SectionHead from './SectionHead.astro';
@@ -16,6 +17,7 @@ import MapCard from './MapCard.astro';
 import AdCard from './AdCard.astro';
 import PhoneCard from './PhoneCard.astro';
 import GbpSection from './GbpSection.astro';
+import WorkCard from './WorkCard.astro';
 import { servicePages, testimonials } from '../data/site';
 import { seoFor } from '../data/seo';
 
@@ -31,9 +33,10 @@ const testimonial = (testimonials as Record<string, { quote: string; name: strin
 
 const posts = await getCollection('blog', ({ data }) => !data.draft && data.service === s.blogService);
 const related = posts.sort((a, b) => a.data.order - b.data.order).slice(0, 3);
+const work = (await getCollection('portfolio', ({ data }) => !data.draft && data.category === s.name)).sort((a, b) => a.data.order - b.data.order).slice(0, 3);
 const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blogService}`;
 ---
-<BaseLayout title={seo.title} description={seo.description} current={slug}>
+<BaseLayout title={seo.title} description={seo.description} current={slug} schema={serviceSchemas(slug)}>
   <section class="hero lightbox">
     <PorchLight x="74%" w="760px" h="720px" />
     <div class="wrap hero-grid">
@@ -192,6 +195,18 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
       </div>
     </div>
   </section>
+
+  {work.length > 0 && (
+    <section class="section section--boards">
+      <div class="wrap">
+        <SectionHead title={`${s.name} portfolio`} center />
+        <div class="work-grid">
+          {work.map((item) => <WorkCard item={item} />)}
+        </div>
+        <p class="work-all"><a class="text-link" href="/portfolio">See the full portfolio <span>&rarr;</span></a></p>
+      </div>
+    </section>
+  )}
 
   <GbpSection seoKey={slug} />
 </BaseLayout>

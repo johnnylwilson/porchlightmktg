@@ -8,6 +8,7 @@ excerpt: "What you do, where you work, and how to reach you, made obvious. Plus 
 focus: "Local Business Website"
 description: "What should a local business website include? Porchlight Marketing in Lake Mary, FL covers the pages, proof, and contact basics that bring in leads."
 author: "Johnny Wilson"
+date: "2026-11-11"
 ---
 A good local business website should make three things clear right away: what you do, where you work, and how someone can contact you. From there, dedicated service pages, reviews, location details, simple contact forms, and proof of your experience help turn more of those visitors into real leads.
 

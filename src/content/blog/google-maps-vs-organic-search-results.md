@@ -8,6 +8,7 @@ excerpt: "The map pack usually brings the quickest calls. Organic results build 
 focus: "Google Maps vs Organic Results"
 description: "Google Maps vs organic results: where should a local business focus first? Porchlight Marketing in Lake Mary, FL explains how to work on both, in order."
 author: "Johnny Wilson"
+date: "2026-11-11"
 ---
 For most local businesses, the Google Maps results are the place to start, with organic rankings built alongside them. The map pack tends to bring the most immediate calls and quote requests, especially for "near me" searches. Organic results matter for specific services and for people doing more research, and they build on themselves over time. The best plan is to make your Google Business Profile competitive while your website grows its service and location pages.
 

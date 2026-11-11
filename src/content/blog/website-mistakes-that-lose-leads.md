@@ -8,6 +8,7 @@ excerpt: "Vague services, buried contact info, missing proof, and slow mobile pa
 focus: "Website Mistakes"
 description: "Ten website mistakes that cost local businesses leads, and how to fix each one. Practical advice from Porchlight Marketing in Lake Mary, FL."
 author: "Johnny Wilson"
+date: "2026-11-11"
 ---
 Most local business websites lose leads because they make visitors work too hard to understand what you offer, where you work, and how to get in touch. The biggest problems are vague service pages, weak location details, missing proof, and a contact path that's buried or too long. Fixing these can bring in more calls and form requests from the traffic you already have.
 
@@ -78,4 +79,4 @@ If visitors can't find your services or contact page quickly, they leave.
 
 ## Bottom line
 
-Most website problems aren't design problems. They're clarity problems, and fixing them is what good [web design](/website-design) is for. When your site clearly explains your services, shows what people get, proves you're trustworthy, and makes it easy to reach out, you capture more leads from the visitors you already have.
+Most website mistakes aren't design problems. They're clarity problems, and fixing them is what good [web design](/website-design) is for. When your site clearly explains your services, shows what people get, proves you're trustworthy, and makes it easy to reach out, you capture more leads from the visitors you already have.

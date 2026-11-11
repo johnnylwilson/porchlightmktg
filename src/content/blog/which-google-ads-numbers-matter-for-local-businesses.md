@@ -8,8 +8,9 @@ excerpt: "Skip the vanity metrics. Search quality, calls and form requests, and 
 focus: "Google Ads Metrics"
 description: "Which Google Ads metrics actually matter? Porchlight Marketing in Lake Mary, FL breaks down search quality, calls and forms, and return on ad spend."
 author: "Johnny Wilson"
+date: "2026-11-11"
 ---
-The numbers that matter most are the quality of the searches you're showing up for, the calls and form requests your ads produce, and the return on ad spend you confirm with your own records. Click-through rate is useful for checking whether your ads match your keywords, and time on site helps you judge your landing page.
+The Google Ads metrics that matter most are the quality of the searches you're showing up for, the calls and form requests your ads produce, and the return on ad spend you confirm with your own records. Click-through rate is useful for checking whether your ads match your keywords, and time on site helps you judge your landing page.
 
 ## 1. Quality search traffic
 
@@ -62,4 +63,4 @@ When engagement goes up, conversion rate often follows without changing bids.
 
 ## Bottom line
 
-Judge your [Google Ads](/google-ads) by who clicked, who contacted you, and what work actually came in. Keep an eye on search quality, count calls and form requests, and confirm your return each month with your own records. Those habits keep your budget pointed at real customers.
+Judge your [Google Ads](/google-ads) metrics by who clicked, who contacted you, and what work actually came in. Keep an eye on search quality, count calls and form requests, and confirm your return each month with your own records. Those habits keep your budget pointed at real customers.

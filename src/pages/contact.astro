@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { businessSchema, pageSchema } from '../data/schema';
 import PorchLight from '../components/PorchLight.astro';
 import Icon from '../components/Icon.astro';
 import AuditForm from '../components/AuditForm.astro';
@@ -8,7 +9,7 @@ import { seoFor } from '../data/seo';
 
 const seo = seoFor('contact');
 ---
-<BaseLayout title={seo.title} description={seo.description} current="contact">
+<BaseLayout title={seo.title} description={seo.description} current="contact" schema={[pageSchema('ContactPage', '/contact', 'contact'), businessSchema()]}>
   <section class="page-hero lightbox">
     <PorchLight w="760px" h="520px" />
     <div class="wrap">

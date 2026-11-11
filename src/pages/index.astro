@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { businessSchema, websiteSchema } from '../data/schema';
 import PorchLight from '../components/PorchLight.astro';
 import CtaPair from '../components/CtaPair.astro';
 import SectionHead from '../components/SectionHead.astro';
@@ -26,7 +27,7 @@ const reasons = [
   { icon: 'chat', t: 'Plainspoken', d: 'You get clear explanations and honest reporting. No jargon, no big promises, and no surprises.' },
 ];
 ---
-<BaseLayout title={seo.title} description={seo.description} current="home">
+<BaseLayout title={seo.title} description={seo.description} current="home" schema={[businessSchema(), websiteSchema()]}>
   <section class="hero lightbox">
     <PorchLight x="72%" w="820px" h="760px" />
     <div class="wrap hero-grid">
@@ -69,7 +70,7 @@ const reasons = [
       <div class="sticky-col">
         <span class="eyebrow">Why Porchlight</span>
         <h2>Marketing that keeps the focus close to home</h2>
-        <p class="lede">We work with local businesses on the things that bring in work: showing up when people nearby search, and making it easy for them to reach you.</p>
+        <p class="lede">As a local marketing agency, we focus on the things that bring in work: showing up when people nearby search, and making it easy for them to reach you.</p>
         <div class="cta-before"><CtaPair /></div>
       </div>
       <div class="reason-list">
@@ -92,7 +93,7 @@ const reasons = [
     </div>
   </section>
 
-  <FinalCta title="Ready to make a name around town?" text="Partner with a team that understands local search and builds visibility where it counts. Start with a free audit, or just reach out and tell us about your business." showPhone={false} />
+  <FinalCta title="Ready to make a name around town?" text="Partner with a Lake Mary marketing agency that understands local search and builds visibility where it counts. Start with a free audit, or just reach out and tell us about your business." showPhone={false} />
 
   <GbpSection seoKey="home" />
 </BaseLayout>

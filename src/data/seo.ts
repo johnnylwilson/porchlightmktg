@@ -38,6 +38,10 @@ export const pageSeo: Record<string, { focus: string; description: string }> = {
     focus: 'Contact Us',
     description: 'Contact us at Porchlight Marketing in Lake Mary, FL. Call (407) 529-8737 or send a message to request a free audit for local SEO, Google Ads, or web design.',
   },
+  portfolio: {
+    focus: 'Marketing Portfolio',
+    description: 'See the marketing portfolio of Porchlight Marketing in Lake Mary, FL: local SEO projects, Google Ads campaigns, and websites built for local businesses.',
+  },
   blog: {
     focus: 'Marketing Blog',
     description: 'The Porchlight Marketing blog from Lake Mary, FL. Plain-language guides on local SEO, Google Ads, and websites built for local businesses.',

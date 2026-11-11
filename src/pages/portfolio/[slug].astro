@@ -1,0 +1,81 @@
+---
+// One page per portfolio project, built from src/content/portfolio.
+// The category tag is the page's one link back to the matching service page.
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PorchLight from '../../components/PorchLight.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import WorkCard from '../../components/WorkCard.astro';
+import FinalCta from '../../components/FinalCta.astro';
+import { services } from '../../data/site';
+import { metaTitle } from '../../data/seo';
+import { projectSchema } from '../../data/schema';
+import { projectSeo, closers } from '../../data/portfolio';
+
+export async function getStaticPaths() {
+  const items = await getCollection('portfolio', ({ data }) => !data.draft);
+  return items.map((entry) => ({ params: { slug: entry.id }, props: { entry, items } }));
+}
+
+interface Props {
+  entry: CollectionEntry<'portfolio'>;
+  items: CollectionEntry<'portfolio'>[];
+}
+
+const { entry, items } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+const hasBody = Boolean(entry.body && entry.body.trim());
+const svc = services.find((s) => s.name === d.category)!;
+const seo = projectSeo(d);
+const more = items
+  .filter((i) => i.id !== entry.id && i.data.category === d.category)
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+---
+<BaseLayout title={metaTitle(seo.focus)} description={seo.description} current="portfolio" image={d.images[0].src} schema={projectSchema(d, entry.id)}>
+  <div class="article-top lightbox">
+    <PorchLight x="78%" w="760px" h="760px" lamp={false} a=".4" />
+    <section class="article-hero project-hero">
+      <div class="wrap">
+        <a class="tag" href={`/${svc.slug}`}>{d.category}</a>
+        <h1>{d.title}</h1>
+        <p class="lede">{seo.lede}</p>
+        {(d.type || d.url || d.note || d.metric) && (
+          <dl class="project-facts">
+            {d.type && <div><dt>Project</dt><dd>{d.type}</dd></div>}
+            {d.url && <div><dt>Website</dt><dd>{d.url}</dd></div>}
+            {d.note && <div><dt>Campaign</dt><dd>{d.note}</dd></div>}
+            {d.metric && <div><dt>{d.metric.label}</dt><dd class="project-metric">{d.metric.value}</dd></div>}
+          </dl>
+        )}
+      </div>
+    </section>
+    <section class="wrap project-shots">
+      {hasBody && <div class="prose project-notes"><Content /></div>}
+      {d.images.map((im, i) => (
+        <figure class="project-shot">
+          <div class="work-shot work-shot--lg" data-label={d.title}>
+            <span class="work-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src={im.src} alt={im.alt} loading={i === 0 ? 'eager' : 'lazy'} decoding="async" onerror="this.parentNode.classList.add('is-missing')" />
+          </div>
+          {im.label && <figcaption>{im.label}</figcaption>}
+        </figure>
+      ))}
+    </section>
+  </div>
+
+  {more.length > 0 && (
+    <section class="section section--paper">
+      <div class="wrap">
+        <SectionHead title={`More ${d.category} work`} center />
+        <div class="work-grid">
+          {more.map((item) => <WorkCard item={item} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <FinalCta title={closers[d.category].title} text={closers[d.category].text} />
+</BaseLayout>

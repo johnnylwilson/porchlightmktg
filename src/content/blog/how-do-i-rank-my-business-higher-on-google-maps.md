@@ -8,6 +8,7 @@ excerpt: "A complete Google Business Profile, steady reviews, clear location sig
 focus: "Rank Higher on Google Maps"
 description: "How to rank higher on Google Maps with a complete Business Profile, steady reviews, and clear location signals. From Porchlight Marketing in Lake Mary, FL."
 author: "Johnny Wilson"
+date: "2026-11-11"
 ---
 To rank higher on Google Maps, make sure your Google Business Profile is complete, keep your business information consistent, and keep earning new customer reviews. Your website should also make it clear where you're located and what services you offer. Location matters too, so rankings can change depending on where someone is searching from.
 

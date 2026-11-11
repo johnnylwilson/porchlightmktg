@@ -7,18 +7,23 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description: string;
-  // Which nav item is highlighted: home, local-seo, google-ads, website-design, about, blog, contact
+  // Which nav item is highlighted: home, local-seo, google-ads, website-design, portfolio, about, blog, contact
   current?: string;
   ogType?: 'website' | 'article';
   noindex?: boolean;
+  // Share image (site path or full URL). Defaults to /images/og-image.jpg.
+  image?: string;
+  // JSON-LD structured data for this page (see src/data/schema.ts)
+  schema?: object | object[];
 }
 
-const { title, description, current, ogType = 'website', noindex = false } = Astro.props;
+const { title, description, current, ogType = 'website', noindex = false, schema, image } = Astro.props;
+const schemaList = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
 
 // Canonical URL without .html or a trailing slash, matching how Vercel serves pages.
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '').replace(/\/$/, '') || '/';
 const canonical = Astro.site ? new URL(path, Astro.site).href : undefined;
-const ogImage = Astro.site ? new URL('/images/og-image.jpg', Astro.site).href : undefined;
+const ogImage = Astro.site ? new URL(image ?? '/images/og-image.jpg', Astro.site).href : undefined;
 const fonts = 'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap';
 ---
 <!doctype html>
@@ -37,8 +42,8 @@ const fonts = 'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,
     <meta property="og:description" content={description} />
     {canonical && <meta property="og:url" content={canonical} />}
     {ogImage && <meta property="og:image" content={ogImage} />}
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    {!image && <meta property="og:image:width" content="1200" />}
+    {!image && <meta property="og:image:height" content="630" />}
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -61,7 +66,8 @@ const fonts = 'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,
       })();
     </script>
 
-    <!-- Pages can add extra head tags here, such as JSON-LD schema. -->
+    {schemaList.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)}></script>)}
+    <!-- Pages can add extra head tags here. -->
     <slot name="head" />
   </head>
   <body>

@@ -8,6 +8,7 @@ excerpt: "A single scrolling page looks tidy but makes it hard to show up for ea
 focus: "Service Pages"
 description: "Why service pages outperform one-page websites, and how to structure them. Advice from Porchlight Marketing, a web design team in Lake Mary, FL."
 author: "Johnny Wilson"
+date: "2026-11-11"
 ---
 One-page websites look simple, but they make it harder to show up on Google for each thing you do and harder for visitors to find what they came for. Giving each main service its own page lets you match how people search, connect services to the towns you serve, and give visitors a clear path to reach out.
 

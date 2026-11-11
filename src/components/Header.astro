@@ -16,7 +16,7 @@ const here = (key: string) => (current === key ? 'page' : undefined);
       <ul class="nav-links">
         <li><a href="/" aria-current={here('home')}>Home</a></li>
         <li class="has-dropdown">
-          <button type="button" aria-expanded="false" aria-haspopup="true" class="dd-toggle">Services</button>
+          <button type="button" aria-expanded="false" aria-haspopup="true" class="dd-toggle">Services <svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5"></path></svg></button>
           <ul class="dropdown">
             {services.map((s) => (
               <li><a href={`/${s.slug}`} aria-current={here(s.slug)}><strong>{s.name}</strong><small>{s.short}</small></a></li>
@@ -24,6 +24,7 @@ const here = (key: string) => (current === key ? 'page' : undefined);
           </ul>
         </li>
         <li><a href="/about-us" aria-current={here('about')}>About</a></li>
+        <li><a href="/portfolio" aria-current={here('portfolio')}>Portfolio</a></li>
         <li><a href="/blogs" aria-current={here('blog')}>Blog</a></li>
         <li><a href="/contact" aria-current={here('contact')}>Contact</a></li>
       </ul>
@@ -41,6 +42,7 @@ const here = (key: string) => (current === key ? 'page' : undefined);
           <li><a class="m-link m-sub" href={`/${s.slug}`}>{s.name}</a></li>
         ))}
         <li><a class="m-link" href="/about-us">About</a></li>
+        <li><a class="m-link" href="/portfolio">Portfolio</a></li>
         <li><a class="m-link" href="/blogs">Blog</a></li>
         <li><a class="m-link" href="/contact">Contact</a></li>
       </ul>

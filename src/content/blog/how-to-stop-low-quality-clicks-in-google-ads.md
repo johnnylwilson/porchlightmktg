@@ -8,6 +8,7 @@ excerpt: "Wasted clicks usually come from broad keywords, vague ads, and pages t
 focus: "Low-Quality Ad Clicks"
 description: "Stop paying for low-quality ad clicks. Porchlight Marketing in Lake Mary, FL shares seven steps to tighten your keywords, targeting, and landing pages."
 author: "Johnny Wilson"
+date: "2026-11-11"
 ---
 To cut down on low-quality clicks in Google Ads, tighten your keywords around real intent, review the search terms that already got clicks, and add the bad ones as negative keywords. Then make your ad copy and landing page match the exact services you want, and limit targeting to the area you actually serve. That reduces wasted spend and raises the share of clicks that can turn into real leads.
 

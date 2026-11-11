@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PorchLight from '../components/PorchLight.astro';
+import SectionHead from '../components/SectionHead.astro';
+import WorkCard from '../components/WorkCard.astro';
+import FinalCta from '../components/FinalCta.astro';
+import { pageSchema } from '../data/schema';
+import { seoFor } from '../data/seo';
+
+const seo = seoFor('portfolio');
+const items = await getCollection('portfolio', ({ data }) => !data.draft);
+
+// One section per service, in the same order as the menu.
+const groups = [
+  { name: 'Local SEO', intro: 'Websites we have optimized to show up in Google Maps and local search.' },
+  { name: 'Google Ads', intro: 'Campaigns we have built and managed, with numbers from the account. Open a project to see the ad copy and keywords.' },
+  { name: 'Web Design', intro: 'Websites we have designed and built around how clients search and reach out.' },
+].map((g) => ({ ...g, items: items.filter((i) => i.data.category === g.name).sort((a, b) => a.data.order - b.data.order) }))
+  .filter((g) => g.items.length);
+---
+<BaseLayout title={seo.title} description={seo.description} current="portfolio" schema={pageSchema('CollectionPage', '/portfolio', 'portfolio')}>
+  <section class="page-hero lightbox">
+    <PorchLight w="760px" h="520px" />
+    <div class="wrap">
+      <h1 class="eyebrow">Our portfolio</h1>
+      <h2 class="display">A look at the work</h2>
+      <p class="lede">A sample of the local SEO, Google Ads, and web design projects we have built and managed.</p>
+    </div>
+  </section>
+
+  {groups.map((g, i) => (
+    <section class:list={['section', { 'section--after-hero': i === 0, 'section--paper': i === 1 }]}>
+      <div class="wrap">
+        <SectionHead title={g.name} intro={g.intro} center />
+        <div class="work-grid">
+          {g.items.map((item) => <WorkCard item={item} />)}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <FinalCta title="Want to see what we would do for your business?" text="Start with a free audit, or reach out and tell us about your business." />
+</BaseLayout>

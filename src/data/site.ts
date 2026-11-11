@@ -3,7 +3,7 @@ export const site = {
   name: 'Porchlight Marketing',
   tagline: 'Make a name around town.',
   description: 'Marketing for local businesses.',
-  positioning: 'Porchlight helps local businesses get found on Google and turn that visibility into calls, bookings, and quote requests.',
+  positioning: 'Porchlight is a Lake Mary marketing agency that helps local businesses get found on Google and turn that visibility into calls, bookings, and quote requests.',
   phone: '(407) 529-8737',
   phoneHref: '+14075298737',
   hours: 'Monday to Friday, 9 AM to 5 PM',
@@ -32,7 +32,7 @@ export const servicePages: Record<string, any> = {
   'local-seo': {
     name: 'Local SEO',
     h1: 'Local SEO',
-    intro: 'Local SEO helps nearby customers find your business when they search for the services you offer.',
+    intro: 'Local SEO (local search engine optimization) helps nearby customers find your business on Google when they search for the services you offer.',
     bullets: [
       'Show up on Google for the core services your business provides',
       'Get seen in the Google Maps results people check first',
@@ -69,7 +69,7 @@ export const servicePages: Record<string, any> = {
     ],
     formTitle: 'Message us or start your free SEO audit',
     processTitle: 'Step by step, from SEO audit to local visibility',
-    processIntro: 'Local SEO works best with a clear process. Ours gives you a plain picture of where you stand, then improves how your business shows up in Google Maps and local search.',
+    processIntro: 'Our local SEO services follow a clear process. It gives you a plain picture of where you stand, then improves how your business shows up in Google Maps and local search.',
     steps: [
       { t: 'Start with your free SEO audit', d: 'Your local SEO review looks at the main things that shape how visible your business is online, including:', list: ['Your current presence in Google Maps and Google Search', 'Technical setup, including indexing, crawlability, site speed, mobile performance, and schema', 'Which services have the strongest ranking potential', 'Where competing businesses are getting more search exposure', 'Your best opportunities to improve website traffic and inquiries'], after: 'You come away with a practical benchmark and a clear list of what can be improved.' },
       { t: 'Outline your services and cities', d: 'We work together to map out your services, the towns you want to work in, and the clients you want more of. That way your SEO effort goes toward the work you actually want.' },
@@ -134,11 +134,11 @@ export const servicePages: Record<string, any> = {
     stats: [
       { n: '80%', d: 'Of customers use Google to find local businesses near them' },
       { n: '63%', d: 'Of users click a Google ad when they\'re ready to buy' },
-      { n: '2x', d: 'Customers who click Google Ads are twice as likely to convert' },
+      { n: '2x', d: 'Customers who click a Google ad are twice as likely to convert' },
     ],
     successTitle: 'How you know Google Ads is working',
     successParas: [
-      'Google Ads performance should be measured by outcomes that help your business grow. That means more qualified website visits, phone calls, form submissions, and opportunities from people actively searching for your services.',
+      'Ad performance should be measured by outcomes that help your business grow. That means more qualified website visits, phone calls, form submissions, and opportunities from people actively searching for your services.',
       'A focused paid search campaign helps turn high-intent searches into real inquiries, putting your business in front of local customers right when they are ready to reach out.',
     ],
     successItems: [
@@ -146,18 +146,18 @@ export const servicePages: Record<string, any> = {
       { icon: 'target', t: 'Buyer intent', d: 'Focus your budget on clicks from searches made by people ready to take action.' },
       { icon: 'chart', t: 'Pay per click', d: 'You only pay when someone clicks your ad, which keeps spending in your control and easy to track.' },
     ],
-    offerEyebrow: 'Google Ads services',
-    offerTitle: 'A fully managed campaign, from setup to monthly reporting',
+    offerEyebrow: 'What is included',
+    offerTitle: 'Google Ads management, from setup to monthly reporting',
     offerCols: 2,
     offers: [
-      { icon: 'layers', t: 'Campaign buildout', d: 'Your pay-per-click campaign built from the ground up so your ads show to nearby people who need your business.' },
+      { icon: 'layers', t: 'Campaign buildout', d: 'Your pay-per-click (PPC) campaign built from the ground up so your ads show to nearby people who need your business.' },
       { icon: 'calendar', t: 'Monthly management', d: 'Steady oversight that keeps costs in check and keeps your leads relevant.' },
       { icon: 'phone', t: 'Conversion tracking', d: 'Tracking that shows which ads bring in calls and form requests, so you know where your money goes.' },
       { icon: 'layout', t: 'Landing page upgrades', d: 'Updates to the pages your ads point to, so more of that traffic turns into people reaching out.' },
     ],
     formTitle: 'Message us or start your free ads audit',
     processTitle: 'How your managed Google Ads campaign comes together',
-    processIntro: 'Google Ads works best with a clear plan, focused targeting, and steady refinement. Our process is built to reach the right searchers and turn paid traffic into real inquiries.',
+    processIntro: 'Paid search works best with a clear plan, focused targeting, and steady refinement. Our process is built to reach the right searchers and turn paid traffic into real inquiries.',
     steps: [
       { t: 'Get your free ads audit', d: 'Your ads audit reviews whether paid search can bring in quality leads for your business, including:', list: ['Search demand for your services in your area', 'Whether your website is ready to turn ad traffic into inquiries', 'Which keywords are likely to bring the strongest leads', 'Where your current campaign could improve, if you already run ads'], after: 'You get a clear view of how paid search could support your business and where a better setup could help.' },
       { t: 'Gather the details for setup', d: 'We collect the key details about your services, your service area, and how leads should reach your team. That keeps campaign setup, ad copy, negative keywords, and location targeting lined up with the clients you want.' },
@@ -202,7 +202,7 @@ export const servicePages: Record<string, any> = {
       { q: 'How long before there are results?', a: 'New traffic usually starts within the first few days as clicks come in. Higher-quality traffic and leads tend to develop over one to three months as the campaign gathers data, the budget settles, and targeting improves.' },
       { q: 'Do I need a new website before I run ads?', a: 'No. As long as your pages load properly and make it easy to contact you, ads can send traffic to your current website. If landing page updates would help, we will give you a list of recommended changes before launch.' },
       { q: 'What budget do I need?', a: 'It depends on your goals, services, and area, but the lowest budget we usually recommend is $300 per month. That gives Google enough activity to collect useful data. A larger budget gathers data faster, which helps the campaign improve sooner.' },
-      { q: 'Can you guarantee this will work?', a: 'No one can honestly guarantee results from Google Ads. Results depend on search demand, competition, budget, landing pages, and more. We manage your campaign closely using real data, and if we think another approach like local SEO would be a better fit, we will tell you.' },
+      { q: 'Can you guarantee this will work?', a: 'No one can honestly guarantee results from paid ads. Results depend on search demand, competition, budget, landing pages, and more. We manage your campaign closely using real data, and if we think another approach like local SEO would be a better fit, we will tell you.' },
     ],
     finalTitle: 'Ready to show up when people are searching?',
     finalText: 'If you want to talk through timing, budget, your target area, or any questions, we are happy to help. Start with a free ads audit or just reach out.',
@@ -255,12 +255,12 @@ export const servicePages: Record<string, any> = {
     steps: [
       { t: 'Initial site audit', d: 'We review your current website the way a potential client sees it, to find what is helping and what is getting in the way of inquiries. That tells us what to fix first.' },
       { t: 'Service research', d: 'We look closely at your services, service areas, and what your clients need to know. That shapes the pages, content, and layout of your new site.' },
-      { t: 'Website upgrade or new build', d: 'We design a clean, fast, professional website around how your clients search and hire, so it builds trust and makes reaching out easy.' },
+      { t: 'Website upgrade or new build', d: 'Whether you need a website redesign or a new build, we design a clean, fast, mobile-friendly site around how your clients search and hire, so it builds trust and makes reaching out easy.' },
       { t: 'Sitewide SEO', d: 'Every page is set up with our SEO approach, which strengthens your presence in your area and helps clients find you on Google.' },
       { t: 'Polish for inquiries', d: 'We refine navigation, messaging, and calls to action to remove friction. That includes clearer copy, better page flow, and simple forms.' },
     ],
     expectTitle: 'What to expect from your new website',
-    expectIntro: 'You get a clear scope with timelines and predictable steps. Most website projects run 30 to 60 days, and you get a schedule before work begins.',
+    expectIntro: 'You get a clear scope with timelines and predictable steps. Most web design projects run 30 to 60 days, and you get a schedule before work begins.',
     expect: [
       'A kickoff review and site plan, so you know how the site will serve your clients',
       'A full website build or redesign that guides visitors toward contacting you',

@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { articleSchema } from '../../data/schema';
 import PorchLight from '../../components/PorchLight.astro';
 import CtaPair from '../../components/CtaPair.astro';
 import SectionHead from '../../components/SectionHead.astro';
@@ -32,7 +33,7 @@ const related = posts
 // Keep the row at three columns; empty slots fill any gap.
 const emptySlots = Array.from({ length: Math.max(0, 3 - related.length) });
 ---
-<BaseLayout title={metaTitle(post.title)} description={post.description} current="blog" ogType="article">
+<BaseLayout title={metaTitle(post.title)} description={post.description} current="blog" ogType="article" schema={articleSchema(post, entry.id)}>
   <div class="article-top lightbox">
     <PorchLight x="78%" w="760px" h="900px" lamp={false} a=".4" />
     <section class="article-hero">
