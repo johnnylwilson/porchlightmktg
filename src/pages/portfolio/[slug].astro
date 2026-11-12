@@ -7,11 +7,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PorchLight from '../../components/PorchLight.astro';
 import SectionHead from '../../components/SectionHead.astro';
 import WorkCard from '../../components/WorkCard.astro';
-import FinalCta from '../../components/FinalCta.astro';
 import { services } from '../../data/site';
 import { metaTitle } from '../../data/seo';
 import { projectSchema } from '../../data/schema';
-import { projectSeo, closers } from '../../data/portfolio';
+import { projectSeo } from '../../data/portfolio';
 
 export async function getStaticPaths() {
   const items = await getCollection('portfolio', ({ data }) => !data.draft);
@@ -56,18 +55,18 @@ const more = items
       {hasBody && <div class="prose project-notes"><Content /></div>}
       {d.images.map((im, i) => (
         <figure class="project-shot">
+          {im.label && <figcaption>{im.label}</figcaption>}
           <div class="work-shot work-shot--lg" data-label={d.title}>
             <span class="work-bar" aria-hidden="true"><i></i><i></i><i></i></span>
             <img src={im.src} alt={im.alt} loading={i === 0 ? 'eager' : 'lazy'} decoding="async" onerror="this.parentNode.classList.add('is-missing')" />
           </div>
-          {im.label && <figcaption>{im.label}</figcaption>}
         </figure>
       ))}
     </section>
   </div>
 
   {more.length > 0 && (
-    <section class="section section--paper">
+    <section class="section section--boards">
       <div class="wrap">
         <SectionHead title={`More ${d.category} work`} center />
         <div class="work-grid">
@@ -77,5 +76,4 @@ const more = items
     </section>
   )}
 
-  <FinalCta title={closers[d.category].title} text={closers[d.category].text} />
 </BaseLayout>

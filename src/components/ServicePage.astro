@@ -51,7 +51,7 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
         <CtaPair audit={s.audit} auditHref={auditHref} />
       </div>
       <div class="hero-visual">
-        {s.visual === 'map' && <MapCard />}
+        {s.visual === 'map' && <MapCard query="best [service] in town" lines={['Top rated · 120 reviews', 'Call · Directions · Website']} />}
         {s.visual === 'ad' && <AdCard />}
         {s.visual === 'phone' && <PhoneCard />}
       </div>
@@ -185,7 +185,7 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
 
   <Faq title={s.faqTitle} items={s.faqs} lede={s.faqLede} eyebrow="Questions" />
 
-  <FinalCta title={s.finalTitle} text={s.finalText} audit={s.audit} auditHref={auditHref} showPhone={false} />
+  <FinalCta title={s.finalTitle} text={s.finalText} audit={s.audit} auditHref={auditHref} />
 
   <section class="section section--paper">
     <div class="wrap">

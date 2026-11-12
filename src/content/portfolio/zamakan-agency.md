@@ -7,7 +7,7 @@ order: 2
 # Shown as plain text, not a link.
 url: "zamakan.agency"
 # One-sentence intro under the title.
-summary: "A full website design and build for Zamakan Agency, with a dark, cinematic homepage."
+summary: "Zamakan Agency's full website build, centered on a dark, cinematic homepage."
 # Meta description. Must include "Zamakan Agency Web Design", "Lake Mary, FL", and "Porchlight Marketing".
 description: "See the Zamakan Agency Web Design project from Porchlight Marketing in Lake Mary, FL, a full build with a dark, cinematic homepage."
 # The first image is the card preview and the share image. All of them show on the project page.

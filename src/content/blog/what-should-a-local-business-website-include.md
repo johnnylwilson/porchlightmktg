@@ -9,10 +9,17 @@ focus: "Local Business Website"
 description: "What should a local business website include? Porchlight Marketing in Lake Mary, FL covers the pages, proof, and contact basics that bring in leads."
 author: "Johnny Wilson"
 date: "2026-11-11"
+# Closing section, shown in the dark box at the end of the post with the audit and contact buttons.
+closing:
+  title: "Your website has a pretty simple job"
+  text: |
+    A local business website doesn't need to be complicated. It needs to help the right person understand what you offer, decide whether they trust you, and easily take the next step.
+
+    That's what good [website design for local businesses](/website-design) should focus on. Every page, review, form, and button should help turn visitors into potential customers.
 ---
 A good local business website should make three things clear right away: what you do, where you work, and how someone can contact you. From there, dedicated service pages, reviews, location details, simple contact forms, and proof of your experience help turn more of those visitors into real leads.
 
-## Make it obvious what you do
+## Say clearly what you do
 
 Someone shouldn't have to scroll halfway down your homepage to figure out what your business does.
 
@@ -30,7 +37,7 @@ This gives potential customers more information about the exact service they nee
 
 You can still have a main services page that lists everything you offer. Use it to send visitors to the more detailed pages.
 
-## Make it easy to contact you
+## Make contacting you effortless
 
 If someone decides they want to talk to you, don't make them work for it.
 
@@ -65,7 +72,7 @@ For a local business, your website should make it obvious where you're located a
 
 If you have a physical office, include the address in places like your footer and contact page. Embedding your Google Business Profile map can also make it easy for visitors to find you.
 
-Businesses with more than one office can create a page for each real location. If you serve surrounding cities without offices there, location pages can make sense too. Just explain the services you provide in that area without pretending you have an office there.
+Businesses with more than one office can give every real location its own page. If you serve surrounding cities without offices there, location pages can make sense too. Just explain the services you provide in that area without pretending you have an office there.
 
 ## Include reviews throughout the site
 
@@ -81,10 +88,4 @@ A lot of people looking for a local service are doing it on their phone. They mi
 
 Your website needs to work just as well on a phone as on a desktop. Text should be easy to read, buttons easy to tap, forms quick to fill out, and your phone number tappable.
 
-Speed matters too. If a page takes too long to load, there's a good chance people will go back to Google and try someone else.
-
-## Your website has a pretty simple job
-
-A local business website doesn't need to be complicated. It needs to help the right person understand what you offer, decide whether they trust you, and easily take the next step.
-
-That's what good [website design for local businesses](/website-design) should focus on. Every page, review, form, and button should help turn visitors into potential customers.
+Speed matters too. If a page is slow, there's a good chance people will go back to Google and try someone else.

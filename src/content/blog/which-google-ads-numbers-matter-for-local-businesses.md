@@ -9,6 +9,11 @@ focus: "Google Ads Metrics"
 description: "Which Google Ads metrics actually matter? Porchlight Marketing in Lake Mary, FL breaks down search quality, calls and forms, and return on ad spend."
 author: "Johnny Wilson"
 date: "2026-11-11"
+# Closing section, shown in the dark box at the end of the post with the audit and contact buttons.
+closing:
+  title: "Bottom line"
+  text: |
+    Judge your [Google Ads](/google-ads) metrics by who clicked, who contacted you, and what work actually came in. Keep an eye on search quality, count calls and form requests, and confirm your return each month with your own records. Those habits keep your budget pointed at real customers.
 ---
 The Google Ads metrics that matter most are the quality of the searches you're showing up for, the calls and form requests your ads produce, and the return on ad spend you confirm with your own records. Click-through rate is useful for checking whether your ads match your keywords, and time on site helps you judge your landing page.
 
@@ -22,7 +27,7 @@ For most local businesses, the conversions that matter are phone calls and form 
 
 ## 3. Return on ad spend you confirm yourself
 
-Google Ads can't see what happens after someone contacts you, so build a simple monthly sheet:
+Your ad account stops tracking once a lead reaches out, so keep a simple monthly sheet of your own:
 
 - Month
 - Ad spend
@@ -46,8 +51,8 @@ Conversion rate depends on your service, your market, and your landing page. Ins
 Time on site, tracked in your analytics, is a useful sign of landing page quality. To improve it:
 
 - Make the headline and first paragraph match the search and say who the service is for
-- Add clear buttons near the top and near any proof or pricing details
-- Place a short form near the top of the page
+- Add clear buttons high on the page and beside any proof or pricing details
+- Keep a short contact form above the fold
 - Add reviews that mention the service and the area
 - Show licenses, certifications, or experience
 - Explain what's included and the typical timeline
@@ -57,10 +62,6 @@ When engagement goes up, conversion rate often follows without changing bids.
 ## 7. A simple monthly routine
 
 1. Pull spend, clicks, and conversions from Google Ads
-2. Review search terms and add negatives for poor searches that got clicks
+2. Check the search terms report and exclude poor searches that got clicks
 3. Match up closed jobs and revenue that came from ad inquiries
 4. Update your monthly sheet and shift budget toward the best-performing services
-
-## Bottom line
-
-Judge your [Google Ads](/google-ads) metrics by who clicked, who contacted you, and what work actually came in. Keep an eye on search quality, count calls and form requests, and confirm your return each month with your own records. Those habits keep your budget pointed at real customers.

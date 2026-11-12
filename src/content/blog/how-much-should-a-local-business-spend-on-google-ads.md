@@ -9,6 +9,15 @@ focus: "Google Ads Budget"
 description: "How big should your Google Ads budget be? Porchlight Marketing in Lake Mary, FL explains how to size a budget around your clicks, services, and goals."
 author: "Johnny Wilson"
 date: "2026-11-11"
+# Closing section, shown in the dark box at the end of the post with the audit and contact buttons.
+closing:
+  title: "Start with a budget you can maintain"
+  text: |
+    You don't need the biggest budget in your market to use Google Ads. You do need enough to generate meaningful traffic, and enough time to see what's working.
+
+    Start with a focused campaign, track calls and form submissions, and pay attention to the search terms people use before they click your ads. From there, increase the budget when the numbers justify it instead of spending more and hoping for better results.
+
+    That balance is at the heart of good [Google Ads management](/google-ads). Your budget should give the campaign room to learn while still making sense based on what a new customer is worth to your business.
 ---
 There isn't one Google Ads budget that works for every local business. Your ideal budget depends on your industry, location, competition, and the cost per click (CPC) in your market. As a general starting point, we usually don't recommend going below $300 per month for a small campaign with one or two ad groups.
 
@@ -73,11 +82,3 @@ If you have a $600 monthly budget split across six services, each one may get ve
 It's usually better to start focused. Services can be separated into their own ad groups so the keywords, ads, and landing pages stay closely related. If a service needs its own budget or a different service area, it may make sense to give it a separate campaign.
 
 We also prefer keeping each campaign focused on one service area. Someone searching locally should see an ad and landing page that feel relevant to where they are.
-
-## Start with a budget you can maintain
-
-You don't need the biggest budget in your market to use Google Ads. You do need enough to generate meaningful traffic, and enough time to see what's working.
-
-Start with a focused campaign, track calls and form submissions, and pay attention to the search terms people use before they click your ads. From there, increase the budget when the numbers justify it instead of spending more and hoping for better results.
-
-That balance is at the heart of good [Google Ads management](/google-ads). Your budget should give the campaign room to learn while still making sense based on what a new customer is worth to your business.

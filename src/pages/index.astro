@@ -5,11 +5,10 @@ import PorchLight from '../components/PorchLight.astro';
 import CtaPair from '../components/CtaPair.astro';
 import SectionHead from '../components/SectionHead.astro';
 import Icon from '../components/Icon.astro';
-import Testimonial from '../components/Testimonial.astro';
 import FinalCta from '../components/FinalCta.astro';
 import MapCard from '../components/MapCard.astro';
 import GbpSection from '../components/GbpSection.astro';
-import { site, testimonials } from '../data/site';
+import { site } from '../data/site';
 import { seoFor } from '../data/seo';
 
 const seo = seoFor('home');
@@ -63,7 +62,6 @@ const reasons = [
     </div>
   </section>
 
-  <Testimonial t={testimonials.david} bg="paper" />
 
   <section class="section">
     <div class="wrap split">
@@ -87,13 +85,13 @@ const reasons = [
       <SectionHead title="Getting started is simple" intro="Most people hear about us from someone they trust. Here is what happens after you reach out." center />
       <ol class="how">
         <li><h3>Free audit</h3><p>We review your website, Google listing, and how you show up in local searches, then walk you through what we found.</p></li>
-        <li><h3>A plan for your business</h3><p>Together we map out your services, the towns you serve, and the work you want more of. You get a clear scope and estimate.</p></li>
+        <li><h3>A plan for your business</h3><p>We agree on the services, areas, and kinds of work to focus on, then send a clear scope and estimate.</p></li>
         <li><h3>Steady work and clear reports</h3><p>We do the work and keep you posted with simple monthly reports on where you show up and how many people reach out.</p></li>
       </ol>
     </div>
   </section>
 
-  <FinalCta title="Ready to make a name around town?" text="Partner with a Lake Mary marketing agency that understands local search and builds visibility where it counts. Start with a free audit, or just reach out and tell us about your business." showPhone={false} />
+  <FinalCta title="Ready to make a name around town?" text="Partner with a Lake Mary marketing agency that understands local search and builds visibility where it counts. Start with a free audit, or just reach out and tell us about your business." />
 
   <GbpSection seoKey="home" />
 </BaseLayout>

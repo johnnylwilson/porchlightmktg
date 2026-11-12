@@ -9,6 +9,11 @@ focus: "Service Pages"
 description: "Why service pages outperform one-page websites, and how to structure them. Advice from Porchlight Marketing, a web design team in Lake Mary, FL."
 author: "Johnny Wilson"
 date: "2026-11-11"
+# Closing section, shown in the dark box at the end of the post with the audit and contact buttons.
+closing:
+  title: "Final thoughts"
+  text: |
+    One-page websites seem simple, but they hold a lot of local businesses back. That's why dedicated service pages are part of every [local business website](/website-design) we build. Dedicated service pages help you show up for more of the right searches, connect your work to the towns you serve, and make it easier for people to reach out.
 ---
 One-page websites look simple, but they make it harder to show up on Google for each thing you do and harder for visitors to find what they came for. Giving each main service its own page lets you match how people search, connect services to the towns you serve, and give visitors a clear path to reach out.
 
@@ -46,13 +51,9 @@ You don't need a complicated website to get these benefits. A clear structure is
 - A dedicated page for each main service
 - Mentions of the towns and areas you serve
 - Simple navigation so visitors can reach any service in one click
-- Clear calls to action like "Request a Quote" or "Schedule a Visit"
+- Clear calls to action, such as "Get My Estimate" or "Book a Time"
 - Links between related services and blog posts
 
 ## Clean design and good performance can go together
 
 Some business owners worry that a multi-page site will feel cluttered compared with a sleek single page. It doesn't have to. Service pages can share the same layout, so the site stays consistent while each service still gets its own space.
-
-## Final thoughts
-
-One-page websites seem simple, but they hold a lot of local businesses back. That's why dedicated service pages are part of every [local business website](/website-design) we build. Dedicated service pages help you show up for more of the right searches, connect your work to the towns you serve, and make it easier for people to reach out.

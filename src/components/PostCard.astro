@@ -3,13 +3,15 @@ import type { CollectionEntry } from 'astro:content';
 
 interface Props {
   post: CollectionEntry<'blog'>;
+  // Set to false to hide the short summary.
+  excerpt?: boolean;
 }
 
-const { post } = Astro.props;
+const { post, excerpt = true } = Astro.props;
 ---
 <a class="post-card" href={`/blog/${post.id}`}>
   <span class="tag">{post.data.service}</span>
   <h3>{post.data.title}</h3>
-  <p>{post.data.excerpt}</p>
+  {excerpt && <p>{post.data.excerpt}</p>}
   <div class="meta"><span class="text-link">Read article <span>&rarr;</span></span></div>
 </a>

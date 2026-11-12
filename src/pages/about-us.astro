@@ -4,9 +4,8 @@ import { businessSchema, personSchema, pageSchema } from '../data/schema';
 import PorchLight from '../components/PorchLight.astro';
 import CtaPair from '../components/CtaPair.astro';
 import SectionHead from '../components/SectionHead.astro';
-import Testimonial from '../components/Testimonial.astro';
 import FinalCta from '../components/FinalCta.astro';
-import { site, testimonials } from '../data/site';
+import { site } from '../data/site';
 import { seoFor } from '../data/seo';
 
 const seo = seoFor('about');
@@ -17,7 +16,7 @@ const seo = seoFor('about');
     <div class="wrap">
       <h1 class="eyebrow">About Porchlight</h1>
       <h2 class="display">Local marketing, done the neighborly way</h2>
-      <p class="lede">Porchlight is a marketing agency based in Lake Mary, Florida. We help local businesses get found on Google and turn that attention into calls, bookings, and quote requests.</p>
+      <p class="lede">Porchlight is a marketing agency based in Lake Mary, Florida, built to help local businesses win more of the work they want through search.</p>
     </div>
   </section>
 
@@ -42,7 +41,7 @@ const seo = seoFor('about');
   <section class="section section--paper">
     <div class="wrap">
       <div class="founder">
-        <img class="founder-photo" src="/images/johnny-wilson.jpg" alt="Johnny Wilson, founder of Porchlight Marketing" width="800" height="1000" loading="lazy" />
+        <img class="founder-photo" src="/images/johnny-wilson.jpg" alt="Johnny Wilson, founder of Porchlight Marketing" width="680" height="850" loading="lazy" />
         <div class="stack">
           <span class="eyebrow">Who you will work with</span>
           <h2>Johnny Wilson</h2>
@@ -99,7 +98,6 @@ const seo = seoFor('about');
     </div>
   </section>
 
-  <Testimonial t={testimonials.justin} bg="paper" />
 
   <FinalCta title="Let's see where your business stands" text="Start with a free audit. We'll look at how you show up online today and walk you through what we'd do first." />
 </BaseLayout>

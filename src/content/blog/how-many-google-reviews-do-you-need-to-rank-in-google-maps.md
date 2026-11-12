@@ -2,13 +2,18 @@
 title: "How Many Google Reviews Do You Need to Rank in Google Maps?"
 service: "Local SEO"
 order: 2
-excerpt: "There's no magic number. The right target depends on who already shows up in your market. Here's a quick way to find yours."
+excerpt: "There's no magic number. The right target depends on the competition already ranking near you. Here's a quick way to find yours."
 # SEO: the meta title is the post title. The description must include the focus keyword,
 # "Lake Mary, FL", and "Porchlight Marketing" or the build will stop with an error.
 focus: "Google Reviews and Rankings"
 description: "How many reviews do you need? Learn how Google reviews and rankings connect, and how to set a target. From Porchlight Marketing in Lake Mary, FL."
 author: "Johnny Wilson"
 date: "2026-11-11"
+# Closing section, shown in the dark box at the end of the post with the audit and contact buttons.
+closing:
+  title: "Bottom line"
+  text: |
+    There's no universal number. Look at who already shows up in your market, aim a little above the middle of the pack, and keep a steady flow of genuine Google reviews coming in. Pair that with a complete Google Business Profile, quick responses, and a website built on solid [local SEO](/local-seo), and you give your business a much better chance of showing up when nearby customers search.
 ---
 There's no single number of Google reviews that gets a business into the Google Maps results. A practical target is the median review count of the top three businesses in your market, plus a 20 to 30% buffer. In a small town that might be 15 to 30 reviews. In a mid-sized city it's often 40 to 80, and in a large metro it can be 100 or more. Rating, recency, and how you respond matter too.
 
@@ -49,7 +54,3 @@ If someone had a bad experience, give them an easy way to reach you privately. F
 - How many new reviews you get each month
 - Your mix of 5-star and 4-star reviews
 - Calls and requests that come from your Maps listing
-
-## Bottom line
-
-There's no universal number. Look at who already shows up in your market, aim a little above the middle of the pack, and keep a steady flow of genuine Google reviews coming in. Pair that with a complete Google Business Profile, quick responses, and a website built on solid [local SEO](/local-seo), and you give your business a much better chance of showing up when nearby customers search.

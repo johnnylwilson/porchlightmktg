@@ -9,6 +9,11 @@ focus: "Website Mistakes"
 description: "Ten website mistakes that cost local businesses leads, and how to fix each one. Practical advice from Porchlight Marketing in Lake Mary, FL."
 author: "Johnny Wilson"
 date: "2026-11-11"
+# Closing section, shown in the dark box at the end of the post with the audit and contact buttons.
+closing:
+  title: "Bottom line"
+  text: |
+    Most website mistakes aren't design problems. They're clarity problems, and fixing them is what good [web design](/website-design) is for. When your site plainly explains your services, shows what people get, proves you're trustworthy, and makes it easy to reach out, you capture more leads from the visitors you already have.
 ---
 Most local business websites lose leads because they make visitors work too hard to understand what you offer, where you work, and how to get in touch. The biggest problems are vague service pages, weak location details, missing proof, and a contact path that's buried or too long. Fixing these can bring in more calls and form requests from the traffic you already have.
 
@@ -45,13 +50,13 @@ Many sites have a nice homepage but no proof on the pages people actually land o
 
 Local customers want to know you're real and nearby.
 
-**Fix:** Put your address and an embedded map on your homepage and contact page, keep your business name, address, and phone number consistent, and add a short "Serving Lake Mary and nearby towns" line on key pages.
+**Fix:** Show your address and a Google map on your homepage and contact page, keep your business details identical everywhere, and add a short "Serving Lake Mary and nearby towns" line on key pages.
 
 ## Mistake 6: Your city pages are copies
 
 Location pages can bring in leads, but copy-and-paste pages rarely rank and can make the site feel spammy.
 
-**Fix:** Make each city page unique. Include the services you offer there and anything useful for someone in that area.
+**Fix:** Make each city page unique. Include the services you offer there and details that matter to people in that town.
 
 ## Mistake 7: There's nothing to support your service pages
 
@@ -67,7 +72,7 @@ People often check your About page before reaching out.
 
 ## Mistake 9: The site is slow on phones
 
-Many visitors are on their phones. If the page takes too long to load, they leave before they call.
+Many visitors are on their phones. If the page loads slowly, they leave before they call.
 
 **Fix:** Compress images, delay loading of maps and heavy elements, and skip big sliders and extra scripts.
 
@@ -76,7 +81,3 @@ Many visitors are on their phones. If the page takes too long to load, they leav
 If visitors can't find your services or contact page quickly, they leave.
 
 **Fix:** Keep the menu simple, give each service its own link, and keep a contact button visible in the header.
-
-## Bottom line
-
-Most website mistakes aren't design problems. They're clarity problems, and fixing them is what good [web design](/website-design) is for. When your site clearly explains your services, shows what people get, proves you're trustworthy, and makes it easy to reach out, you capture more leads from the visitors you already have.

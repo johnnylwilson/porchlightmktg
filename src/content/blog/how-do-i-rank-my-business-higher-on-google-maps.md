@@ -9,6 +9,13 @@ focus: "Rank Higher on Google Maps"
 description: "How to rank higher on Google Maps with a complete Business Profile, steady reviews, and clear location signals. From Porchlight Marketing in Lake Mary, FL."
 author: "Johnny Wilson"
 date: "2026-11-11"
+# Closing section, shown in the dark box at the end of the post with the audit and contact buttons.
+closing:
+  title: "There isn't one trick to ranking higher"
+  text: |
+    Ranking higher on Google Maps usually comes down to doing a bunch of smaller things well. Keep your Google Business Profile accurate, keep earning reviews, make your location clear, build out your main service and location pages, and keep your information consistent around the web.
+
+    That's what a good [local SEO strategy](/local-seo) comes down to. You're making it as easy as possible for Google to understand what you do, where you're located, and when your business is a good match for someone's search.
 ---
 To rank higher on Google Maps, make sure your Google Business Profile is complete, keep your business information consistent, and keep earning new customer reviews. Your website should also make it clear where you're located and what services you offer. Location matters too, so rankings can change depending on where someone is searching from.
 
@@ -18,7 +25,7 @@ Your Google Business Profile is a big part of whether you show up on Google Maps
 
 Start by making sure the basics are filled out correctly:
 
-- Business name, address, and phone number
+- Business name, street address, and main phone line
 - Business hours
 - Primary and secondary categories
 - Website
@@ -53,15 +60,15 @@ Most importantly, make sure your business name, address, and phone number match 
 
 Having an office in one city doesn't mean that's the only place you do business.
 
-Say you're based in Lake Mary but regularly work in Sanford, Longwood, and Winter Springs. You can create a page for each of those areas to help your website show up when people there search for what you do.
+Say you're based in Lake Mary but regularly work in Sanford, Longwood, and Winter Springs. You can build a separate page for those areas to help your website show up when people there search for what you do.
 
-Just don't create 30 copies of the same page and swap out the city name. Give each page unique content and make it useful for someone in that area.
+Just don't create 30 copies of the same page and swap out the city name. Give each page unique content that a reader in that town would actually value.
 
 Smaller nearby cities can be especially useful because there may be less competition than in your main market.
 
 ## Keep your information consistent around the web
 
-Your website and Google Business Profile aren't the only places Google finds information about you.
+Google also learns about your business from sites beyond your own website and profile.
 
 Your business may also appear on directories, industry websites, social profiles, and other sites. Make sure your basic information matches across them, especially your:
 
@@ -87,9 +94,3 @@ This is one part of Google Maps you can't completely control.
 Google considers where the person searching is located. You might show up near the top for someone a couple of miles from your office and much lower for someone on the other side of town.
 
 That doesn't necessarily mean anything is wrong with your SEO. Google Maps results are local, so they can change a lot depending on where the search happens.
-
-## There isn't one trick to ranking higher
-
-Ranking higher on Google Maps usually comes down to doing a bunch of smaller things well. Keep your Google Business Profile accurate, keep earning reviews, make your location clear, build out your main service and location pages, and keep your information consistent around the web.
-
-That's what a good [local SEO strategy](/local-seo) comes down to. You're making it as easy as possible for Google to understand what you do, where you're located, and when your business is a good match for someone's search.

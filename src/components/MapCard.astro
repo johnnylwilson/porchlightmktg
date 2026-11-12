@@ -2,9 +2,16 @@
 // Illustration: a Google Maps style result with "Your Business" lit up at the top.
 import Icon from './Icon.astro';
 import Stars from './Stars.astro';
+
+interface Props {
+  // Lets each page use its own wording so the illustration text isn't repeated.
+  query?: string;
+  lines?: [string, string];
+}
+const { query = 'service near me', lines = ['Open now · Lake Mary, FL', 'Local service business · Serves nearby towns'] } = Astro.props;
 ---
 <div class="viz" role="img" aria-label="Illustration: a Google Maps style search where Your Business is the highlighted top result">
-  <div class="viz-search"><Icon name="search" /><span><b>service near me</b></span></div>
+  <div class="viz-search"><Icon name="search" /><span><b>{query}</b></span></div>
   <div class="viz-map">
     <span class="pin" style="left:18%;top:58%"></span>
     <span class="pin" style="left:70%;top:24%"></span>
@@ -14,8 +21,8 @@ import Stars from './Stars.astro';
   <ul class="viz-results">
     <li class="is-lit">
       <div class="r-title"><span>Your Business</span><Stars /></div>
-      <div class="r-meta">Open now &middot; Lake Mary, FL</div>
-      <div class="r-meta">Local service business &middot; Serves nearby towns</div>
+      <div class="r-meta">{lines[0]}</div>
+      <div class="r-meta">{lines[1]}</div>
     </li>
     <li aria-hidden="true"><div class="bar" style="width:46%"></div><div class="bar" style="width:72%;height:7px"></div></li>
   </ul>

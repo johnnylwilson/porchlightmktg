@@ -22,6 +22,8 @@ const blog = defineCollection({
       author: z.string().default('Johnny Wilson'),
       // Publish date as "YYYY-MM-DD" (keep the quotes). Used in the article's structured data.
       date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+      // The post's last section (title plus paragraphs, links allowed), shown in the closing box.
+      closing: z.object({ title: z.string(), text: z.string() }),
       // Set to true to keep a post off the site while you work on it.
       draft: z.boolean().default(false),
     })

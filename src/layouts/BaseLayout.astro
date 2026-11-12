@@ -117,6 +117,81 @@ const fonts = 'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,
         });
       });
 
+      // Scroll reveal: blocks below the fold fade up as they come into view.
+      (() => {
+        const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce || !('IntersectionObserver' in window)) return;
+        const sel = '.section-head, .service-card, .reason, .feature, .how > li, .steps > li, .offer, .stat, .success-item, .value, .mv > div, .post-card, .work-card, .project-shot, .price-card, .faq details, .founder-photo, .founder .stack, blockquote, .deliver-list, .article-cta .box, .gbp .wrap > *';
+        const fold = window.innerHeight * 0.92;
+        const els = Array.from(document.querySelectorAll<HTMLElement>(sel)).filter((el) => el.getBoundingClientRect().top > fold);
+        if (!els.length) return;
+        document.documentElement.classList.add('reveal-ready');
+        els.forEach((el) => {
+          const group = Array.from(el.parentElement ? el.parentElement.children : []).filter((c) => c.matches(sel));
+          el.style.setProperty('--rd', Math.min(Math.max(group.indexOf(el), 0), 4) * 80 + 'ms');
+          el.classList.add('reveal');
+        });
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (!e.isIntersecting) return;
+            const el = e.target as HTMLElement;
+            el.classList.add('is-in');
+            io.unobserve(el);
+            // Hand control back to the normal styles (hover lifts and so on) once it has settled.
+            setTimeout(() => { el.classList.remove('reveal', 'is-in'); el.style.removeProperty('--rd'); }, 1200);
+          });
+        }, { rootMargin: '0px 0px -8% 0px' });
+        els.forEach((el) => io.observe(el));
+      })();
+
+      // Number roll: stat digits spin into place like an odometer when they scroll into view.
+      (() => {
+        const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce || !('IntersectionObserver' in window)) return;
+        const build = () => {
+          const els = Array.from(document.querySelectorAll<HTMLElement>('.stat-n, .founder-facts b, .project-metric')).filter((el) => /\d/.test(el.textContent || ''));
+          if (!els.length) return;
+          els.forEach((el) => {
+            const text = (el.textContent || '').trim();
+            // Measure each character in place so every digit cell keeps its real width.
+            el.innerHTML = Array.from(text).map((ch) => '<span class="odo-m">' + ch + '</span>').join('');
+            const widths = Array.from(el.querySelectorAll('.odo-m')).map((m) => m.getBoundingClientRect().width);
+            const wrap = document.createElement('span');
+            wrap.className = 'odo';
+            wrap.setAttribute('aria-hidden', 'true');
+            let n = 0;
+            Array.from(text).forEach((ch, i) => {
+              if (/\d/.test(ch)) {
+                const cell = document.createElement('span');
+                cell.className = 'odo-digit';
+                cell.style.width = widths[i] + 'px';
+                const strip = document.createElement('span');
+                strip.className = 'odo-strip';
+                strip.dataset.to = String(10 + Number(ch));
+                strip.style.setProperty('--od', n * 90 + 'ms');
+                for (let k = 0; k < 20; k++) { const d = document.createElement('span'); d.textContent = String(k % 10); strip.appendChild(d); }
+                cell.appendChild(strip); wrap.appendChild(cell); n++;
+              } else {
+                const c = document.createElement('span'); c.className = 'odo-char'; c.textContent = ch; wrap.appendChild(c);
+              }
+            });
+            el.textContent = '';
+            el.setAttribute('aria-label', text);
+            el.appendChild(wrap);
+          });
+          const io = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+              if (!e.isIntersecting) return;
+              io.unobserve(e.target);
+              e.target.querySelectorAll<HTMLElement>('.odo-strip').forEach((s) => { s.style.transform = 'translateY(calc(-' + s.dataset.to + ' * var(--oh)))'; });
+            });
+          }, { rootMargin: '0px 0px -10% 0px' });
+          requestAnimationFrame(() => els.forEach((el) => io.observe(el)));
+        };
+        // Wait for the web fonts so the measured widths match the final text.
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(build); else build();
+      })();
+
       // Lead forms: send to PUBLIC_FORM_ENDPOINT without leaving the page.
       const endpoint = import.meta.env.PUBLIC_FORM_ENDPOINT;
       document.querySelectorAll<HTMLFormElement>('form[data-lead-form]').forEach((form) => {

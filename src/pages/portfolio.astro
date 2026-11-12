@@ -13,7 +13,7 @@ const items = await getCollection('portfolio', ({ data }) => !data.draft);
 
 // One section per service, in the same order as the menu.
 const groups = [
-  { name: 'Local SEO', intro: 'Websites we have optimized to show up in Google Maps and local search.' },
+  { name: 'Local SEO', intro: 'Sites we have worked on to compete in map results and nearby searches.' },
   { name: 'Google Ads', intro: 'Campaigns we have built and managed, with numbers from the account. Open a project to see the ad copy and keywords.' },
   { name: 'Web Design', intro: 'Websites we have designed and built around how clients search and reach out.' },
 ].map((g) => ({ ...g, items: items.filter((i) => i.data.category === g.name).sort((a, b) => a.data.order - b.data.order) }))
@@ -40,5 +40,5 @@ const groups = [
     </section>
   ))}
 
-  <FinalCta title="Want to see what we would do for your business?" text="Start with a free audit, or reach out and tell us about your business." />
+  <FinalCta title="Want to see what we would do for your business?" text="Tell us what you are working on, and we will point you to the right place to start." />
 </BaseLayout>

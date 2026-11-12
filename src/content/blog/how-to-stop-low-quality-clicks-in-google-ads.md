@@ -9,6 +9,11 @@ focus: "Low-Quality Ad Clicks"
 description: "Stop paying for low-quality ad clicks. Porchlight Marketing in Lake Mary, FL shares seven steps to tighten your keywords, targeting, and landing pages."
 author: "Johnny Wilson"
 date: "2026-11-11"
+# Closing section, shown in the dark box at the end of the post with the audit and contact buttons.
+closing:
+  title: "Bottom line"
+  text: |
+    Don't overcomplicate your [Google Ads campaign](/google-ads). Review the search terms that already got clicks and add negatives, keep keywords tied to specific services, use ad copy to qualify clicks, keep your targeting realistic, and make the landing page match the search. When those pieces are in place, your clicks get more relevant and your spending gets more predictable.
 ---
 To cut down on low-quality clicks in Google Ads, tighten your keywords around real intent, review the search terms that already got clicks, and add the bad ones as negative keywords. Then make your ad copy and landing page match the exact services you want, and limit targeting to the area you actually serve. That reduces wasted spend and raises the share of clicks that can turn into real leads.
 
@@ -51,7 +56,7 @@ Ad copy isn't only about getting clicks. It's your first filter. Generic ads get
 - Be clear about what's included and typical timing
 - Keep the call to action direct, like Request a Quote or Schedule a Visit
 
-Good ads make it obvious what you do, which keeps the wrong people from clicking.
+Good ads spell out exactly what you offer, which keeps the wrong people from clicking.
 
 ## Step 4: Keep location targeting realistic
 
@@ -61,11 +66,11 @@ Start with the area you actually serve. If you need to cover a larger region, us
 
 ## Step 5: Match the landing page to the search
 
-If someone searches for a specific service and lands on a generic homepage, they're likely to leave. Your landing page should include:
+If someone looks up one particular service and lands on a generic homepage, they're likely to leave. Your landing page should include:
 
 - A clear headline naming the service and who it's for
 - What's included and typical timing
-- A short form near the top
+- A brief form high on the page
 - Easy ways to call or request a quote
 - Reviews that mention that service, if you have them
 - Licenses, certifications, or experience that build trust
@@ -85,7 +90,3 @@ Google Ads can't see what happens after someone contacts you. To know whether th
 - Calls and form submissions
 - Jobs that came from ad inquiries
 - Revenue from those jobs
-
-## Bottom line
-
-Don't overcomplicate your [Google Ads campaign](/google-ads). Review the search terms that already got clicks and add negatives, keep keywords tied to specific services, use ad copy to qualify clicks, keep your targeting realistic, and make the landing page match the search. When those pieces are in place, your clicks get more relevant and your spending gets more predictable.
