@@ -13,11 +13,13 @@ interface Props {
   noindex?: boolean;
   // Share image (site path or full URL). Defaults to /images/og-image.jpg.
   image?: string;
+  // Category of a post or project, added as article:section and article:tag.
+  section?: string;
   // JSON-LD structured data for this page (see src/data/schema.ts)
   schema?: object | object[];
 }
 
-const { title, description, current, ogType = 'website', noindex = false, schema, image } = Astro.props;
+const { title, description, current, ogType = 'website', noindex = false, schema, image, section } = Astro.props;
 const schemaList = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
 
 // Canonical URL without .html or a trailing slash, matching how Vercel serves pages.
@@ -44,6 +46,8 @@ const fonts = 'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,
     {ogImage && <meta property="og:image" content={ogImage} />}
     {!image && <meta property="og:image:width" content="1200" />}
     {!image && <meta property="og:image:height" content="630" />}
+    {section && <meta property="article:section" content={section} />}
+    {section && <meta property="article:tag" content={section} />}
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Bump ?v= whenever the icons change so browsers fetch the new ones. -->

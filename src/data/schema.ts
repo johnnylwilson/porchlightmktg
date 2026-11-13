@@ -116,32 +116,69 @@ export function serviceSchemas(slug: ServiceSlug) {
   ];
 }
 
-export function projectSchema(p: { title: string; category: string; images: { src: string }[] }, slug: string) {
-  const u = url(`/portfolio/${slug}`);
-  const img = p.images[0].src;
+// Category signals for posts and projects. The category is one of the three services, and each
+// service page is the category's home: the visible tag links there, and the data below says so too.
+const CATEGORY_PATHS: Record<string, string> = { 'Local SEO': '/local-seo', 'Google Ads': '/google-ads', 'Web Design': '/website-design' };
+const categoryPath = (category: string) => CATEGORY_PATHS[category] ?? '/';
+// Points at the Service described on that service page (see serviceSchemas).
+const categoryRef = (category: string) => ({ '@type': 'Service', '@id': `${url(categoryPath(category))}#service`, name: category });
+
+// Breadcrumb trail, e.g. Home > Local SEO > How Do I Rank My Business Higher on Google Maps?
+export function breadcrumbSchema(trail: { name: string; path: string }[]) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'CreativeWork',
-    name: `${p.title} ${p.category}`,
-    url: u,
-    image: img.startsWith('http') ? img : `${SITE_URL}${img}`,
-    genre: p.category,
-    creator: { '@id': BUSINESS_ID },
+    '@type': 'BreadcrumbList',
+    itemListElement: trail.map((t, i) => ({ '@type': 'ListItem', position: i + 1, name: t.name, item: url(t.path) })),
   };
 }
 
-export function articleSchema(post: { title: string; description: string; author: string; date?: string }, slug: string) {
+export function projectSchema(p: { title: string; category: string; images: { src: string }[] }, slug: string) {
+  const u = url(`/portfolio/${slug}`);
+  const img = p.images[0].src;
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CreativeWork',
+      name: `${p.title} ${p.category}`,
+      url: u,
+      image: img.startsWith('http') ? img : `${SITE_URL}${img}`,
+      genre: p.category,
+      keywords: p.category,
+      about: categoryRef(p.category),
+      isPartOf: { '@type': 'CollectionPage', '@id': url('/portfolio'), name: 'Marketing Portfolio' },
+      creator: { '@id': BUSINESS_ID },
+    },
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: p.category, path: categoryPath(p.category) },
+      { name: p.title, path: `/portfolio/${slug}` },
+    ]),
+  ];
+}
+
+export function articleSchema(post: { title: string; description: string; author: string; service: string; date?: string }, slug: string) {
   const u = url(`/blog/${slug}`);
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: post.title,
-    description: post.description,
-    url: u,
-    mainEntityOfPage: u,
-    image: `${SITE_URL}/images/og-image.jpg`,
-    ...(post.date ? { datePublished: post.date, dateModified: post.date } : {}),
-    author: post.author === 'Johnny Wilson' ? { '@id': PERSON_ID, '@type': 'Person', name: 'Johnny Wilson' } : { '@type': 'Person', name: post.author },
-    publisher: { '@id': BUSINESS_ID },
-  };
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.description,
+      url: u,
+      mainEntityOfPage: u,
+      image: `${SITE_URL}/images/og-image.jpg`,
+      articleSection: post.service,
+      keywords: post.service,
+      about: categoryRef(post.service),
+      isPartOf: { '@type': 'Blog', '@id': url('/blogs'), name: 'Porchlight Marketing Blog' },
+      ...(post.date ? { datePublished: post.date, dateModified: post.date } : {}),
+      author: post.author === 'Johnny Wilson' ? { '@id': PERSON_ID, '@type': 'Person', name: 'Johnny Wilson' } : { '@type': 'Person', name: post.author },
+      publisher: { '@id': BUSINESS_ID },
+    },
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: post.service, path: categoryPath(post.service) },
+      { name: post.title, path: `/blog/${slug}` },
+    ]),
+  ];
 }

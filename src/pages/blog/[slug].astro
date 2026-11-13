@@ -34,12 +34,12 @@ const related = posts
 // Keep the row at three columns; empty slots fill any gap.
 const emptySlots = Array.from({ length: Math.max(0, 3 - related.length) });
 ---
-<BaseLayout title={metaTitle(post.title)} description={post.description} current="blog" ogType="article" schema={articleSchema(post, entry.id)}>
+<BaseLayout title={metaTitle(post.title)} description={post.description} current="blog" ogType="article" section={post.service} schema={articleSchema(post, entry.id)}>
   <div class="article-top lightbox">
     <PorchLight x="78%" w="760px" h="900px" lamp={false} a=".4" />
     <section class="article-hero">
       <div class="wrap">
-        <a class="tag" href={`/${svc.slug}`}>{post.service}</a>
+        <a class="tag" href={`/${svc.slug}`} rel="tag">{post.service}</a>
         <h1>{post.title}</h1>
         <div class="article-meta"><span>By {post.author}</span></div>
       </div>

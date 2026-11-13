@@ -33,12 +33,12 @@ const more = items
   .sort((a, b) => a.data.order - b.data.order)
   .slice(0, 3);
 ---
-<BaseLayout title={metaTitle(seo.focus)} description={seo.description} current="portfolio" image={d.images[0].src} schema={projectSchema(d, entry.id)}>
+<BaseLayout title={metaTitle(seo.focus)} description={seo.description} current="portfolio" image={d.images[0].src} section={d.category} schema={projectSchema(d, entry.id)}>
   <div class="article-top lightbox">
     <PorchLight x="78%" w="760px" h="760px" lamp={false} a=".4" />
     <section class="article-hero project-hero">
       <div class="wrap">
-        <a class="tag" href={`/${svc.slug}`}>{d.category}</a>
+        <a class="tag" href={`/${svc.slug}`} rel="tag">{d.category}</a>
         <h1>{d.title}</h1>
         <p class="lede">{seo.lede}</p>
         {(d.type || d.url || d.note || d.metric) && (
