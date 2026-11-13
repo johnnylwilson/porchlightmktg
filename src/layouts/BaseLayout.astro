@@ -32,6 +32,13 @@ const fonts = 'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <!-- Google tag (GTM-KB9MKH8Z), exactly as provided by Google Analytics. Keep only one Google tag per page. -->
+    <script is:inline async src="https://www.googletagmanager.com/gtm.js?id=GTM-KB9MKH8Z"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
