@@ -23,7 +23,7 @@ const { title, items, eyebrow, lede = ["Still have a question we didn't cover? C
       {items.map((f) => (
         <details>
           <summary><h3 class="faq-q">{f.q}</h3><span class="plus"><Icon name="plus" /></span></summary>
-          <p>{f.a}</p>
+          <p set:html={f.a}></p>
         </details>
       ))}
     </div>

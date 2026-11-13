@@ -429,6 +429,7 @@ strong { font-weight: 600; }
 .faq summary .plus svg { width: 14px; height: 14px; }
 .faq details[open] summary .plus { transform: rotate(45deg); background: var(--navy-100); }
 .faq details p { padding-bottom: 1.3rem; color: var(--muted); max-width: 70ch; }
+.faq details p a { color: var(--navy-800); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 
 /* Blog ------------------------------------------------------------- */
 .post-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }

@@ -110,7 +110,7 @@ export function serviceSchemas(slug: ServiceSlug) {
       mainEntity: s.faqs.map((f: { q: string; a: string }) => ({
         '@type': 'Question',
         name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a },
+        acceptedAnswer: { '@type': 'Answer', text: f.a.replace(/<[^>]+>/g, '') },
       })),
     },
   ];
