@@ -1,6 +1,6 @@
 Effective Date: 10 November 2026
 
-These Terms of Service (“Terms”) govern your use of the website [https://porchlightmktg.com/](https://porchlightmktg.com/) (the “Site”), operated by Porchlight Marketing, LLC (“Porchlight Marketing,” “we,” “our,” or “us”). By accessing or using the Site, you agree to be bound by these Terms. If you do not agree, please discontinue use of the Site.
+These Terms of Service (“Terms”) govern your use of the website [https://www.porchlightmktg.com/](https://www.porchlightmktg.com/) (the “Site”), operated by Porchlight Marketing, LLC (“Porchlight Marketing,” “we,” “our,” or “us”). By accessing or using the Site, you agree to be bound by these Terms. If you do not agree, please discontinue use of the Site.
 
 ## 1. Use of the Site
 

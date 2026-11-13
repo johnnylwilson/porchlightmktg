@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 const pages = ['/', '/local-seo', '/google-ads', '/website-design', '/portfolio', '/about-us', '/contact', '/blogs', '/privacy-policy', '/terms-of-service'];
 
 export const GET: APIRoute = async ({ site }) => {
-  const base = site ?? new URL('https://porchlightmktg.com');
+  const base = site ?? new URL('https://www.porchlightmktg.com');
   const posts = await getCollection('blog', ({ data }) => !data.draft);
   const work = await getCollection('portfolio', ({ data }) => !data.draft);
   const urls = [...pages, ...posts.map((p) => `/blog/${p.id}`), ...work.map((w) => `/portfolio/${w.id}`)];

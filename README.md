@@ -22,7 +22,7 @@ The Porchlight Marketing site, built with [Astro](https://astro.build) and deplo
    ```
 2. **Import it in Vercel.** In Vercel, choose **Add New > Project**, pick the repository, and keep the detected settings (Framework: Astro, Build command: `astro build`, Output: `dist`).
 3. **Add the form endpoint** under **Project Settings > Environment Variables** (see below), then redeploy.
-4. **Connect the domain** under **Project Settings > Domains**: add `porchlightmktg.com`. If Vercel also adds `www.porchlightmktg.com`, set www to redirect to `porchlightmktg.com`, since that's the address the site's canonical URLs and sitemap use.
+4. **Connect the domain** under **Project Settings > Domains**: add `www.porchlightmktg.com` as the primary domain and set `porchlightmktg.com` to redirect to it. The site's official address is the www version (`site` in `astro.config.mjs`), so the domain settings must match.
 
 After that, every push to `main` deploys automatically.
 
@@ -52,7 +52,7 @@ npm run preview   # serve the built site locally
 | Images, logo, favicon | `public/` |
 | Privacy Policy and Terms of Service text | `src/legal/*.md` |
 | Clean URLs (no `.html`, no trailing slash) | `vercel.json` |
-| Live domain | `site` in `astro.config.mjs` (`https://porchlightmktg.com`) |
+| Live domain | `site` in `astro.config.mjs` (`https://www.porchlightmktg.com`) |
 
 ## SEO rules (enforced by the build)
 

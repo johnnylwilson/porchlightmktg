@@ -1,6 +1,6 @@
 Effective Date: 10 November 2026
 
-Porchlight Marketing, LLC (“Porchlight Marketing,” “we,” “our,” or “us”) operates the website [https://porchlightmktg.com/](https://porchlightmktg.com/) (the “Site”). We are committed to protecting your privacy and handling your personal information responsibly.
+Porchlight Marketing, LLC (“Porchlight Marketing,” “we,” “our,” or “us”) operates the website [https://www.porchlightmktg.com/](https://www.porchlightmktg.com/) (the “Site”). We are committed to protecting your privacy and handling your personal information responsibly.
 
 This Privacy Policy explains what information we collect, how we use it, and the rights available to you, especially if you reside in California.
 
