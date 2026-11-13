@@ -8,7 +8,7 @@ export const site = {
   phoneHref: '+14075298737',
   hours: 'Monday to Friday, 9 AM to 5 PM',
   city: 'Lake Mary, FL',
-  linkedin: 'https://www.linkedin.com/company/gridline-marketing/', // TODO: update to the Porchlight LinkedIn page
+  linkedin: 'https://www.linkedin.com/company/porchlight-mktg/',
   year: 2026,
   // Google Business Profile map. Paste the embed URL here (the src="..." value from Google Maps:
   // Share > Embed a map). Leave empty to show the illustrated placeholder map.

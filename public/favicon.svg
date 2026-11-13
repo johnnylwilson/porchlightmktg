@@ -1,22 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#fbeda0" stop-opacity="1"/>
-      <stop offset=".5" stop-color="#f5dd68" stop-opacity=".55"/>
-      <stop offset="1" stop-color="#f5dd68" stop-opacity=".08"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="32" cy="16" r="24" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#f9f2df" stop-opacity=".95"/>
-      <stop offset=".45" stop-color="#f5dd68" stop-opacity=".45"/>
-      <stop offset="1" stop-color="#f5dd68" stop-opacity="0"/>
-    </radialGradient>
-    <clipPath id="tile"><rect width="64" height="64" rx="14"/></clipPath>
+    <radialGradient id="bg" cx="32" cy="8" r="62" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#22396a"/><stop offset=".5" stop-color="#18294b"/><stop offset="1" stop-color="#111d36"/></radialGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd66e" stop-opacity="0.42"/><stop offset=".55" stop-color="#ffd66e" stop-opacity="0.139"/><stop offset="1" stop-color="#ffd66e" stop-opacity="0"/></linearGradient>
+    <radialGradient id="glow" cx="32" cy="0" r="30" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffe28c" stop-opacity="0.7"/><stop offset=".45" stop-color="#ffd66e" stop-opacity="0.210"/><stop offset="1" stop-color="#ffd66e" stop-opacity="0"/></radialGradient>
+    <clipPath id="tile"><rect width="64" height="64" rx="12"/></clipPath>
   </defs>
   <g clip-path="url(#tile)">
-    <rect width="64" height="64" fill="#18294b"/>
-    <path d="M25 16h14l22 48H3z" fill="url(#beam)"/>
-    <circle cx="32" cy="16" r="24" fill="url(#glow)"/>
-    <circle cx="32" cy="15" r="8.5" fill="#f7e15c"/>
-    <circle cx="32" cy="15" r="4.5" fill="#fbf7e9"/>
+    <rect width="64" height="64" fill="url(#bg)"/>
+    <path d="M28.6 0h6.8L72 64H-8z" fill="url(#beam)"/>
+    <rect width="64" height="64" fill="url(#glow)"/>
+    <path transform="translate(13.028 54.500) scale(0.05650 -0.05650)" fill="#fff" d="M30.8001708984375 708Q58.2000732421875 707 102.99990844726562 706.0Q147.79974365234375 705 192.799560546875 705Q242.19952392578125 705 287.5994873046875 706.0Q332.99945068359375 707 351.7994384765625 707Q497.59906005859375 707 569.1988830566406 652.0Q640.7987060546875 597 640.7987060546875 510Q640.7987060546875 474 626.3987426757812 434.5Q611.998779296875 395 577.2988586425781 361.5Q542.5989379882812 328 482.3990783691406 307.0Q422.19921875 286 329.7994384765625 286H225.799560546875V306H319.7994384765625Q374.7996826171875 306 403.49981689453125 333.0Q432.199951171875 360 442.5 404.0Q452.800048828125 448 452.800048828125 499Q452.800048828125 594 428.099853515625 641.0Q403.399658203125 688 342.7991943359375 688Q306.3990478515625 688 295.5989990234375 671.0Q284.7989501953125 654 284.7989501953125 602V113.9998779296875Q284.7989501953125 73.99993896484375 293.09893798828125 54.39996337890625Q301.39892578125 34.79998779296875 324.9989013671875 28.79998779296875Q348.598876953125 22.79998779296875 393.798828125 22.39996337890625V0Q361.39892578125 1.20001220703125 309.39910888671875 2.100006103515625Q257.3992919921875 3 199.59954833984375 3Q154.9996337890625 3 111.3997802734375 2.100006103515625Q67.7999267578125 1.20001220703125 30.8001708984375 0V20Q62.40020751953125 22 77.90023803710938 28.0Q93.4002685546875 34 98.60028076171875 52.0Q103.80029296875 70 103.80029296875 106V602Q103.80029296875 639 98.60028076171875 656.5Q93.4002685546875 674 77.500244140625 680.5Q61.6002197265625 687 30.8001708984375 688Z"/>
   </g>
 </svg>

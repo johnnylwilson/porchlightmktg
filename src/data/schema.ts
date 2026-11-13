@@ -41,8 +41,8 @@ export function businessSchema() {
     ],
     founder: { '@id': PERSON_ID },
     knowsAbout: ['Local SEO', 'Google Ads', 'Web Design', 'Google Business Profile'],
-    // TODO: add the Porchlight LinkedIn and Google Business Profile URLs here once they exist.
-    // sameAs: ['https://www.linkedin.com/company/...', 'https://maps.google.com/?cid=...'],
+    // Other official profiles for the business. Add the Google Business Profile link here once it's live.
+    sameAs: [site.linkedin],
   };
 }
 

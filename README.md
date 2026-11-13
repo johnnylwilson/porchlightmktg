@@ -5,7 +5,6 @@ The Porchlight Marketing site, built with [Astro](https://astro.build) and deplo
 ## Before launch checklist
 
 - [ ] **Form endpoint.** Add `PUBLIC_FORM_ENDPOINT` in Vercel (see "Forms" below). Until it's set, the forms show an error asking people to call.
-- [ ] **LinkedIn.** Update `linkedin` in `src/data/site.ts`. It still points to the Gridline page.
 - [ ] **Stats.** Confirm sources for the three stats on each service page (`stats` in `src/data/site.ts`), or swap any you can't back up.
 - [ ] **Testimonials.** Confirm David, Justin, and Spencer are happy appearing under the Porchlight name.
 
