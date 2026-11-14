@@ -172,7 +172,7 @@ strong { font-weight: 600; }
 .on-dark .porchlight { --la: .34; }
 .on-dark .lamp { background: #f3d754; box-shadow: 0 0 0 6px rgba(var(--glow), .25), 0 0 60px 18px rgba(var(--glow), .5); }
 @keyframes flicker-in { from { opacity: 0; } to { opacity: 1; } }
-.porchlight, .lamp { animation: flicker-in 1.4s ease-out both; }
+.porchlight, .lamp { animation: flicker-in 2.2s ease-out both; }
 
 /* Hero ---------------------------------------------------------------- */
 .hero { padding-block: clamp(3rem, 2rem + 4vw, 6rem) clamp(3.5rem, 2.5rem + 4vw, 6.5rem); }
@@ -755,8 +755,8 @@ a[href^="tel:"] { text-decoration: underline; text-decoration-thickness: 1px; te
   0%, 100% { opacity: .85; transform: translateX(-50%) scale(1); }
   50% { opacity: 1; transform: translateX(-50%) scale(1.07); }
 }
-.on-dark .porchlight { animation: flicker-in 1.4s ease-out both, light-breathe 5.5s ease-in-out 1.4s infinite; }
-.on-dark .porchlight::after { animation: halo-breathe 5.5s ease-in-out 1.4s infinite backwards; }
+.on-dark .porchlight { animation: flicker-in 2.2s ease-out both, light-breathe 5.5s ease-in-out 2.2s infinite; }
+.on-dark .porchlight::after { animation: halo-breathe 5.5s ease-in-out 2.2s infinite backwards; }
 
 /* Scroll reveal: content blocks below the fold fade up slightly as they come into view.
    Only switched on by the script when the visitor hasn't asked for reduced motion. */
@@ -779,8 +779,8 @@ a[href^="tel:"] { text-decoration: underline; text-decoration-thickness: 1px; te
 .hero--dark .hero-copy .lede { color: var(--on-dark-muted); }
 .hero--dark .hero-meta { color: var(--on-dark); }
 .hero--dark .hero-meta svg { color: #f3d754; }
-.hero--dark .porchlight { --la: .46; animation: flicker-in 1.4s ease-out both, bulb-flicker 9s linear 1.4s infinite; }
-.hero--dark .lamp { animation: flicker-in 1.4s ease-out both, bulb-flicker 9s linear 1.4s infinite; }
+.hero--dark .porchlight { --la: .46; animation: flicker-in 2.2s ease-out both, bulb-flicker 9s linear 2.2s infinite; }
+.hero--dark .lamp { animation: flicker-in 2.2s ease-out both, bulb-flicker 9s linear 2.2s infinite; }
 /* On phones the text sits right under the lamp, so the halo stays smaller there. */
 @media (max-width: 900px) {
   .hero--dark .porchlight { --la: .24; }
