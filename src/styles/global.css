@@ -749,13 +749,14 @@ a[href^="tel:"] { text-decoration: underline; text-decoration-thickness: 1px; te
   50% { box-shadow: 0 0 0 5px rgba(var(--glow), .52), 0 0 18px 7px rgba(232, 190, 40, .42); }
 }
 .eyebrow::before { animation: dot-glow 2.8s ease-in-out infinite; }
-@keyframes light-breathe { 0%, 100% { opacity: .88; } 50% { opacity: 1; } }
+/* Starts at full strength so it picks up exactly where the fade-in ends. */
+@keyframes light-breathe { 0%, 100% { opacity: 1; } 50% { opacity: .88; } }
 @keyframes halo-breathe {
   0%, 100% { opacity: .85; transform: translateX(-50%) scale(1); }
   50% { opacity: 1; transform: translateX(-50%) scale(1.07); }
 }
 .on-dark .porchlight { animation: flicker-in 1.4s ease-out both, light-breathe 5.5s ease-in-out 1.4s infinite; }
-.on-dark .porchlight::after { animation: halo-breathe 5.5s ease-in-out 1.4s infinite; }
+.on-dark .porchlight::after { animation: halo-breathe 5.5s ease-in-out 1.4s infinite backwards; }
 
 /* Scroll reveal: content blocks below the fold fade up slightly as they come into view.
    Only switched on by the script when the visitor hasn't asked for reduced motion. */
