@@ -47,6 +47,7 @@ npm run preview   # serve the built site locally
 | Header and footer | `src/components/Header.astro`, `Footer.astro` |
 | Head tags, scripts, page frame | `src/layouts/BaseLayout.astro` |
 | Colors, fonts, and all styling | `src/styles/global.css` (color tokens are at the top) |
+| Font files (Playfair Display, DM Sans) | `public/fonts/` (loaded by the `@font-face` rules at the top of `global.css`) |
 | Images, logo, favicon | `public/` |
 | Privacy Policy and Terms of Service text | `src/legal/*.md` |
 | Clean URLs (no `.html`, no trailing slash) | `vercel.json` |
