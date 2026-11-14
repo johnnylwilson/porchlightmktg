@@ -9,6 +9,8 @@ export const site = {
   hours: 'Monday to Friday, 9 AM to 5 PM',
   city: 'Lake Mary, FL',
   linkedin: 'https://www.linkedin.com/company/porchlight-mktg/',
+  // Where the audit and contact forms send submissions (Formspree emails them to you).
+  formEndpoint: 'https://formspree.io/f/mnpdjryd',
   year: 2026,
   // Google Business Profile map. Paste the embed URL here (the src="..." value from Google Maps:
   // Share > Embed a map). Leave empty to show the illustrated placeholder map.

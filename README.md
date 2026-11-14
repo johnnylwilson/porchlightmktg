@@ -4,7 +4,6 @@ The Porchlight Marketing site, built with [Astro](https://astro.build) and deplo
 
 ## Before launch checklist
 
-- [ ] **Form endpoint.** Add `PUBLIC_FORM_ENDPOINT` in Vercel (see "Forms" below). Until it's set, the forms show an error asking people to call.
 - [ ] **Stats.** Confirm sources for the three stats on each service page (`stats` in `src/data/site.ts`), or swap any you can't back up.
 - [ ] **Testimonials.** Confirm David, Justin, and Spencer are happy appearing under the Porchlight name.
 
@@ -96,15 +95,12 @@ The post appears automatically on the blog page, on its service page (the first 
 
 ## Forms
 
-The audit and contact forms post to whatever URL is in `PUBLIC_FORM_ENDPOINT`. The simplest option is [Formspree](https://formspree.io):
+The audit and contact forms send submissions to Formspree, which emails them to you. Visitors stay on the page and see the form's own thank-you message.
 
-1. Create a free Formspree account and a new form. Set it to email you.
-2. Copy the form's endpoint, which looks like `https://formspree.io/f/abcdwxyz`.
-3. In Vercel, add an environment variable `PUBLIC_FORM_ENDPOINT` with that URL, then redeploy.
-
-Each submission includes the name, phone, email, website, message, the services checked (contact page), and which page the form was on. A hidden honeypot field (`_gotcha`) filters out most spam bots.
-
-Any service that accepts a standard form POST and returns JSON will work the same way.
+- The endpoint is `formEndpoint` in `src/data/site.ts` (currently `https://formspree.io/f/mnpdjryd`). To switch forms or services, change it there. A `PUBLIC_FORM_ENDPOINT` environment variable in Vercel, if set, overrides it.
+- Each submission includes the name, phone, email, website, message, the services checked (contact page), and which page the form was on (`form`). The email subject is set with `_subject`.
+- A hidden honeypot field (`_gotcha`) filters out most spam bots.
+- Fields are defined in `src/components/AuditForm.astro`. Formspree accepts whatever fields the form sends, so nothing needs to change on the Formspree side when you add or rename one.
 
 ## Intro animation
 

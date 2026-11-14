@@ -1,6 +1,6 @@
 ---
 // Lead form used on the service pages and the contact page.
-// Submissions go to PUBLIC_FORM_ENDPOINT (set it in Vercel). See README.
+// Submissions go to Formspree (site.formEndpoint), which emails them to you. See README.
 import { site } from '../data/site';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 }
 
 const { id, formName, cta = 'Request my free audit', split = false, withServices = false } = Astro.props;
-const endpoint = import.meta.env.PUBLIC_FORM_ENDPOINT || undefined;
+const endpoint = import.meta.env.PUBLIC_FORM_ENDPOINT || site.formEndpoint;
 const serviceOptions = ['Local SEO', 'Google Ads', 'Web Design', 'Not sure yet'];
 ---
 <form class="form" data-lead-form method="post" action={endpoint}>
