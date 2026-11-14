@@ -44,7 +44,7 @@ npm run preview   # serve the built site locally
 | Blog posts | `src/content/blog/*.md` |
 | Home, About, Contact, Blog pages | `src/pages/*.astro` |
 | Shared service page layout | `src/components/ServicePage.astro` |
-| Header, footer, intro animation | `src/components/Header.astro`, `Footer.astro`, `Intro.astro` |
+| Header and footer | `src/components/Header.astro`, `Footer.astro` |
 | Head tags, scripts, page frame | `src/layouts/BaseLayout.astro` |
 | Colors, fonts, and all styling | `src/styles/global.css` (color tokens are at the top) |
 | Images, logo, favicon | `public/` |
@@ -101,7 +101,3 @@ The audit and contact forms send submissions to Formspree, which emails them to 
 - Each submission includes the name, phone, email, website, message, the services checked (contact page), and which page the form was on (`form`). The email subject is set with `_subject`.
 - A hidden honeypot field (`_gotcha`) filters out most spam bots.
 - Fields are defined in `src/components/AuditForm.astro`. Formspree accepts whatever fields the form sends, so nothing needs to change on the Formspree side when you add or rename one.
-
-## Intro animation
-
-The door and porch light intro plays on a visitor's first page view in a browser session, skips on click, and never plays for people who have reduced motion turned on. To turn it off entirely, remove `<Intro />` and the intro `<script is:inline>` from `src/layouts/BaseLayout.astro`.

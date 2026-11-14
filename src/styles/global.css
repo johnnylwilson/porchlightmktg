@@ -552,30 +552,6 @@ strong { font-weight: 600; }
 .deliver .cta-pair { margin-top: .5rem; }
 .mobile-panel .btn { width: 100%; }
 
-/* Intro --------------------------------------------------------------- */
-html.intro-on, html.intro-on body { overflow: hidden; }
-.intro { position: fixed; inset: 0; z-index: 200; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; background: radial-gradient(ellipse at 50% 40%, #152543 0%, var(--navy-950) 70%); cursor: pointer; transition: opacity .8s ease, transform .8s ease; }
-.intro.is-leaving { opacity: 0; transform: scale(1.04); pointer-events: none; }
-.intro-scene { position: relative; width: 220px; height: 300px; }
-.intro-fixture { position: absolute; left: 50%; top: 0; width: 26px; height: 32px; margin-left: -13px; border-radius: 5px 5px 9px 9px; background: #0c1526; border: 2px solid #38445c; z-index: 2; }
-.intro-fixture::before { content: ""; position: absolute; left: 50%; top: -16px; width: 2px; height: 16px; margin-left: -1px; background: #38445c; }
-.intro-bulb { position: absolute; left: 50%; top: 34px; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: #f5d956; z-index: 3; opacity: 0; box-shadow: 0 0 0 6px rgba(var(--glow), .3), 0 0 50px 18px rgba(var(--glow), .6); animation: bulb-on .7s .55s steps(1, end) forwards, bulb-glow .5s 1.25s ease-out forwards; }
-@keyframes bulb-on { 0% { opacity: 1; } 18% { opacity: .15; } 32% { opacity: 1; } 46% { opacity: .35; } 60%, 100% { opacity: 1; } }
-@keyframes bulb-glow { from { opacity: 1; } to { opacity: 1; box-shadow: 0 0 0 8px rgba(var(--glow), .35), 0 0 80px 30px rgba(var(--glow), .65); } }
-.intro-beam { position: absolute; left: 50%; top: 30px; width: 520px; height: 380px; margin-left: -260px; filter: blur(18px); opacity: 0; animation: beam-on .9s 1.15s ease-out forwards; }
-.intro-beam::before { content: ""; position: absolute; inset: 0; clip-path: polygon(45% 0, 55% 0, 100% 100%, 0 100%); background: linear-gradient(to bottom, rgba(var(--glow), .55), rgba(var(--glow), .12) 60%, rgba(var(--glow), 0) 90%); }
-@keyframes beam-on { to { opacity: 1; } }
-.intro-door { position: absolute; left: 50%; bottom: 22px; width: 116px; height: 196px; margin-left: -58px; border-radius: 8px 8px 0 0; border: 2px solid rgba(248, 245, 239, .18); border-bottom: 0; background: rgba(248, 245, 239, .02); z-index: 1; animation: door-warm .9s 1.2s ease-out forwards; }
-@keyframes door-warm { to { border-color: rgba(248, 245, 239, .45); background: linear-gradient(180deg, rgba(var(--glow), .2), rgba(var(--glow), .05)); } }
-.intro-window { position: absolute; left: 18%; right: 18%; top: 14%; height: 30%; border: 2px solid rgba(248, 245, 239, .16); border-radius: 4px; }
-.intro-knob { position: absolute; right: 13%; top: 56%; width: 9px; height: 9px; border-radius: 50%; background: #6f6a55; animation: knob-on .6s 1.3s ease-out forwards; }
-@keyframes knob-on { to { background: #f3d754; box-shadow: 0 0 10px 2px rgba(var(--glow), .6); } }
-.intro-porch { position: absolute; left: 0; right: 0; bottom: 0; height: 22px; border-top: 2px solid rgba(248, 245, 239, .2); background: linear-gradient(180deg, rgba(248, 245, 239, .08), transparent); animation: porch-warm .9s 1.25s ease-out forwards; }
-@keyframes porch-warm { to { border-top-color: rgba(248, 245, 239, .4); background: linear-gradient(180deg, rgba(var(--glow), .25), transparent); } }
-.intro-tag { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: clamp(1.3rem, 1.1rem + 1vw, 1.75rem); color: var(--on-dark); opacity: 0; transform: translateY(8px); animation: tag-in .8s 1.7s ease-out forwards; margin: 0; }
-@keyframes tag-in { to { opacity: 1; transform: none; } }
-.intro-skip { position: absolute; right: max(20px, env(safe-area-inset-right, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); font: inherit; font-size: .85rem; font-weight: 600; color: var(--on-dark-muted); background: transparent; border: 1px solid rgba(248, 245, 239, .25); border-radius: 999px; padding: .4rem .9rem; cursor: pointer; }
-
 @media (max-width: 600px) { .hero-meta { gap: .4rem 1rem; font-size: .86rem; } }
 
 /* Sections that follow a page hero directly need less top padding. */
@@ -643,10 +619,6 @@ h1.eyebrow { font-family: var(--font-body); font-weight: 600; font-size: .78rem;
 .tier[open] .t-chev { transform: rotate(45deg); background: rgba(248, 245, 239, .1); }
 .tier summary:hover .t-name { color: #ffffff; }
 .tier .t-desc { padding: 0 2.75rem 1rem 0; font-size: .95rem; color: var(--on-dark-muted); }
-
-/* Intro only shows when the head script decides to play it, so it never blocks the page without JavaScript. */
-.intro { display: none; }
-html.intro-on .intro, .intro.is-leaving { display: flex; }
 
 /* Forms */
 .hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
@@ -759,10 +731,10 @@ a[href^="tel:"] { text-decoration: underline; text-decoration-thickness: 1px; te
 /* Gentle glow: the amber eyebrow dots and the porch light in the dark navy sections.
    Turned off for visitors who prefer reduced motion (see the rule near the top). */
 @keyframes dot-glow {
-  0%, 100% { box-shadow: 0 0 0 4px rgba(var(--glow), .3), 0 0 4px 0 rgba(var(--glow), .2); }
-  50% { box-shadow: 0 0 0 4px rgba(var(--glow), .42), 0 0 12px 3px rgba(var(--glow), .5); }
+  0%, 100% { box-shadow: 0 0 0 3px rgba(var(--glow), .35), 0 0 0 0 rgba(232, 190, 40, 0); }
+  50% { box-shadow: 0 0 0 5px rgba(var(--glow), .52), 0 0 18px 7px rgba(232, 190, 40, .42); }
 }
-.eyebrow::before { animation: dot-glow 3.8s ease-in-out infinite; }
+.eyebrow::before { animation: dot-glow 2.8s ease-in-out infinite; }
 @keyframes light-breathe { 0%, 100% { opacity: .88; } 50% { opacity: 1; } }
 @keyframes halo-breathe {
   0%, 100% { opacity: .85; transform: translateX(-50%) scale(1); }
@@ -786,3 +758,30 @@ a[href^="tel:"] { text-decoration: underline; text-decoration-thickness: 1px; te
 .odo-strip { display: flex; flex-direction: column; transform: translateY(0); transition: transform 1.6s cubic-bezier(.16, .84, .3, 1); transition-delay: var(--od, 0ms); }
 .odo-strip > span { display: block; height: var(--oh); line-height: var(--oh); text-align: center; }
 .odo-char { line-height: var(--oh); }
+
+/* Home hero on dark navy. The porch light flickers now and then, like a real bulb. */
+.hero--dark h1 { color: var(--on-dark); }
+.hero--dark .hero-copy .lede { color: var(--on-dark-muted); }
+.hero--dark .hero-meta { color: var(--on-dark); }
+.hero--dark .hero-meta svg { color: #f3d754; }
+.hero--dark .porchlight { --la: .46; animation: flicker-in 1.4s ease-out both, bulb-flicker 9s linear 1.4s infinite; }
+.hero--dark .lamp { animation: flicker-in 1.4s ease-out both, bulb-flicker 9s linear 1.4s infinite; }
+/* On phones the text sits right under the lamp, so the halo stays smaller there. */
+@media (max-width: 900px) {
+  .hero--dark .porchlight { --la: .34; }
+  .hero--dark .porchlight::after { width: 180px; height: 100px; top: -50px; }
+}
+@keyframes bulb-flicker {
+  0%, 56%, 100% { opacity: 1; }
+  57% { opacity: .55; }
+  58% { opacity: .95; }
+  59.5% { opacity: .35; }
+  61% { opacity: 1; }
+  78% { opacity: 1; }
+  78.6% { opacity: .65; }
+  79.4% { opacity: 1; }
+}
+
+/* CTA sections: the beam dims a little where it reaches the paragraph, so the text stays easy to read. */
+.final-cta .porchlight { -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 22%, rgba(0, 0, 0, .55) 34%, rgba(0, 0, 0, .55) 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 22%, rgba(0, 0, 0, .55) 34%, rgba(0, 0, 0, .55) 100%); }
+.article-cta .porchlight { -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 12%, rgba(0, 0, 0, .55) 28%, rgba(0, 0, 0, .55) 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 12%, rgba(0, 0, 0, .55) 28%, rgba(0, 0, 0, .55) 100%); }

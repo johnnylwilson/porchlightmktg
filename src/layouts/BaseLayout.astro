@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import Intro from '../components/Intro.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -68,25 +67,11 @@ const fonts = 'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href={fonts} />
 
-    <!-- Decide before first paint whether the porch light intro plays (once per session). -->
-    <script is:inline>
-      (function () {
-        try {
-          var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          if (!reduce && sessionStorage.getItem('pl-intro') !== '1') {
-            document.documentElement.classList.add('intro-on');
-            sessionStorage.setItem('pl-intro', '1');
-          }
-        } catch (e) {}
-      })();
-    </script>
-
     {schemaList.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)}></script>)}
     <!-- Pages can add extra head tags here. -->
     <slot name="head" />
   </head>
   <body>
-    <Intro />
     <Header current={current} />
     <main id="main">
       <slot />
