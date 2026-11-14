@@ -783,8 +783,9 @@ a[href^="tel:"] { text-decoration: underline; text-decoration-thickness: 1px; te
 .hero--dark .lamp { animation: flicker-in 1.4s ease-out both, bulb-flicker 9s linear 1.4s infinite; }
 /* On phones the text sits right under the lamp, so the halo stays smaller there. */
 @media (max-width: 900px) {
-  .hero--dark .porchlight { --la: .34; }
-  .hero--dark .porchlight::after { width: 180px; height: 100px; top: -50px; }
+  .hero--dark .porchlight { --la: .24; }
+  .hero--dark .porchlight::after { width: 170px; height: 96px; top: -48px; background: radial-gradient(ellipse at center, rgba(var(--glow), .55), rgba(var(--glow), 0) 70%); }
+  .hero--dark .lamp { box-shadow: 0 0 0 5px rgba(var(--glow), .2), 0 0 40px 12px rgba(var(--glow), .35); }
 }
 @keyframes bulb-flicker {
   0%, 56%, 100% { opacity: 1; }
