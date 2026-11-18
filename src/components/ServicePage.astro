@@ -65,8 +65,8 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
         <p class="lede" set:html={s.statsIntro}></p>
       </div>
       <div class="stats">
-        {s.stats.map((x: { n: string; d: string }) => (
-          <div class="stat"><span class="stat-n">{x.n}</span><p>{x.d}</p></div>
+        {s.stats.map((x: { n: string; d: string; s?: string }) => (
+          <div class="stat"><span class="stat-n">{x.n}</span><p>{x.d}</p>{x.s && <p class="stat-src">Source: {x.s}</p>}</div>
         ))}
       </div>
     </div>
@@ -99,6 +99,8 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
     </div>
   </section>
 
+  <Testimonial t={testimonial} bg="boards" />
+
   <section class="section">
     <div class="wrap audit-layout">
       <div class="form-card" id="audit">
@@ -125,28 +127,31 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
   </section>
 
   <section class="section section--paper">
-    <div class="wrap deliver">
+    <div class="wrap bio">
+      <img class="bio-photo" src="/images/johnny-wilson.jpg" alt="Johnny Wilson, founder of Porchlight Marketing" width="680" height="850" loading="lazy" decoding="async" />
       <div class="stack">
-        <span class="eyebrow">Deliverables</span>
-        <h2>{s.expectTitle}</h2>
-        <p class="lede">{s.expectIntro}</p>
+        <span class="eyebrow">Who you'll work with</span>
+        <h2>{s.bio.title}</h2>
+        <p>{s.bio.text}</p>
+        <ul class="founder-facts">
+          {s.bio.facts.map((f: { n: string; d: string }) => <li><b>{f.n}</b><span>{f.d}</span></li>)}
+        </ul>
+        <a class="text-link" href="/about-us">More about Johnny <span>&rarr;</span></a>
       </div>
-      <ul class="deliver-list">
-        {s.expect.map((e: string) => <li><Icon name="tick" /><span>{e}</span></li>)}
-      </ul>
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap">
-      <SectionHead title={s.whyTitle} center />
-      <div class="features">
-        {s.why.map((w: { icon: string; t: string; d: string }) => (
-          <div class="feature"><span class="icon"><Icon name={w.icon} /></span><h3>{w.t}</h3><p>{w.d}</p></div>
-        ))}
+  {work.length > 0 && (
+    <section class="section section--boards">
+      <div class="wrap">
+        <SectionHead title={`${s.name} portfolio`} center />
+        <div class="work-grid">
+          {work.map((item) => <WorkCard item={item} />)}
+        </div>
+        <p class="work-all"><a class="text-link" href="/portfolio">See the full portfolio <span>&rarr;</span></a></p>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 
   <section class="section section--paper">
     <div class:list={['wrap', 'pricing', { 'pricing--top': s.pricing.tiers }]}>
@@ -173,15 +178,13 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
           <Fragment>
             <h3>{s.pricing.card.title}</h3>
             <ol>{s.pricing.card.steps.map((x: string) => <li>{x}</li>)}</ol>
-            <p class="fine">{s.pricing.card.note}</p>
+            {s.pricing.card.note && <p class="fine">{s.pricing.card.note}</p>}
           </Fragment>
         )}
       </div>
       <div class="cta-after"><CtaPair audit={s.audit} auditHref={auditHref} /></div>
     </div>
   </section>
-
-  <Testimonial t={testimonial} bg="boards" />
 
   <Faq title={s.faqTitle} items={s.faqs} lede={s.faqLede} eyebrow="Questions" />
 
@@ -195,18 +198,6 @@ const blogTitle = `More on ${s.blogService === 'Local SEO' ? 'local SEO' : s.blo
       </div>
     </div>
   </section>
-
-  {work.length > 0 && (
-    <section class="section section--boards">
-      <div class="wrap">
-        <SectionHead title={`${s.name} portfolio`} center />
-        <div class="work-grid">
-          {work.map((item) => <WorkCard item={item} />)}
-        </div>
-        <p class="work-all"><a class="text-link" href="/portfolio">See the full portfolio <span>&rarr;</span></a></p>
-      </div>
-    </section>
-  )}
 
   <GbpSection seoKey={slug} />
 </BaseLayout>

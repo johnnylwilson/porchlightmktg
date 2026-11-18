@@ -295,13 +295,6 @@ strong { font-weight: 600; }
 .service-card p { color: var(--muted); flex: 1; }
 .service-card .text-link { margin-top: .25rem; }
 
-.feature { display: flex; flex-direction: column; gap: .6rem; padding: 1.6rem 0 0; border-top: 1px solid var(--sand); min-width: 0; }
-.feature .icon { color: var(--navy-700); width: 26px; height: 26px; margin-bottom: .25rem; }
-.feature h3 { font-size: 1.2rem; }
-.feature p { color: var(--muted); }
-.features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem 2.25rem; }
-@media (max-width: 900px) { .features { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 600px) { .features { grid-template-columns: 1fr; gap: 1.75rem; } }
 
 .offer-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 .offer-grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -395,12 +388,6 @@ strong { font-weight: 600; }
 .form-success { padding: 1rem 1.1rem; border-radius: 12px; background: var(--navy-100); color: var(--navy-800); font-size: .95rem; }
 
 /* Deliverables ----------------------------------------------------- */
-.deliver { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 1.5rem + 3vw, 4rem); align-items: start; }
-@media (max-width: 900px) { .deliver { grid-template-columns: 1fr; } }
-.deliver-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .1rem; background: #ffffff; border: 1px solid var(--sand); border-radius: 18px; padding: .5rem 1.5rem; }
-.deliver-list li { display: grid; grid-template-columns: 24px 1fr; gap: .9rem; padding: 1rem 0; border-bottom: 1px solid var(--sand); }
-.deliver-list li:last-child { border-bottom: 0; }
-.deliver-list svg { width: 22px; height: 22px; color: var(--navy-700); margin-top: 2px; }
 .timeline-note { display: flex; gap: 1rem; align-items: flex-start; padding: 1.1rem 1.25rem; border-radius: 14px; background: rgba(var(--glow), .2); border: 1px solid rgba(210, 171, 26, .25); }
 .timeline-note svg { width: 22px; height: 22px; color: var(--amber-deep); flex: none; margin-top: 3px; }
 .timeline-note p { color: #3e434e; }
@@ -563,7 +550,6 @@ strong { font-weight: 600; }
 .inline-cta p { font-weight: 600; color: var(--navy-800); font-size: 1.05rem; max-width: 46ch; }
 
 .below-link { display: flex; justify-content: center; margin-top: 2rem; }
-.deliver .cta-pair { margin-top: .5rem; }
 .mobile-panel .btn { width: 100%; }
 
 @media (max-width: 600px) { .hero-meta { gap: .4rem 1rem; font-size: .86rem; } }
@@ -674,8 +660,8 @@ h1.eyebrow { font-family: var(--font-body); font-weight: 600; font-size: .78rem;
 /* Two-column sections: on phones, buttons move below the second column. */
 .cta-after { display: none; }
 @media (max-width: 900px) {
-  .split .cta-before, .success .cta-before, .deliver .cta-before, .pricing .cta-before { display: none; }
-  .split .cta-after, .success .cta-after, .deliver .cta-after, .pricing .cta-after { display: block; }
+  .split .cta-before, .success .cta-before, .pricing .cta-before { display: none; }
+  .split .cta-after, .success .cta-after, .pricing .cta-after { display: block; }
 }
 @media (max-width: 860px) {
   .gbp .cta-before { display: none; }
@@ -801,3 +787,11 @@ a[href^="tel:"] { text-decoration: underline; text-decoration-thickness: 1px; te
 /* CTA sections: the beam dims a little where it reaches the paragraph, so the text stays easy to read. */
 .final-cta .porchlight { -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 22%, rgba(0, 0, 0, .55) 34%, rgba(0, 0, 0, .55) 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 22%, rgba(0, 0, 0, .55) 34%, rgba(0, 0, 0, .55) 100%); }
 .article-cta .porchlight { -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 12%, rgba(0, 0, 0, .55) 28%, rgba(0, 0, 0, .55) 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 12%, rgba(0, 0, 0, .55) 28%, rgba(0, 0, 0, .55) 100%); }
+
+/* Service pages: stat sources and the short bio */
+.stat-src { margin-top: auto; padding-top: .35rem; font-size: .75rem; letter-spacing: .02em; color: var(--muted); opacity: .85; }
+.bio { display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: clamp(2rem, 1.5rem + 3vw, 3.5rem); align-items: start; max-width: 980px; margin: 0 auto; }
+.bio-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow); }
+.bio .stack p { color: #3e434e; max-width: 60ch; }
+.bio .founder-facts { margin: .25rem 0 .25rem; }
+@media (max-width: 760px) { .bio { grid-template-columns: 1fr; } .bio-photo { max-width: 200px; } }

@@ -121,7 +121,7 @@ const ogImage = Astro.site ? new URL(image ?? '/images/og-image.jpg', Astro.site
       (() => {
         const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (reduce || !('IntersectionObserver' in window)) return;
-        const sel = '.section-head, .service-card, .reason, .feature, .how > li, .steps > li, .offer, .stat, .success-item, .value, .mv > div, .post-card, .work-card, .project-shot, .price-card, .faq details, .founder-photo, .founder .stack, blockquote, .deliver-list, .article-cta .box, .gbp .wrap > *';
+        const sel = '.section-head, .service-card, .reason, .how > li, .steps > li, .offer, .stat, .success-item, .value, .mv > div, .post-card, .work-card, .project-shot, .price-card, .faq details, .founder-photo, .founder .stack, blockquote, .bio-photo, .bio .stack, .article-cta .box, .gbp .wrap > *';
         const fold = window.innerHeight * 0.92;
         const els = Array.from(document.querySelectorAll<HTMLElement>(sel)).filter((el) => el.getBoundingClientRect().top > fold);
         if (!els.length) return;
