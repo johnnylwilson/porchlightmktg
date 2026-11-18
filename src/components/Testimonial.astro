@@ -8,7 +8,7 @@ interface Props {
 
 const { t, bg } = Astro.props;
 ---
-<section class:list={['section', bg && `section--${bg}`]} aria-label="Client review">
+<section class:list={['section', 'section--quote', bg && `section--${bg}`]} aria-label="Client review">
   <div class="wrap">
     <figure class="quote-block">
       <Stars />

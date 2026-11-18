@@ -411,9 +411,9 @@ strong { font-weight: 600; }
 .price-card .fine { font-size: .9rem; border-top: 1px solid rgba(248, 245, 239, .14); padding-top: 1rem; }
 
 /* Testimonial ------------------------------------------------------ */
-.quote-block { max-width: 880px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+.quote-block { max-width: 880px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
 .quote-block .stars svg { width: 20px; height: 20px; }
-.quote-block blockquote { margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: clamp(1.5rem, 1.15rem + 1.5vw, 2.2rem); line-height: 1.35; color: var(--navy-800); text-wrap: balance; }
+.quote-block blockquote { margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: clamp(1.3rem, 1.1rem + 1vw, 1.8rem); line-height: 1.35; color: var(--navy-800); text-wrap: balance; }
 .quote-block cite { font-style: normal; display: flex; flex-direction: column; gap: .1rem; align-items: center; }
 .quote-block cite b { font-weight: 600; }
 .quote-block cite span { color: var(--muted); font-size: .92rem; }
@@ -795,3 +795,5 @@ a[href^="tel:"] { text-decoration: underline; text-decoration-thickness: 1px; te
 .bio .stack p { color: #3e434e; max-width: 60ch; }
 .bio .founder-facts { margin: .25rem 0 .25rem; }
 @media (max-width: 760px) { .bio { grid-template-columns: 1fr; } .bio-photo { max-width: 200px; } }
+/* Testimonials sit between two larger sections, so they get less padding. */
+.section.section--quote { padding-block: clamp(2.75rem, 2rem + 2.5vw, 4rem); }
