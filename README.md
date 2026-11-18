@@ -4,7 +4,6 @@ The Porchlight Marketing site, built with [Astro](https://astro.build) and deplo
 
 ## Before launch checklist
 
-- [ ] **Stats.** Confirm sources for the three stats on each service page (`stats` in `src/data/site.ts`), or swap any you can't back up.
 - [ ] **Testimonials.** Confirm David, Justin, and Spencer are happy appearing under the Porchlight name.
 
 ## Deploy
