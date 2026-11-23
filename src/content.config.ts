@@ -1,42 +1,31 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
-import { missingFromDescription } from './data/seo';
 
 // Blog posts live in src/content/blog as Markdown. The file name becomes the URL:
 // src/content/blog/my-post.md -> /blog/my-post
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
-  schema: z
-    .object({
-      title: z.string(),
-      // Which service the post supports. Decides its tag, related posts, and closing call to action.
-      service: z.enum(['Local SEO', 'Google Ads', 'Web Design']),
-      // Sort order within its service (1 shows first).
-      order: z.number().default(99),
-      // Short summary shown on blog cards.
-      excerpt: z.string(),
-      // SEO focus keyword. Must appear in the description.
-      focus: z.string(),
-      // Meta description. Must include the focus keyword, "Lake Mary, FL", and "Porchlight Marketing".
-      description: z.string(),
-      author: z.string().default('Johnny Wilson'),
-      // Publish date as "YYYY-MM-DD" (keep the quotes). Used in the article's structured data.
-      date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
-      // The post's last section (title plus paragraphs, links allowed), shown in the closing box.
-      closing: z.object({ title: z.string(), text: z.string() }),
-      // Set to true to keep a post off the site while you work on it.
-      draft: z.boolean().default(false),
-    })
-    .superRefine((d, ctx) => {
-      const missing = missingFromDescription(d.focus, d.description);
-      if (missing.length) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          path: ['description'],
-          message: `Description is missing: ${missing.join(', ')}`,
-        });
-      }
-    }),
+  schema: z.object({
+    title: z.string(),
+    // Which service the post supports. Decides its tag, related posts, and closing call to action.
+    service: z.enum(['Local SEO', 'Google Ads', 'Web Design']),
+    // Sort order within its service (1 shows first).
+    order: z.number().default(99),
+    // Short summary shown on blog cards.
+    excerpt: z.string(),
+    // SEO focus keyword.
+    focus: z.string(),
+    // Meta description. Unlike the main site pages, blog posts do NOT need the focus keyword,
+    // "Lake Mary, FL", or "Porchlight Marketing" in it.
+    description: z.string(),
+    author: z.string().default('Johnny Wilson'),
+    // Publish date as "YYYY-MM-DD" (keep the quotes). Used in the article's structured data.
+    date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+    // The post's last section (title plus paragraphs, links allowed), shown in the closing box.
+    closing: z.object({ title: z.string(), text: z.string() }),
+    // Set to true to keep a post off the site while you work on it.
+    draft: z.boolean().default(false),
+  }),
 });
 
 // Portfolio projects live in src/content/portfolio as Markdown files. Each one gets its own page at
