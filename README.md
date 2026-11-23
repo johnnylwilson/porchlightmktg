@@ -55,7 +55,7 @@ npm run preview   # serve the built site locally
 ## SEO rules (enforced by the build)
 
 - **Titles** are `[Focus Keyword] | Lake Mary, FL | Porchlight Marketing`. Blog posts use the full post title in place of the focus keyword.
-- **Descriptions** must include the focus keyword, `Lake Mary, FL`, and `Porchlight Marketing`. If one doesn't, `npm run build` (and the Vercel deploy) stops and names the page and what's missing.
+- **Descriptions** on the main site pages must include the focus keyword, `Lake Mary, FL`, and `Porchlight Marketing`. If one doesn't, `npm run build` (and the Vercel deploy) stops and names the page and what's missing. Blog post descriptions are exempt: write them as a plain summary of the post.
 - URLs have no trailing slash or `.html` (`/local-seo`, `/about-us`, `/blog/...`).
 - `sitemap.xml` and `robots.txt` are generated automatically and include every blog post.
 
@@ -79,7 +79,7 @@ service: "Google Ads"          # Local SEO, Google Ads, or Web Design
 order: 4                       # position among that service's posts
 excerpt: "One or two sentences for the blog cards."
 focus: "Google Ads for Beginners"
-description: "A 140 to 160 character summary that includes the focus keyword. From Porchlight Marketing in Lake Mary, FL."
+description: "A 140 to 160 character summary of the post."
 author: "Johnny Wilson"
 ---
 The first paragraph is shown as the "Short answer" box, so make it a direct answer.
