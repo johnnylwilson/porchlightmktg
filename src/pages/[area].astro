@@ -1,6 +1,6 @@
 ---
 // One page per nearby city, built from `areas` in src/data/site.ts.
-// Order: hero with form, services, testimonial, process, coffee CTA, location section.
+// Order: hero with form, services, testimonial, process, about me, coffee CTA, location section.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PorchLight from '../components/PorchLight.astro';
 import SectionHead from '../components/SectionHead.astro';
@@ -64,6 +64,18 @@ const cards = services.map((s) => ({ ...s, d: area.services[s.slug as keyof type
       <ol class="how">
         {area.steps.map((st) => <li><h3>{st.t}</h3><p>{st.d}</p></li>)}
       </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap bio home-about">
+      <div class="home-about-photo"><img class="bio-photo" src="/images/johnny-wilson.jpg" alt="Johnny Wilson, founder of Porchlight Marketing" width="680" height="850" loading="lazy" decoding="async" /></div>
+      <div class="stack">
+        <span class="eyebrow">About me</span>
+        <h2>{area.aboutTitle}</h2>
+        <p>{area.aboutText}</p>
+        <a class="text-link" href="/about">More about me <span>&rarr;</span></a>
+      </div>
     </div>
   </section>
 

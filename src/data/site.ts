@@ -282,6 +282,8 @@ export const areas = [
     ],
     ctaTitle: "Let's grab a coffee",
     ctaText: "Heathrow is just minutes from me, so meeting in person is easy. Pick a coffee spot nearby and we can talk through your business, or request a free audit if you'd rather keep things online.",
+    aboutTitle: 'Hi, I\'m Johnny',
+    aboutText: 'Porchlight is based in Lake Mary, a short drive from Heathrow. I handle every project personally and bring more than seven years of experience with websites, Google Ads, and local search to each one.',
     gbpHeading: 'Serving Heathrow from Lake Mary, FL',
   },
   {
@@ -304,6 +306,8 @@ export const areas = [
     ],
     ctaTitle: "Let's meet in Longwood",
     ctaText: "If you'd like to talk face to face, I\'m happy to meet for coffee somewhere in Longwood. You can also request a free audit, and I\'ll send over what I find.",
+    aboutTitle: 'Meet Johnny Wilson',
+    aboutText: 'Porchlight is a one-person business based in Lake Mary, just up I-4 from Longwood. When you reach out, you\'re talking with me directly. I\'ve been building websites, managing Google Ads, and working on local search for over seven years.',
     gbpHeading: 'Helping Longwood businesses from Lake Mary, FL',
   },
   {
@@ -326,6 +330,8 @@ export const areas = [
     ],
     ctaTitle: 'Meet me downtown',
     ctaText: "I\'m glad to meet for coffee in downtown Sanford and hear about your business. Not a coffee person? Request a free audit and we'll start online instead.",
+    aboutTitle: 'Nice to meet you',
+    aboutText: 'I\'m Johnny Wilson, and Porchlight is my business. I work out of Lake Mary, right next door to Sanford, and I handle every client myself. My background includes more than seven years of web design, Google Ads, and local SEO for small businesses.',
     gbpHeading: 'Working with Sanford businesses from Lake Mary, FL',
   },
   {
@@ -348,6 +354,8 @@ export const areas = [
     ],
     ctaTitle: 'Talk it over in person',
     ctaText: "If you're in Winter Springs, I\'m happy to meet near the Town Center for coffee and a conversation about your business. Prefer to stay online? Start with a free audit.",
+    aboutTitle: 'The person behind Porchlight',
+    aboutText: 'Porchlight is me, Johnny Wilson, working from Lake Mary, just a couple of towns over from Winter Springs. You won\'t get passed between departments or account reps. Over the past seven-plus years, I\'ve built websites, run Google Ads campaigns, and helped businesses improve how they show up in local search.',
     gbpHeading: 'Serving Winter Springs from Lake Mary, FL',
   },
 ];
