@@ -2,18 +2,18 @@
    Layout: soft off-white pages, deep-navy "evening" bands, and a soft cone of
    porch light that falls over each hero and closing call to action. */
 /* Fonts ----------------------------------------------------------------
-   Playfair Display and DM Sans are hosted with the site (public/fonts), Latin characters only.
-   The "Fallback" faces resize Times New Roman and Arial to take up the same space as the real fonts,
+   Figtree (headings and interface text), Lora (paragraphs), and Playfair Display italic (testimonial quotes)
+   are hosted with the site (public/fonts), Latin characters only. Lora is set 6% larger to match Figtree's size.
+   The "Fallback" faces resize Arial and Times New Roman to take up the same space as the real fonts,
    so nothing shifts on the rare first visit where the page draws before the fonts arrive. */
-@font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 700; font-display: swap; src: url("/fonts/playfair-display-700.woff2") format("woff2"); }
+@font-face { font-family: "Figtree"; font-style: normal; font-weight: 400 800; font-display: swap; src: url("/fonts/figtree.woff2") format("woff2"); }
+@font-face { font-family: "Lora"; font-style: normal; font-weight: 400 700; font-display: swap; size-adjust: 106%; src: url("/fonts/lora.woff2") format("woff2"); }
+@font-face { font-family: "Lora"; font-style: italic; font-weight: 400 700; font-display: swap; size-adjust: 106%; src: url("/fonts/lora-italic.woff2") format("woff2"); }
 @font-face { font-family: "Playfair Display"; font-style: italic; font-weight: 400; font-display: swap; src: url("/fonts/playfair-display-400-italic.woff2") format("woff2"); }
-@font-face { font-family: "Playfair Display"; font-style: italic; font-weight: 700; font-display: swap; src: url("/fonts/playfair-display-700-italic.woff2") format("woff2"); }
-@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/dm-sans-400.woff2") format("woff2"); }
-@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("/fonts/dm-sans-600.woff2") format("woff2"); }
-@font-face { font-family: "Playfair Display Fallback"; font-weight: 700; src: local("Times New Roman Bold"), local("TimesNewRomanPS-BoldMT"), local("Liberation Serif Bold"), local("LiberationSerif-Bold"); size-adjust: 109%; ascent-override: 99.27%; descent-override: 23.03%; line-gap-override: 0%; }
-@font-face { font-family: "Playfair Display Fallback"; font-weight: 400; src: local("Times New Roman"), local("TimesNewRomanPSMT"), local("Liberation Serif"), local("LiberationSerif"); size-adjust: 109%; ascent-override: 99.27%; descent-override: 23.03%; line-gap-override: 0%; }
-@font-face { font-family: "DM Sans Fallback"; font-weight: 400; src: local("Arial"), local("ArialMT"), local("Liberation Sans"), local("LiberationSans"); size-adjust: 104%; ascent-override: 95.38%; descent-override: 29.81%; line-gap-override: 0%; }
-@font-face { font-family: "DM Sans Fallback"; font-weight: 600; src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"), local("LiberationSans-Bold"); size-adjust: 99.7%; ascent-override: 99.5%; descent-override: 31.09%; line-gap-override: 0%; }
+@font-face { font-family: "Figtree Fallback"; font-weight: 400; src: local("Arial"), local("ArialMT"), local("Liberation Sans"), local("LiberationSans"); size-adjust: 100%; ascent-override: 95%; descent-override: 25%; line-gap-override: 0%; }
+@font-face { font-family: "Figtree Fallback"; font-weight: 700; src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"), local("LiberationSans-Bold"); size-adjust: 96.5%; ascent-override: 98.45%; descent-override: 25.91%; line-gap-override: 0%; }
+@font-face { font-family: "Lora Fallback"; font-weight: 400; src: local("Times New Roman"), local("TimesNewRomanPSMT"), local("Liberation Serif"), local("LiberationSerif"); size-adjust: 122.48%; ascent-override: 87.06%; descent-override: 23.71%; line-gap-override: 0%; }
+@font-face { font-family: "Lora Fallback"; font-weight: 700; src: local("Times New Roman Bold"), local("TimesNewRomanPS-BoldMT"), local("Liberation Serif Bold"), local("LiberationSerif-Bold"); size-adjust: 122.48%; ascent-override: 87.06%; descent-override: 23.71%; line-gap-override: 0%; }
 
 :root {
   --navy-950: #0a1223;
@@ -32,8 +32,10 @@
   --on-dark: #f8f5ef;
   --on-dark-muted: #ccd0d8;
 
-  --font-display: "Playfair Display", "Playfair Display Fallback", Georgia, serif;
-  --font-body: "DM Sans", "DM Sans Fallback", Arial, system-ui, sans-serif;
+  --font-display: "Figtree", "Figtree Fallback", Arial, sans-serif;
+  --font-text: "Lora", "Lora Fallback", Georgia, serif;
+  --font-accent: "Playfair Display", Georgia, serif;
+  --font-body: "Figtree", "Figtree Fallback", Arial, system-ui, sans-serif;
 
   --radius: 12px;
   --wrap: 1180px;
@@ -66,7 +68,14 @@ a { color: inherit; }
 :focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
 
 h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; text-wrap: balance; color: var(--navy-800); letter-spacing: -0.01em; }
-h1 { font-size: clamp(2.5rem, 1.6rem + 3.6vw, 4.4rem); letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.5rem, 1.6rem + 3.6vw, 4.4rem); }
+h1, h2 { font-weight: 800; letter-spacing: -0.025em; }
+/* Paragraph and list text is set in Lora. Zero specificity, so any rule that names a font wins. */
+:where(main, .site-footer) :where(p, li, dd) { font-family: var(--font-text); }
+/* Small interface text stays in Figtree */
+.viz p, .viz li, .loc-label, .phone-line, .site-footer li, .gbp-facts dd, .stat-src, .tiers li, form p, form li,
+.founder-facts li, .contact-lines li, .contact-lines dd, .prose .answer::before { font-family: var(--font-body); }
+
 h2 { font-size: clamp(1.9rem, 1.4rem + 1.9vw, 2.85rem); }
 h3 { font-size: 1.3rem; line-height: 1.25; }
 p { margin: 0; }
@@ -413,11 +422,11 @@ strong { font-weight: 600; }
 /* Testimonial ------------------------------------------------------ */
 .quote-block { max-width: 880px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
 .quote-block .stars svg { width: 20px; height: 20px; }
-.quote-block blockquote { margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: clamp(1.3rem, 1.1rem + 1vw, 1.8rem); line-height: 1.35; color: var(--navy-800); text-wrap: balance; }
+.quote-block blockquote { margin: 0; font-family: var(--font-accent); font-style: italic; font-weight: 400; font-size: clamp(1.3rem, 1.1rem + 1vw, 1.8rem); line-height: 1.35; color: var(--navy-800); text-wrap: balance; }
 .quote-block cite { font-style: normal; display: flex; flex-direction: column; gap: .1rem; align-items: center; }
 .quote-block cite b { font-weight: 600; }
 .quote-block cite span { color: var(--muted); font-size: .92rem; }
-.quote-mark { font-family: var(--font-display); font-size: 5rem; line-height: .5; color: var(--amber); height: 2rem; }
+.quote-mark { font-family: var(--font-accent); font-size: 5rem; line-height: .5; color: var(--amber); height: 2rem; }
 
 /* FAQ -------------------------------------------------------------- */
 .faq { display: grid; gap: .75rem; }
@@ -487,7 +496,7 @@ strong { font-weight: 600; }
 .porch-art .door { position: absolute; left: 50%; bottom: 0; width: 46%; height: 58%; transform: translateX(-50%); border-radius: 10px 10px 0 0; background: linear-gradient(180deg, rgba(var(--glow), .22), rgba(var(--glow), .05)); border: 2px solid rgba(248, 245, 239, .25); border-bottom: 0; }
 .porch-art .door::before { content: ""; position: absolute; inset: 14% 16% 52% 16%; border: 2px solid rgba(248, 245, 239, .2); border-radius: 4px; }
 .porch-art .door::after { content: ""; position: absolute; right: 12%; top: 56%; width: 10px; height: 10px; border-radius: 50%; background: #f3d754; box-shadow: 0 0 10px 2px rgba(var(--glow), .6); }
-.porch-art figcaption { position: absolute; left: 1.25rem; right: 1.25rem; bottom: 13%; text-align: center; font-family: var(--font-display); font-style: italic; color: var(--on-dark); font-size: 1.1rem; z-index: 2; display: none; }
+.porch-art figcaption { position: absolute; left: 1.25rem; right: 1.25rem; bottom: 13%; text-align: center; font-family: var(--font-accent); font-style: italic; color: var(--on-dark); font-size: 1.1rem; z-index: 2; display: none; }
 
 .mv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
 @media (max-width: 760px) { .mv { grid-template-columns: 1fr; } }
@@ -561,7 +570,7 @@ strong { font-weight: 600; }
 
 /* Page heroes: the short label is the H1, the big line is a styled H2. */
 h1.eyebrow { font-family: var(--font-body); font-weight: 600; font-size: .78rem; line-height: 1.4; letter-spacing: .14em; color: var(--navy-700); text-wrap: nowrap; }
-.display { font-size: clamp(2.5rem, 1.6rem + 3.6vw, 4.4rem); letter-spacing: -0.02em; }
+.display { font-size: clamp(2.5rem, 1.6rem + 3.6vw, 4.4rem); letter-spacing: -0.025em; }
 
 /* Service page stats */
 .stats-head .lede em { font-style: italic; color: var(--navy-800); }
