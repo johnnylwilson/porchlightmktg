@@ -10,7 +10,7 @@ import { seoFor } from '../data/seo';
 
 const seo = seoFor('about');
 ---
-<BaseLayout title={seo.title} description={seo.description} current="about" schema={[pageSchema('AboutPage', '/about-us', 'about'), businessSchema(), personSchema()]}>
+<BaseLayout title={seo.title} description={seo.description} current="about" schema={[pageSchema('AboutPage', '/about', 'about'), businessSchema(), personSchema()]}>
   <section class="page-hero lightbox">
     <PorchLight w="760px" h="560px" />
     <div class="wrap">

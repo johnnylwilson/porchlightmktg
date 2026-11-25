@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import { areas } from '../data/site';
 
 // Every public page. New blog posts and portfolio projects are added automatically.
-const pages = ['/', '/local-seo', '/google-ads', '/website-design', '/portfolio', '/about-us', '/contact', '/blogs', '/privacy-policy', '/terms-of-service'];
+const pages = ['/', '/local-seo', '/google-ads', '/website-design', '/portfolio', '/about', '/contact', '/blogs', '/privacy-policy', '/terms-of-service'];
 
 export const GET: APIRoute = async ({ site }) => {
   const base = site ?? new URL('https://www.porchlightmktg.com');

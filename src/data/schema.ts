@@ -5,7 +5,7 @@ import { pageSeo } from './seo';
 
 export const SITE_URL = 'https://www.porchlightmktg.com';
 const BUSINESS_ID = `${SITE_URL}/#business`;
-const PERSON_ID = `${SITE_URL}/about-us#johnny-wilson`;
+const PERSON_ID = `${SITE_URL}/about#johnny-wilson`;
 
 const url = (path: string) => (path === '/' ? SITE_URL : `${SITE_URL}${path}`);
 

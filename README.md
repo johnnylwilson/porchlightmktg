@@ -56,7 +56,7 @@ npm run preview   # serve the built site locally
 
 - **Titles** are `[Focus Keyword] | Lake Mary, FL | Porchlight Marketing`. Blog posts use the full post title in place of the focus keyword.
 - **Descriptions** on the main site pages must include the focus keyword, `Lake Mary, FL`, and `Porchlight Marketing`. If one doesn't, `npm run build` (and the Vercel deploy) stops and names the page and what's missing. Blog post descriptions are exempt: write them as a plain summary of the post.
-- URLs have no trailing slash or `.html` (`/local-seo`, `/about-us`, `/blog/...`).
+- URLs have no trailing slash or `.html` (`/local-seo`, `/about`, `/blog/...`). The old `/about-us` address 301-redirects to `/about` (see `vercel.json`).
 - `sitemap.xml` and `robots.txt` are generated automatically and include every blog post.
 
 Schema (JSON-LD) can be added per page through the `head` slot in `BaseLayout`:
