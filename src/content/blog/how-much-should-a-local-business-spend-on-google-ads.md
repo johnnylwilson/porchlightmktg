@@ -19,7 +19,7 @@ closing:
 
     That balance is at the heart of good [Google Ads management](/google-ads). Your budget should give the campaign room to learn while still making sense based on what a new customer is worth to your business.
 ---
-There isn't one Google Ads budget that works for every local business. Your ideal budget depends on your industry, location, competition, and the cost per click (CPC) in your market. As a general starting point, we usually don't recommend going below $300 per month for a small campaign with one or two ad groups.
+There isn't one Google Ads budget that works for every local business. Your ideal budget depends on your industry, location, competition, and the cost per click (CPC) in your market. As a general starting point, I usually don't recommend going below $300 per month for a small campaign with one or two ad groups.
 
 ## Why there isn't a perfect Google Ads budget
 
@@ -40,7 +40,7 @@ That's why it makes more sense to build the budget around the campaign instead o
 
 ## Is $300 per month enough for Google Ads?
 
-For a smaller campaign with one or two ad groups, we generally recommend starting at no less than $300 per month. That works out to roughly $10 per day.
+For a smaller campaign with one or two ad groups, I generally recommend starting at no less than $300 per month. That works out to roughly $10 per day.
 
 Depending on your industry, $300 may not bring in a lot of traffic. That's okay. The bigger concern with going much lower is that there may not be enough activity to learn anything.
 
@@ -81,4 +81,4 @@ If you have a $600 monthly budget split across six services, each one may get ve
 
 It's usually better to start focused. Services can be separated into their own ad groups so the keywords, ads, and landing pages stay closely related. If a service needs its own budget or a different service area, it may make sense to give it a separate campaign.
 
-We also prefer keeping each campaign focused on one service area. Someone searching locally should see an ad and landing page that feel relevant to where they are.
+I also prefer keeping each campaign focused on one service area. Someone searching locally should see an ad and landing page that feel relevant to where they are.

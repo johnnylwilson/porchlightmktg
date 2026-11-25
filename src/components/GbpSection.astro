@@ -7,10 +7,12 @@ import { pageSeo, LOCATION } from '../data/seo';
 interface Props {
   // Key from src/data/seo.ts: home, local-seo, google-ads, or website-design
   seoKey: string;
+  // Optional custom heading, used on the city pages
+  heading?: string;
 }
 
-const { seoKey } = Astro.props;
-const heading = `${pageSeo[seoKey].focus} in ${LOCATION}`;
+const { seoKey, heading: custom } = Astro.props;
+const heading = custom ?? `${pageSeo[seoKey].focus} in ${LOCATION}`;
 ---
 <section class="section gbp" aria-labelledby="gbp-heading">
   <div class="wrap location">
@@ -19,7 +21,7 @@ const heading = `${pageSeo[seoKey].focus} in ${LOCATION}`;
       <dl class="gbp-facts">
         <div><dt>Hours</dt><dd>{site.hours}</dd></div>
       </dl>
-      <div class="cta-before"><a class="btn btn-primary" href="/contact">Contact Us</a></div>
+      <div class="cta-before"><a class="btn btn-primary" href="/contact">Contact Me</a></div>
     </div>
     <div class="loc-card gbp-map">
       {site.gbpMapEmbed ? (
@@ -31,6 +33,6 @@ const heading = `${pageSeo[seoKey].focus} in ${LOCATION}`;
         </Fragment>
       )}
     </div>
-    <div class="cta-after"><a class="btn btn-primary" href="/contact">Contact Us</a></div>
+    <div class="cta-after"><a class="btn btn-primary" href="/contact">Contact Me</a></div>
   </div>
 </section>

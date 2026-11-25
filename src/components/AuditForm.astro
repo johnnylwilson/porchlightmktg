@@ -9,9 +9,12 @@ interface Props {
   cta?: string;
   split?: boolean;
   withServices?: boolean;
+  // Set false to leave out the optional website field or the reply-time note (used on the city pages)
+  website?: boolean;
+  note?: boolean;
 }
 
-const { id, formName, cta = 'Request my free audit', split = false, withServices = false } = Astro.props;
+const { id, formName, cta = 'Request my free audit', split = false, withServices = false, website = true, note = true } = Astro.props;
 const endpoint = import.meta.env.PUBLIC_FORM_ENDPOINT || site.formEndpoint;
 const serviceOptions = ['Local SEO', 'Google Ads', 'Web Design', 'Not sure yet'];
 ---
@@ -37,21 +40,21 @@ const serviceOptions = ['Local SEO', 'Google Ads', 'Web Design', 'Not sure yet']
     <div class="field"><label for={`${id}-email`}>Email</label><input id={`${id}-email`} name="email" type="email" autocomplete="email" placeholder="you@business.com" required /></div>
   </div>
 
-  <div class="field"><label for={`${id}-site`}>Website <span class="opt">(optional)</span></label><input id={`${id}-site`} name="website" inputmode="url" placeholder="yourbusiness.com" /></div>
+  {website && <div class="field"><label for={`${id}-site`}>Website <span class="opt">(optional)</span></label><input id={`${id}-site`} name="website" inputmode="url" placeholder="yourbusiness.com" /></div>}
 
   {withServices && (
     <fieldset class="checkset">
-      <legend>What can we help with?</legend>
+      <legend>What can I help with?</legend>
       {serviceOptions.map((s, i) => (
         <label><input type="checkbox" id={`${id}-svc-${i}`} name="services" value={s} /> {s}</label>
       ))}
     </fieldset>
   )}
 
-  <div class="field"><label for={`${id}-msg`}>Message</label><textarea id={`${id}-msg`} name="message" placeholder="Tell us about your business and the towns you serve."></textarea></div>
+  <div class="field"><label for={`${id}-msg`}>Message</label><textarea id={`${id}-msg`} name="message" placeholder="Tell me about your business and the towns you serve."></textarea></div>
 
   <button class="btn btn-primary" type="submit">{cta}</button>
-  <p class="form-note">We usually reply within one business day.</p>
-  <div class="form-success" role="status" hidden>Thanks! Your message is on its way. We usually reply within one business day.</div>
+  {note && <p class="form-note">I usually reply within one business day.</p>}
+  <div class="form-success" role="status" hidden>Thanks! Your message is on its way. I usually reply within one business day.</div>
   <div class="form-error" role="alert" hidden>Sorry, your message didn't go through. Please call <a href={`tel:${site.phoneHref}`}>{site.phone}</a> or try again.</div>
 </form>

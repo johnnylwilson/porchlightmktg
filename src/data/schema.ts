@@ -1,6 +1,6 @@
 // JSON-LD structured data (schema.org). Pages pass these to BaseLayout's `schema` prop,
 // which prints them in the <head>. Test any page at https://search.google.com/test/rich-results
-import { site, servicePages } from './site';
+import { site, servicePages, areas } from './site';
 import { pageSeo } from './seo';
 
 export const SITE_URL = 'https://www.porchlightmktg.com';
@@ -30,7 +30,7 @@ export function businessSchema() {
       addressRegion: 'FL',
       addressCountry: 'US',
     },
-    areaServed: { '@type': 'City', name: 'Lake Mary', containedInPlace: { '@type': 'State', name: 'Florida' } },
+    areaServed: ['Lake Mary', ...areas.map((a) => a.city)].map((name) => ({ '@type': 'City', name, containedInPlace: { '@type': 'State', name: 'Florida' } })),
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -177,6 +177,28 @@ export function articleSchema(post: { title: string; description: string; author
       { name: 'Home', path: '/' },
       { name: post.service, path: categoryPath(post.service) },
       { name: post.title, path: `/blog/${slug}` },
+    ]),
+  ];
+}
+
+// City pages: a Service offered in that city, plus a breadcrumb.
+export function areaSchema(area: { slug: string; city: string; description: string }) {
+  const u = url(`/${area.slug}`);
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      '@id': `${u}#service`,
+      name: `Marketing for ${area.city} businesses`,
+      serviceType: ['Local SEO', 'Google Ads', 'Web Design'],
+      description: area.description,
+      url: u,
+      provider: { '@id': BUSINESS_ID },
+      areaServed: { '@type': 'City', name: area.city, containedInPlace: { '@type': 'State', name: 'Florida' } },
+    },
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: `Marketing in ${area.city}, FL`, path: `/${area.slug}` },
     ]),
   ];
 }

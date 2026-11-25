@@ -2,14 +2,13 @@
    Layout: soft off-white pages, deep-navy "evening" bands, and a soft cone of
    porch light that falls over each hero and closing call to action. */
 /* Fonts ----------------------------------------------------------------
-   Figtree (headings and interface text), Lora (paragraphs), and Playfair Display italic (testimonial quotes)
+   Figtree (headings and interface text) and Lora (paragraphs and testimonial quotes)
    are hosted with the site (public/fonts), Latin characters only. Lora is set 6% larger to match Figtree's size.
    The "Fallback" faces resize Arial and Times New Roman to take up the same space as the real fonts,
    so nothing shifts on the rare first visit where the page draws before the fonts arrive. */
 @font-face { font-family: "Figtree"; font-style: normal; font-weight: 400 800; font-display: swap; src: url("/fonts/figtree.woff2") format("woff2"); }
 @font-face { font-family: "Lora"; font-style: normal; font-weight: 400 700; font-display: swap; size-adjust: 106%; src: url("/fonts/lora.woff2") format("woff2"); }
 @font-face { font-family: "Lora"; font-style: italic; font-weight: 400 700; font-display: swap; size-adjust: 106%; src: url("/fonts/lora-italic.woff2") format("woff2"); }
-@font-face { font-family: "Playfair Display"; font-style: italic; font-weight: 400; font-display: swap; src: url("/fonts/playfair-display-400-italic.woff2") format("woff2"); }
 @font-face { font-family: "Figtree Fallback"; font-weight: 400; src: local("Arial"), local("ArialMT"), local("Liberation Sans"), local("LiberationSans"); size-adjust: 100%; ascent-override: 95%; descent-override: 25%; line-gap-override: 0%; }
 @font-face { font-family: "Figtree Fallback"; font-weight: 700; src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"), local("LiberationSans-Bold"); size-adjust: 96.5%; ascent-override: 98.45%; descent-override: 25.91%; line-gap-override: 0%; }
 @font-face { font-family: "Lora Fallback"; font-weight: 400; src: local("Times New Roman"), local("TimesNewRomanPSMT"), local("Liberation Serif"), local("LiberationSerif"); size-adjust: 122.48%; ascent-override: 87.06%; descent-override: 23.71%; line-gap-override: 0%; }
@@ -34,7 +33,6 @@
 
   --font-display: "Figtree", "Figtree Fallback", Arial, sans-serif;
   --font-text: "Lora", "Lora Fallback", Georgia, serif;
-  --font-accent: "Playfair Display", Georgia, serif;
   --font-body: "Figtree", "Figtree Fallback", Arial, system-ui, sans-serif;
 
   --radius: 12px;
@@ -67,14 +65,14 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 :focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
 
-h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; margin: 0; text-wrap: balance; color: var(--navy-800); letter-spacing: -0.01em; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.12; margin: 0; text-wrap: balance; color: var(--navy-800); letter-spacing: -0.01em; }
 h1 { font-size: clamp(2.5rem, 1.6rem + 3.6vw, 4.4rem); }
 h1, h2 { font-weight: 800; letter-spacing: -0.025em; }
 /* Paragraph and list text is set in Lora. Zero specificity, so any rule that names a font wins. */
 :where(main, .site-footer) :where(p, li, dd) { font-family: var(--font-text); }
 /* Small interface text stays in Figtree */
 .viz p, .viz li, .loc-label, .phone-line, .site-footer li, .gbp-facts dd, .stat-src, .tiers li, form p, form li,
-.founder-facts li, .contact-lines li, .contact-lines dd, .prose .answer::before { font-family: var(--font-body); }
+.founder-facts li, .contact-lines li, .contact-lines dd, .prose .answer::before, .how li::before, .form-card .sub { font-family: var(--font-body); }
 
 h2 { font-size: clamp(1.9rem, 1.4rem + 1.9vw, 2.85rem); }
 h3 { font-size: 1.3rem; line-height: 1.25; }
@@ -422,11 +420,11 @@ strong { font-weight: 600; }
 /* Testimonial ------------------------------------------------------ */
 .quote-block { max-width: 880px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
 .quote-block .stars svg { width: 20px; height: 20px; }
-.quote-block blockquote { margin: 0; font-family: var(--font-accent); font-style: italic; font-weight: 400; font-size: clamp(1.3rem, 1.1rem + 1vw, 1.8rem); line-height: 1.35; color: var(--navy-800); text-wrap: balance; }
+.quote-block blockquote { margin: 0; max-width: 46ch; font-family: var(--font-text); font-style: normal; font-weight: 500; font-size: clamp(1.15rem, 1rem + .7vw, 1.45rem); line-height: 1.55; color: var(--navy-800); text-wrap: balance; }
 .quote-block cite { font-style: normal; display: flex; flex-direction: column; gap: .1rem; align-items: center; }
 .quote-block cite b { font-weight: 600; }
 .quote-block cite span { color: var(--muted); font-size: .92rem; }
-.quote-mark { font-family: var(--font-accent); font-size: 5rem; line-height: .5; color: var(--amber); height: 2rem; }
+.quote-mark { font-family: var(--font-text); font-size: 5rem; line-height: .5; color: var(--amber); height: 2rem; }
 
 /* FAQ -------------------------------------------------------------- */
 .faq { display: grid; gap: .75rem; }
@@ -496,7 +494,7 @@ strong { font-weight: 600; }
 .porch-art .door { position: absolute; left: 50%; bottom: 0; width: 46%; height: 58%; transform: translateX(-50%); border-radius: 10px 10px 0 0; background: linear-gradient(180deg, rgba(var(--glow), .22), rgba(var(--glow), .05)); border: 2px solid rgba(248, 245, 239, .25); border-bottom: 0; }
 .porch-art .door::before { content: ""; position: absolute; inset: 14% 16% 52% 16%; border: 2px solid rgba(248, 245, 239, .2); border-radius: 4px; }
 .porch-art .door::after { content: ""; position: absolute; right: 12%; top: 56%; width: 10px; height: 10px; border-radius: 50%; background: #f3d754; box-shadow: 0 0 10px 2px rgba(var(--glow), .6); }
-.porch-art figcaption { position: absolute; left: 1.25rem; right: 1.25rem; bottom: 13%; text-align: center; font-family: var(--font-accent); font-style: italic; color: var(--on-dark); font-size: 1.1rem; z-index: 2; display: none; }
+.porch-art figcaption { position: absolute; left: 1.25rem; right: 1.25rem; bottom: 13%; text-align: center; font-family: var(--font-text); font-style: italic; color: var(--on-dark); font-size: 1.1rem; z-index: 2; display: none; }
 
 .mv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
 @media (max-width: 760px) { .mv { grid-template-columns: 1fr; } }
@@ -806,3 +804,19 @@ a[href^="tel:"] { text-decoration: underline; text-decoration-thickness: 1px; te
 @media (max-width: 760px) { .bio { grid-template-columns: 1fr; } .bio-photo { max-width: 200px; } }
 /* Testimonials sit between two larger sections, so they get less padding. */
 .section.section--quote { padding-block: clamp(2.75rem, 2rem + 2.5vw, 4rem); }
+
+/* City pages */
+.area-hero .hero-grid { align-items: center; }
+.area-links { display: flex; flex-wrap: wrap; gap: .1rem .75rem; }
+.area-links a { color: inherit; text-decoration: underline; text-decoration-color: rgba(var(--glow), .7); text-underline-offset: 3px; }
+.area-links a:hover { text-decoration-color: currentColor; }
+.area-hero .field textarea { min-height: 72px; }
+.home-about { max-width: 860px; align-items: stretch; grid-template-columns: minmax(0, 200px) minmax(0, 1fr); }
+/* The photo fills the full height of the text beside it */
+.home-about-photo { position: relative; min-height: 200px; }
+.home-about-photo .bio-photo { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: center 20%; }
+@media (max-width: 760px) {
+  .home-about { grid-template-columns: 1fr; }
+  .home-about-photo { position: static; max-width: 200px; }
+  .home-about-photo .bio-photo { position: static; height: auto; aspect-ratio: 4 / 5; }
+}

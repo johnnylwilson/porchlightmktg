@@ -46,7 +46,7 @@ npm run preview   # serve the built site locally
 | Header and footer | `src/components/Header.astro`, `Footer.astro` |
 | Head tags, scripts, page frame | `src/layouts/BaseLayout.astro` |
 | Colors, fonts, and all styling | `src/styles/global.css` (color tokens are at the top) |
-| Font files (Figtree for headings, Lora for paragraphs, Playfair Display italic for quotes) | `public/fonts/` (loaded by the `@font-face` rules at the top of `global.css`) |
+| Font files (Figtree for headings, Lora for paragraphs and quotes) | `public/fonts/` (loaded by the `@font-face` rules at the top of `global.css`) |
 | Images, logo, favicon | `public/` |
 | Privacy Policy and Terms of Service text | `src/legal/*.md` |
 | Clean URLs (no `.html`, no trailing slash) | `vercel.json` |
@@ -101,3 +101,9 @@ The audit and contact forms send submissions to Formspree, which emails them to 
 - Each submission includes the name, phone, email, website, message, the services checked (contact page), and which page the form was on (`form`). The email subject is set with `_subject`.
 - A hidden honeypot field (`_gotcha`) filters out most spam bots.
 - Fields are defined in `src/components/AuditForm.astro`. Formspree accepts whatever fields the form sends, so nothing needs to change on the Formspree side when you add or rename one.
+
+## City pages
+
+`/heathrow-fl`, `/longwood-fl`, `/sanford-fl`, and `/winter-springs-fl` are built from `areas` in `src/data/site.ts` by `src/pages/[area].astro`. They're linked from the contact page under "Other areas served" and added to the sitemap automatically.
+
+To add a city, copy one entry in `areas`, change the slug and city, and write every line of copy fresh for that city. Copying sentences between city pages creates duplicate content. The build stops if a city's `description` is missing "marketing agency", the city with ", FL", or "Porchlight Marketing".

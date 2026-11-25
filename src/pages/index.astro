@@ -21,7 +21,7 @@ const serviceCards = [
 
 const reasons = [
   { icon: 'target', t: 'Precise', d: 'Your marketing is aimed at the exact services you want more of and the areas you want to work in.' },
-  { icon: 'shield', t: 'Credible', d: 'We turn your business into a strong, professional online presence that nearby clients can find.' },
+  { icon: 'shield', t: 'Credible', d: 'I turn your business into a strong, professional online presence that nearby clients can find.' },
   { icon: 'pin', t: 'Local', d: 'Everything focuses on the cities where you operate and actually want to win more work.' },
   { icon: 'chat', t: 'Plainspoken', d: 'You get clear explanations and honest reporting. No jargon, no big promises, and no surprises.' },
 ];
@@ -48,7 +48,7 @@ const reasons = [
 
   <section class="section section--boards">
     <div class="wrap">
-      <SectionHead eyebrow="Our services" title="Three ways to help the right people find you" center />
+      <SectionHead eyebrow="Services" title="Three ways to help the right people find you" center />
       <div class="grid-3">
         {serviceCards.map((c) => (
           <a class="service-card" href={`/${c.slug}`}>
@@ -68,7 +68,7 @@ const reasons = [
       <div class="sticky-col">
         <span class="eyebrow">Why Porchlight</span>
         <h2>Marketing that keeps the focus close to home</h2>
-        <p class="lede">As a local marketing agency, we focus on the things that bring in work: showing up when people nearby search, and making it easy for them to reach you.</p>
+        <p class="lede">I put my time into the things that bring in work: showing up when people nearby search, and making it easy for them to reach you.</p>
         <div class="cta-before"><CtaPair /></div>
       </div>
       <div class="reason-list">
@@ -82,16 +82,28 @@ const reasons = [
 
   <section class="section section--paper">
     <div class="wrap">
-      <SectionHead title="Getting started is simple" intro="Most people hear about us from someone they trust. Here is what happens after you reach out." center />
+      <SectionHead title="Getting started is simple" intro="Most people hear about me from someone they trust. Here is what happens after you reach out." center />
       <ol class="how">
-        <li><h3>Free audit</h3><p>We review your website, Google listing, and how you show up in local searches, then walk you through what we found.</p></li>
-        <li><h3>A plan for your business</h3><p>We agree on the services, areas, and kinds of work to focus on, then send a clear scope and estimate.</p></li>
-        <li><h3>Do the work and measure it</h3><p>We publish the updates or launch your campaign, then track how you're showing up so you know what the work is doing.</p></li>
+        <li><h3>Free audit</h3><p>I review your website, Google listing, and how you show up in local searches, then walk you through what I found.</p></li>
+        <li><h3>A plan for your business</h3><p>We agree on the services, areas, and kinds of work to focus on, and I send a clear scope and estimate.</p></li>
+        <li><h3>Do the work and measure it</h3><p>I publish the updates or launch your campaign, then track how you're showing up so you know what the work is doing.</p></li>
       </ol>
     </div>
   </section>
 
-  <FinalCta title="Ready to make a name around town?" text="Partner with a Lake Mary marketing agency that understands local search and builds visibility where it counts. Start with a free audit, or just reach out and tell us about your business." />
+  <section class="section">
+    <div class="wrap bio home-about">
+      <div class="home-about-photo"><img class="bio-photo" src="/images/johnny-wilson.jpg" alt="Johnny Wilson, founder of Porchlight Marketing" width="680" height="850" loading="lazy" decoding="async" /></div>
+      <div class="stack">
+        <span class="eyebrow">About me</span>
+        <h2>Hi, I'm Johnny</h2>
+        <p>Porchlight is just me, working with local businesses from right here in Lake Mary. When you call, you get me, not an account manager or a call center. I've spent more than seven years building websites, running Google Ads, and helping businesses show up in local search.</p>
+        <a class="text-link" href="/about-us">More about me <span>&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <FinalCta title="Ready to make a name around town?" text="If you're in or around Lake Mary, I'd be glad to grab a coffee and hear about your business. Rather start online? Request a free audit or send a quick note, and I'll take it from there." />
 
   <GbpSection seoKey="home" />
 </BaseLayout>

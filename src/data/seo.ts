@@ -67,3 +67,13 @@ export function seoFor(key: string) {
   if (missing.length) throw new Error(`SEO description for "${key}" is missing: ${missing.join(', ')}`);
   return { title: metaTitle(m.focus), description: m.description };
 }
+
+// City pages: "Marketing Agency | Heathrow, FL | Porchlight Marketing".
+// The description must include "marketing agency", the city with ", FL", and "Porchlight Marketing".
+export const AREA_FOCUS = 'Marketing Agency';
+export function areaSeo(area: { city: string; description: string }) {
+  const place = `${area.city}, FL`;
+  const missing = [AREA_FOCUS, place, BRAND].filter((need) => !area.description.toLowerCase().includes(need.toLowerCase()));
+  if (missing.length) throw new Error(`SEO description for the ${area.city} page is missing: ${missing.join(', ')}`);
+  return { title: `${AREA_FOCUS} | ${place} | ${BRAND}`, description: area.description };
+}

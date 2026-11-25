@@ -13,7 +13,7 @@ date: "2026-11-11"
 closing:
   title: "Final thoughts"
   text: |
-    One-page websites seem simple, but they hold a lot of local businesses back. That's why dedicated service pages are part of every [local business website](/website-design) we build. Dedicated service pages help you show up for more of the right searches, connect your work to the towns you serve, and make it easier for people to reach out.
+    One-page websites seem simple, but they hold a lot of local businesses back. That's why dedicated service pages are part of every [local business website](/website-design) I build. Dedicated service pages help you show up for more of the right searches, connect your work to the towns you serve, and make it easier for people to reach out.
 ---
 One-page websites look simple, but they make it harder to show up on Google for each thing you do and harder for visitors to find what they came for. Giving each main service its own page lets you match how people search, connect services to the towns you serve, and give visitors a clear path to reach out.
 

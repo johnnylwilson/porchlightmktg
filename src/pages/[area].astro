@@ -1,0 +1,73 @@
+---
+// One page per nearby city, built from `areas` in src/data/site.ts.
+// Order: hero with form, services, testimonial, process, coffee CTA, location section.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PorchLight from '../components/PorchLight.astro';
+import SectionHead from '../components/SectionHead.astro';
+import Icon from '../components/Icon.astro';
+import AuditForm from '../components/AuditForm.astro';
+import Testimonial from '../components/Testimonial.astro';
+import FinalCta from '../components/FinalCta.astro';
+import GbpSection from '../components/GbpSection.astro';
+import { areas, services, testimonials } from '../data/site';
+import { areaSeo } from '../data/seo';
+import { businessSchema, areaSchema } from '../data/schema';
+
+export async function getStaticPaths() {
+  return areas.map((area) => ({ params: { area: area.slug }, props: { area } }));
+}
+
+const { area } = Astro.props;
+const seo = areaSeo(area);
+const cards = services.map((s) => ({ ...s, d: area.services[s.slug as keyof typeof area.services] }));
+---
+<BaseLayout title={seo.title} description={seo.description} current="" schema={[...areaSchema(area), businessSchema()]}>
+  <section class="hero lightbox area-hero">
+    <PorchLight x="70%" w="820px" h="760px" />
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="hero-meta">
+          {services.map((s) => <span><Icon name={s.icon} />{s.name}</span>)}
+        </div>
+        <h1>Marketing for {area.city} businesses</h1>
+        <p class="lede">{area.lede}</p>
+      </div>
+      <div class="form-card" id="audit">
+        <h2>Request a free audit</h2>
+        <p class="sub"><Icon name="clock" />Takes less than a minute</p>
+        <AuditForm id={`area-${area.slug}`} formName={`${area.city} page`} cta="Request my free audit" website={false} note={false} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--boards">
+    <div class="wrap">
+      <SectionHead eyebrow="Services" title={area.servicesTitle} center />
+      <div class="grid-3">
+        {cards.map((c) => (
+          <a class="service-card" href={`/${c.slug}`}>
+            <span class="icon"><Icon name={c.icon} /></span>
+            <h3>{c.name} in {area.city}</h3>
+            <p>{c.d}</p>
+            <span class="text-link">Learn more <span>&rarr;</span></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Testimonial t={testimonials[area.testimonial as keyof typeof testimonials]} />
+
+  <section class="section section--paper">
+    <div class="wrap">
+      <SectionHead eyebrow="Process" title={area.processTitle} center />
+      <ol class="how">
+        {area.steps.map((st) => <li><h3>{st.t}</h3><p>{st.d}</p></li>)}
+      </ol>
+    </div>
+  </section>
+
+  <FinalCta title={area.ctaTitle} text={area.ctaText} />
+
+  <GbpSection seoKey="home" heading={area.gbpHeading} />
+</BaseLayout>

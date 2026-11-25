@@ -29,7 +29,7 @@ You don't need a clever headline or a paragraph about how passionate you are abo
 
 ## Create a page for each main service
 
-One mistake we see often is putting every service on a single page.
+One mistake I see often is putting every service on a single page.
 
 Say you run a cleaning company that offers move-out cleaning, deep cleaning, recurring service, and office cleaning. Each of those should have its own page instead of being squeezed into a few paragraphs on a general services page.
 
@@ -43,7 +43,7 @@ If someone decides they want to talk to you, don't make them work for it.
 
 Your phone number should be easy to find and tappable on mobile. You should also have clear buttons that take people to your contact form or scheduling page.
 
-We like offering two options, such as a free consultation and a contact button, because not everyone wants to take the same next step.
+I like offering two options, such as a free consultation and a contact button, because not everyone wants to take the same next step.
 
 You don't need a button after every other paragraph, though. A few well-placed calls to action are enough.
 
