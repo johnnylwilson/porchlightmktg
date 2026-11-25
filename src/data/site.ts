@@ -283,7 +283,7 @@ export const areas = [
     ctaTitle: "Let's grab a coffee",
     ctaText: "Heathrow is just minutes from me, so meeting in person is easy. Pick a coffee spot nearby and we can talk through your business, or request a free audit if you'd rather keep things online.",
     aboutTitle: 'Hi, I\'m Johnny',
-    aboutText: 'Porchlight is based in Lake Mary, a short drive from Heathrow. I handle every project personally and bring more than seven years of experience with websites, Google Ads, and local search to each one.',
+    aboutText: 'Porchlight is based in Lake Mary, a short drive from Heathrow. I handle every project personally, so you always know who is doing the work and who to call with a question. I bring more than seven years of experience with websites, Google Ads, and local search to each one.',
     gbpHeading: 'Serving Heathrow from Lake Mary, FL',
   },
   {
